@@ -1,0 +1,10 @@
+﻿
+Parâmetros para passar:
+
+txtNome, txtNomer, Calendario, Calendarior, txtRg, txtRgr, txtCep, txtCepr, txtCpfr, txtEnd, txtEndr, txtEsco, txtParentesco
+
+Atributos crianças:
+nome, data, rg, cep, endereço, escolaridade
+
+Atributos adultos:
+nome, data, rg, cpf, cep, endereço, parentesco
