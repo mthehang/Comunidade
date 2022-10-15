@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Data;
 using Npgsql;
 
 namespace IG
 {
-    public class DAO
-    {
-
+    public class DAO {
         private static string Host = "ec2-18-209-78-11.compute-1.amazonaws.com";
         private static string User = "fyqggtqexifwde";
         private static string DBname = "d2pjbma96jccqm";
@@ -30,7 +29,7 @@ namespace IG
                 conn.Open();
 
                 using (var cmd = new NpgsqlCommand("INSERT INTO crianca (crianca_nome, crianca_datanasc, crianca_rg, " +
-                    "crianca_cpf, crianca_cep, crianca_endereco, crianca_sala) values (@nomec, @rgc, @cpfc, @nascc, @cepc," +
+                    "crianca_cpf, crianca_cep, crianca_endereco, crianca_sala) values (@nomec, @nascc, @rgc, @cpfc, @cepc," +
                     "@endc, @salac)", conn))
                 {
                     cmd.Parameters.AddWithValue("nomec", nome);
@@ -42,8 +41,8 @@ namespace IG
                     cmd.Parameters.AddWithValue("salac", sala);
                     cmd.ExecuteNonQuery();
 
-                    using (var command = new NpgsqlCommand("INSERT INTO responsavel (resp_nome, resp_datanasc, resp_rg, resp_cpf" +
-                        "resp_cep, resp_endereco, resp_parentesco, resp_cel) values (@nomer, @nascr, @rgr, @cpfr, @cepr, @endrm, @parr, @celr", conn))
+                    using (var command = new NpgsqlCommand("INSERT INTO responsavel (resp_nome, resp_datanasc, resp_rg, resp_cpf," +
+                        "resp_cep, resp_endereco, resp_parentesco, resp_cel) values (@nomer, @nascr, @rgr, @cpfr, @cepr, @endr, @parr, @celr)", conn))
                     {
                         command.Parameters.AddWithValue("nomer", nomer);
                         command.Parameters.AddWithValue("nascr", nascr);
@@ -62,45 +61,56 @@ namespace IG
             }
         }
 
-        //public void InserirTeste(string nome) 
-        //{
-        //    using (var conn = new NpgsqlConnection(connString))
-        //    {
-        //        MessageBox.Show("Conexão extabelecida.");
-        //        conn.Open();
+        public void ExTabela()
+        {
+            ExibirTabela();
+        }
+        private List<Criancas> ExibirTabela()
+        {
 
-        //        //using (var command = new NpgsqlCommand("INSERT INTO pessoa (nomep) values (@nomep)", conn))
-        //        //{
-        //        //    command.Parameters.AddWithValue("nomep", nome);
-        //        //    command.ExecuteNonQuery();
-        //        //}
+            List<Criancas> pessoas = new List<Criancas>();
+            Criancas cr = new Criancas();
 
-        //        using (var command = new NpgsqlCommand("UPDATE pessoa set nomep = @nomep where id = 1", conn))
-        //        {
-        //            command.Parameters.AddWithValue("nomep", nome);
-        //            command.ExecuteNonQuery();
-        //        }
-
-        //    }
-
-
-        public String ShowIdCrianca() {
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-                string mensagem = null;
 
-                using (var command = new NpgsqlCommand("SELECT MAX (crianca_id) as crianca_id FROM crianca", conn))
+                using (var command = new NpgsqlCommand("SELECT * FROM crianca order by crianca_id", conn))
                 {
                     var reader = command.ExecuteReader();
+
                     while (reader.Read())
                     {
-                        mensagem = (reader.GetInt32(0)).ToString();
+
+                        cr.Id = reader["crianca_id"].ToString()!;
+                        cr.Nome = reader["crianca_nome"].ToString()!;
+                        cr.Datanasc = reader["crianca_datanasc"].ToString()!;
+                        cr.Rg = reader["crianca_rg"].ToString()!;
+                        cr.Cpf = reader["crianca_cpf"].ToString()!;
+                        cr.Cep = reader["crianca_cep"].ToString()!;
+                        cr.End = reader["crianca_endereco"].ToString()!;
+                        cr.Sala = reader["crianca_sala"].ToString()!;
+                        cr.Resp = reader["crianca_respid"].ToString()!;
+                        pessoas.Add(cr);
+                        foreach (var p in pessoas)
+                        {
+                            MessageBox.Show($"{(p.Id)} - {p.Nome} | {p.Datanasc} | {p.Rg} | {p.Cpf} | {p.Cep} | {p.End} | {p.Sala} | {p.Resp}");
+                        }
                     }
                     reader.Close();
-                    return mensagem;
-                    conn.Close();
                 }
+                conn.Close();
+            }
+            return pessoas;
+        }
+
+        public void ExID()
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+
             }
         }
     }

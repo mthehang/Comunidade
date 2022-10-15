@@ -274,5 +274,13 @@ namespace IG
                 txtNomer.Focus();
             }
         }
+
+        private void txtRg_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtCpf.Focus();
+            }
+        }
     }
 }

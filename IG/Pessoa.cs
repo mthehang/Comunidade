@@ -17,8 +17,6 @@ namespace IG
         private string cep;
         private string end;
         private string cel;
-
-
         public string Id { get { return id; } set { id = value; } }
         public string Nome { get { return nome; } set { nome = value; } }
         public string Rg { get { return rg; } set { rg = value; } }

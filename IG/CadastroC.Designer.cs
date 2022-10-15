@@ -357,6 +357,7 @@
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(150, 23);
             this.txtRg.TabIndex = 42;
+            this.txtRg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRg_KeyDown);
             this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRg_KeyPress_1);
             // 
             // txtRgr

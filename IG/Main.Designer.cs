@@ -34,6 +34,7 @@
             this.criançaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.responsávelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colaboradorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.criançaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.responsávelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +76,8 @@
             this.criarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.criançaToolStripMenuItem,
             this.responsávelToolStripMenuItem,
-            this.colaboradorToolStripMenuItem1});
+            this.colaboradorToolStripMenuItem1,
+            this.salaToolStripMenuItem});
             this.criarToolStripMenuItem.Name = "criarToolStripMenuItem";
             this.criarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.criarToolStripMenuItem.Text = "Criar";
@@ -92,13 +94,19 @@
             this.responsávelToolStripMenuItem.Name = "responsávelToolStripMenuItem";
             this.responsávelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.responsávelToolStripMenuItem.Text = "Responsável";
-            this.responsávelToolStripMenuItem.Click += new System.EventHandler(this.responsávelToolStripMenuItem_Click);
             // 
             // colaboradorToolStripMenuItem1
             // 
             this.colaboradorToolStripMenuItem1.Name = "colaboradorToolStripMenuItem1";
             this.colaboradorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.colaboradorToolStripMenuItem1.Text = "Colaborador";
+            // 
+            // salaToolStripMenuItem
+            // 
+            this.salaToolStripMenuItem.Name = "salaToolStripMenuItem";
+            this.salaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salaToolStripMenuItem.Text = "Sala";
+            this.salaToolStripMenuItem.Click += new System.EventHandler(this.salaToolStripMenuItem_Click);
             // 
             // alterarToolStripMenuItem
             // 
@@ -141,19 +149,19 @@
             // criançaToolStripMenuItem2
             // 
             this.criançaToolStripMenuItem2.Name = "criançaToolStripMenuItem2";
-            this.criançaToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.criançaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.criançaToolStripMenuItem2.Text = "Criança";
             // 
             // responsávelToolStripMenuItem2
             // 
             this.responsávelToolStripMenuItem2.Name = "responsávelToolStripMenuItem2";
-            this.responsávelToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.responsávelToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.responsávelToolStripMenuItem2.Text = "Responsável";
             // 
             // colaboradorToolStripMenuItem2
             // 
             this.colaboradorToolStripMenuItem2.Name = "colaboradorToolStripMenuItem2";
-            this.colaboradorToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.colaboradorToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.colaboradorToolStripMenuItem2.Text = "Colaborador";
             // 
             // buscarToolStripMenuItem
@@ -161,6 +169,7 @@
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
             this.buscarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
+            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
@@ -203,5 +212,6 @@
         private ToolStripMenuItem responsávelToolStripMenuItem2;
         private ToolStripMenuItem colaboradorToolStripMenuItem2;
         private ToolStripMenuItem buscarToolStripMenuItem;
+        private ToolStripMenuItem salaToolStripMenuItem;
     }
 }

@@ -25,19 +25,23 @@ namespace IG
         {
             CadastroC cc = new CadastroC();
             cc.StartPosition = FormStartPosition.CenterScreen;
-
             cc.Size = new Size(this.Width/2, this.Height/2);
-            
             cc.Show();
             
         }
 
-        private void responsávelToolStripMenuItem_Click(object sender, EventArgs e)
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Teste teste = new Teste();
-            teste.StartPosition = FormStartPosition.CenterScreen;
-            teste.Size = new Size(this.Width/2, this.Height/2);
-            teste.Show();
+            Buscar buscar = new Buscar();
+            buscar.StartPosition = FormStartPosition.CenterScreen;
+            buscar.Size = new Size(this.Width/2, this.Height/2);
+            buscar.Show();
+        }
+
+        private void salaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DAO banco = new DAO();
+            banco.ExTabela();
         }
     }
 }
