@@ -249,8 +249,10 @@
             this.btnCadastros.TabIndex = 4;
             this.btnCadastros.Text = "Cadastros";
             this.btnCadastros.UseVisualStyleBackColor = false;
+            this.btnCadastros.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCadastros_MouseDown);
             this.btnCadastros.MouseEnter += new System.EventHandler(this.btnCadastros_MouseEnter);
             this.btnCadastros.MouseLeave += new System.EventHandler(this.btnCadastros_MouseLeave);
+            this.btnCadastros.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCadastros_MouseUp);
             // 
             // Logo
             // 

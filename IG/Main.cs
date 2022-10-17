@@ -141,5 +141,15 @@ namespace IG
             imgCad.Visible = true;
             imgCadF.Visible = false;
         }
+
+        private void btnCadastros_MouseUp(object sender, MouseEventArgs e)
+        {
+            imgCadF.BackColor = Color.FromArgb(236, 47, 67);
+        }
+
+        private void btnCadastros_MouseDown(object sender, MouseEventArgs e)
+        {
+            imgCadF.BackColor = Color.FromArgb(145, 119, 117);
+        }
     }
 }
