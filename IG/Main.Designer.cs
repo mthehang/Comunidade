@@ -43,6 +43,10 @@
             this.btnCrianca = new System.Windows.Forms.Button();
             this.btnMenuF = new System.Windows.Forms.PictureBox();
             this.MenuBar = new System.Windows.Forms.Panel();
+            this.imgHomeF = new System.Windows.Forms.PictureBox();
+            this.imgHome = new System.Windows.Forms.PictureBox();
+            this.panelHome = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.imgCheckOutF = new System.Windows.Forms.PictureBox();
             this.imgCheckOut = new System.Windows.Forms.PictureBox();
@@ -76,6 +80,8 @@
             this.subMenuCad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).BeginInit();
             this.MenuBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHomeF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCheckOutF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCheckOut)).BeginInit();
@@ -115,9 +121,9 @@
             this.subMenuRel.Controls.Add(this.btnRelFreq);
             this.subMenuRel.Controls.Add(this.btnRelCheck);
             this.subMenuRel.Controls.Add(this.btnRelCad);
-            this.subMenuRel.Location = new System.Drawing.Point(6, 351);
+            this.subMenuRel.Location = new System.Drawing.Point(0, 228);
             this.subMenuRel.Name = "subMenuRel";
-            this.subMenuRel.Size = new System.Drawing.Size(203, 162);
+            this.subMenuRel.Size = new System.Drawing.Size(203, 163);
             this.subMenuRel.TabIndex = 2;
             this.subMenuRel.Visible = false;
             // 
@@ -199,10 +205,10 @@
             // subMenuCad
             // 
             this.subMenuCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.subMenuCad.Controls.Add(this.btnCrianca);
             this.subMenuCad.Controls.Add(this.btnSala);
             this.subMenuCad.Controls.Add(this.btnProfessor);
             this.subMenuCad.Controls.Add(this.btnResponsavel);
-            this.subMenuCad.Controls.Add(this.btnCrianca);
             this.subMenuCad.Location = new System.Drawing.Point(0, 189);
             this.subMenuCad.Name = "subMenuCad";
             this.subMenuCad.Size = new System.Drawing.Size(203, 156);
@@ -271,7 +277,7 @@
             this.btnCrianca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCrianca.Location = new System.Drawing.Point(0, 0);
             this.btnCrianca.Name = "btnCrianca";
-            this.btnCrianca.Size = new System.Drawing.Size(203, 44);
+            this.btnCrianca.Size = new System.Drawing.Size(203, 48);
             this.btnCrianca.TabIndex = 21;
             this.btnCrianca.Text = "Criança";
             this.btnCrianca.UseVisualStyleBackColor = false;
@@ -294,6 +300,10 @@
             // MenuBar
             // 
             this.MenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(31)))), ((int)(((byte)(30)))));
+            this.MenuBar.Controls.Add(this.imgHomeF);
+            this.MenuBar.Controls.Add(this.imgHome);
+            this.MenuBar.Controls.Add(this.panelHome);
+            this.MenuBar.Controls.Add(this.btnHome);
             this.MenuBar.Controls.Add(this.btnMenuF);
             this.MenuBar.Controls.Add(this.btnMenu);
             this.MenuBar.Controls.Add(this.imgCheckOutF);
@@ -318,6 +328,57 @@
             this.MenuBar.Name = "MenuBar";
             this.MenuBar.Size = new System.Drawing.Size(220, 619);
             this.MenuBar.TabIndex = 2;
+            // 
+            // imgHomeF
+            // 
+            this.imgHomeF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(106)))), ((int)(((byte)(137)))));
+            this.imgHomeF.Image = ((System.Drawing.Image)(resources.GetObject("imgHomeF.Image")));
+            this.imgHomeF.Location = new System.Drawing.Point(31, 150);
+            this.imgHomeF.Name = "imgHomeF";
+            this.imgHomeF.Size = new System.Drawing.Size(33, 33);
+            this.imgHomeF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgHomeF.TabIndex = 24;
+            this.imgHomeF.TabStop = false;
+            this.imgHomeF.Visible = false;
+            // 
+            // imgHome
+            // 
+            this.imgHome.Image = ((System.Drawing.Image)(resources.GetObject("imgHome.Image")));
+            this.imgHome.Location = new System.Drawing.Point(31, 150);
+            this.imgHome.Name = "imgHome";
+            this.imgHome.Size = new System.Drawing.Size(33, 33);
+            this.imgHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgHome.TabIndex = 24;
+            this.imgHome.TabStop = false;
+            // 
+            // panelHome
+            // 
+            this.panelHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(58)))));
+            this.panelHome.Location = new System.Drawing.Point(0, 150);
+            this.panelHome.Name = "panelHome";
+            this.panelHome.Size = new System.Drawing.Size(11, 33);
+            this.panelHome.TabIndex = 4;
+            // 
+            // btnHome
+            // 
+            this.btnHome.AutoSize = true;
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(31)))), ((int)(((byte)(30)))));
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(106)))), ((int)(((byte)(137)))));
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnHome.Location = new System.Drawing.Point(0, 150);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(220, 33);
+            this.btnHome.TabIndex = 23;
+            this.btnHome.Text = "Tela inicial";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.btnHome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseDown);
+            this.btnHome.MouseEnter += new System.EventHandler(this.btnHome_MouseEnter);
+            this.btnHome.MouseLeave += new System.EventHandler(this.btnHome_MouseLeave);
+            this.btnHome.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseUp);
             // 
             // btnMenu
             // 
@@ -536,7 +597,7 @@
             // LogoComuna
             // 
             this.LogoComuna.Image = ((System.Drawing.Image)(resources.GetObject("LogoComuna.Image")));
-            this.LogoComuna.Location = new System.Drawing.Point(44, 40);
+            this.LogoComuna.Location = new System.Drawing.Point(42, 28);
             this.LogoComuna.Name = "LogoComuna";
             this.LogoComuna.Size = new System.Drawing.Size(124, 92);
             this.LogoComuna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -696,6 +757,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).EndInit();
             this.MenuBar.ResumeLayout(false);
             this.MenuBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHomeF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCheckOutF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCheckOut)).EndInit();
@@ -763,5 +826,9 @@
         private Button btnRelFreq;
         private PictureBox btnMenu;
         private PictureBox btnMenuF;
+        private PictureBox imgHomeF;
+        private PictureBox imgHome;
+        private Panel panelHome;
+        private Button btnHome;
     }
 }

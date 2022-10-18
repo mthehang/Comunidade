@@ -201,6 +201,28 @@ namespace IG
             imgCheckOutF.BackColor = Color.FromArgb(145, 119, 117);
         }
 
+        private void btnHome_MouseDown(object sender, MouseEventArgs e)
+        {
+            imgHomeF.BackColor = Color.FromArgb(145, 119, 117); 
+        }
+
+        private void btnHome_MouseEnter(object sender, EventArgs e)
+        {
+            imgHome.Visible = false;
+            imgHomeF.Visible = true;
+        }
+
+        private void btnHome_MouseLeave(object sender, EventArgs e)
+        {
+            imgHome.Visible = true;
+            imgHomeF.Visible = false;
+        }
+
+        private void btnHome_MouseUp(object sender, MouseEventArgs e)
+        {
+            imgHomeF.BackColor = Color.FromArgb(93, 106, 137);
+        }
+
         private void btnCheckOut_MouseEnter(object sender, EventArgs e)
         {
             imgCheckOut.Visible = false;
@@ -223,6 +245,7 @@ namespace IG
             if (subMenuCad.Visible == false)
             {
                 subMenuCad.Visible = true;
+                subMenuCad.BringToFront();
                 subMenuRel.Visible = false;
             }
             else
@@ -237,6 +260,7 @@ namespace IG
             if (subMenuRel.Visible == false)
             {
                 subMenuRel.Visible = true;
+                subMenuRel.BringToFront();
                 subMenuCad.Visible = false;
 
             }
@@ -274,14 +298,17 @@ namespace IG
             {
                 MenuBar.Width = 55;
                 LogoComuna.Visible = false;
+                panelHome.Visible = false;
                 panelCad.Visible = false;
                 panelRel.Visible = false;
                 panelCheck.Visible = false;
                 panel5.Visible = false;
+                imgHome.Visible = false;
                 imgCad.Visible = false;
                 imgRel.Visible = false;
                 imgCheckIn.Visible = false;
                 imgCheckOut.Visible = false;
+                btnHome.Visible = false;
                 btnCadastros.Visible = false;
                 btnRelatorios.Visible = false;
                 btnCheckIn.Visible = false;
@@ -295,15 +322,18 @@ namespace IG
             {
                 MenuBar.Width = 220;
                 LogoComuna.Visible = true;
+                panelHome.Visible = true;
                 panelCad.Visible = true;
                 panelRel.Visible = true;
                 panelCheck.Visible = true;
                 panel5.Visible = true;
+                imgHome.Visible = true;
                 imgCad.Visible = true;
                 imgRel.Visible = true;
                 imgCheckIn.Visible = true;
                 imgCheckOut.Visible = true;
-                btnCadastros.Visible = true;
+                btnHome.Visible = true;
+               btnCadastros.Visible = true;
                 btnRelatorios.Visible = true;
                 btnCheckIn.Visible = true;
                 btnCheckOut.Visible = true;
@@ -312,6 +342,12 @@ namespace IG
             }
         }
 
+        private void ShowAll()
+        {
+            subMenuCad.Visible = false;
+            subMenuRel.Visible = false;
+            
+        }
         private void btnResponsavel_Click(object sender, EventArgs e)
         {
             HideAll();
@@ -359,6 +395,11 @@ namespace IG
             Fundo.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            ShowAll();
         }
     }
 }
