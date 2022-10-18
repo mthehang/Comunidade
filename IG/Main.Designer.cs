@@ -31,16 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Janela1));
             this.Fundo = new System.Windows.Forms.Panel();
             this.subMenuRel = new System.Windows.Forms.Panel();
-            this.btnRelVisitantes = new System.Windows.Forms.Button();
-            this.btnRelFreq = new System.Windows.Forms.Button();
             this.btnRelCheck = new System.Windows.Forms.Button();
             this.btnRelCad = new System.Windows.Forms.Button();
-            this.logoComunaKids = new System.Windows.Forms.PictureBox();
+            this.btnRelVisitantes = new System.Windows.Forms.Button();
+            this.btnRelFreq = new System.Windows.Forms.Button();
             this.subMenuCad = new System.Windows.Forms.Panel();
-            this.btnSala = new System.Windows.Forms.Button();
-            this.btnProfessor = new System.Windows.Forms.Button();
             this.btnResponsavel = new System.Windows.Forms.Button();
             this.btnCrianca = new System.Windows.Forms.Button();
+            this.btnSala = new System.Windows.Forms.Button();
+            this.btnProfessor = new System.Windows.Forms.Button();
             this.btnMenuF = new System.Windows.Forms.PictureBox();
             this.MenuBar = new System.Windows.Forms.Panel();
             this.imgHomeF = new System.Windows.Forms.PictureBox();
@@ -76,7 +75,6 @@
             this.btnRes = new System.Windows.Forms.PictureBox();
             this.Fundo.SuspendLayout();
             this.subMenuRel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoComunaKids)).BeginInit();
             this.subMenuCad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).BeginInit();
             this.MenuBar.SuspendLayout();
@@ -107,57 +105,25 @@
             // 
             this.Fundo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.Fundo.Controls.Add(this.subMenuRel);
-            this.Fundo.Controls.Add(this.logoComunaKids);
             this.Fundo.Controls.Add(this.subMenuCad);
             this.Fundo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Fundo.Location = new System.Drawing.Point(220, 31);
             this.Fundo.Name = "Fundo";
             this.Fundo.Size = new System.Drawing.Size(1080, 619);
             this.Fundo.TabIndex = 3;
+            this.Fundo.Visible = false;
             // 
             // subMenuRel
             // 
-            this.subMenuRel.Controls.Add(this.btnRelVisitantes);
-            this.subMenuRel.Controls.Add(this.btnRelFreq);
             this.subMenuRel.Controls.Add(this.btnRelCheck);
             this.subMenuRel.Controls.Add(this.btnRelCad);
+            this.subMenuRel.Controls.Add(this.btnRelVisitantes);
+            this.subMenuRel.Controls.Add(this.btnRelFreq);
             this.subMenuRel.Location = new System.Drawing.Point(0, 228);
             this.subMenuRel.Name = "subMenuRel";
-            this.subMenuRel.Size = new System.Drawing.Size(203, 163);
+            this.subMenuRel.Size = new System.Drawing.Size(203, 155);
             this.subMenuRel.TabIndex = 2;
             this.subMenuRel.Visible = false;
-            // 
-            // btnRelVisitantes
-            // 
-            this.btnRelVisitantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnRelVisitantes.FlatAppearance.BorderSize = 0;
-            this.btnRelVisitantes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
-            this.btnRelVisitantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelVisitantes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRelVisitantes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRelVisitantes.Location = new System.Drawing.Point(0, 117);
-            this.btnRelVisitantes.Name = "btnRelVisitantes";
-            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 45);
-            this.btnRelVisitantes.TabIndex = 24;
-            this.btnRelVisitantes.Text = "Visitantes";
-            this.btnRelVisitantes.UseVisualStyleBackColor = false;
-            this.btnRelVisitantes.Click += new System.EventHandler(this.btnRelVisitantes_Click);
-            // 
-            // btnRelFreq
-            // 
-            this.btnRelFreq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRelFreq.FlatAppearance.BorderSize = 0;
-            this.btnRelFreq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
-            this.btnRelFreq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelFreq.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRelFreq.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRelFreq.Location = new System.Drawing.Point(0, 78);
-            this.btnRelFreq.Name = "btnRelFreq";
-            this.btnRelFreq.Size = new System.Drawing.Size(203, 44);
-            this.btnRelFreq.TabIndex = 23;
-            this.btnRelFreq.Text = "Frequência";
-            this.btnRelFreq.UseVisualStyleBackColor = false;
-            this.btnRelFreq.Click += new System.EventHandler(this.btnRelFreq_Click);
             // 
             // btnRelCheck
             // 
@@ -167,9 +133,9 @@
             this.btnRelCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelCheck.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRelCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRelCheck.Location = new System.Drawing.Point(0, 40);
+            this.btnRelCheck.Location = new System.Drawing.Point(0, 39);
             this.btnRelCheck.Name = "btnRelCheck";
-            this.btnRelCheck.Size = new System.Drawing.Size(203, 44);
+            this.btnRelCheck.Size = new System.Drawing.Size(203, 41);
             this.btnRelCheck.TabIndex = 22;
             this.btnRelCheck.Text = "Check";
             this.btnRelCheck.UseVisualStyleBackColor = false;
@@ -185,35 +151,90 @@
             this.btnRelCad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRelCad.Location = new System.Drawing.Point(0, 0);
             this.btnRelCad.Name = "btnRelCad";
-            this.btnRelCad.Size = new System.Drawing.Size(203, 44);
+            this.btnRelCad.Size = new System.Drawing.Size(203, 42);
             this.btnRelCad.TabIndex = 21;
             this.btnRelCad.Text = "Cadastros";
             this.btnRelCad.UseVisualStyleBackColor = false;
             this.btnRelCad.Click += new System.EventHandler(this.btnRelCad_Click);
             // 
-            // logoComunaKids
+            // btnRelVisitantes
             // 
-            this.logoComunaKids.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.logoComunaKids.Image = ((System.Drawing.Image)(resources.GetObject("logoComunaKids.Image")));
-            this.logoComunaKids.Location = new System.Drawing.Point(209, 207);
-            this.logoComunaKids.Name = "logoComunaKids";
-            this.logoComunaKids.Size = new System.Drawing.Size(659, 132);
-            this.logoComunaKids.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logoComunaKids.TabIndex = 0;
-            this.logoComunaKids.TabStop = false;
+            this.btnRelVisitantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.btnRelVisitantes.FlatAppearance.BorderSize = 0;
+            this.btnRelVisitantes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
+            this.btnRelVisitantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelVisitantes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRelVisitantes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRelVisitantes.Location = new System.Drawing.Point(0, 117);
+            this.btnRelVisitantes.Name = "btnRelVisitantes";
+            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 39);
+            this.btnRelVisitantes.TabIndex = 24;
+            this.btnRelVisitantes.Text = "Visitantes";
+            this.btnRelVisitantes.UseVisualStyleBackColor = false;
+            this.btnRelVisitantes.Click += new System.EventHandler(this.btnRelVisitantes_Click);
+            // 
+            // btnRelFreq
+            // 
+            this.btnRelFreq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRelFreq.FlatAppearance.BorderSize = 0;
+            this.btnRelFreq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
+            this.btnRelFreq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelFreq.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRelFreq.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRelFreq.Location = new System.Drawing.Point(0, 78);
+            this.btnRelFreq.Name = "btnRelFreq";
+            this.btnRelFreq.Size = new System.Drawing.Size(203, 46);
+            this.btnRelFreq.TabIndex = 23;
+            this.btnRelFreq.Text = "Frequência";
+            this.btnRelFreq.UseVisualStyleBackColor = false;
+            this.btnRelFreq.Click += new System.EventHandler(this.btnRelFreq_Click);
             // 
             // subMenuCad
             // 
             this.subMenuCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.subMenuCad.Controls.Add(this.btnResponsavel);
             this.subMenuCad.Controls.Add(this.btnCrianca);
             this.subMenuCad.Controls.Add(this.btnSala);
             this.subMenuCad.Controls.Add(this.btnProfessor);
-            this.subMenuCad.Controls.Add(this.btnResponsavel);
             this.subMenuCad.Location = new System.Drawing.Point(0, 189);
             this.subMenuCad.Name = "subMenuCad";
             this.subMenuCad.Size = new System.Drawing.Size(203, 156);
             this.subMenuCad.TabIndex = 1;
             this.subMenuCad.Visible = false;
+            // 
+            // btnResponsavel
+            // 
+            this.btnResponsavel.AutoSize = true;
+            this.btnResponsavel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.btnResponsavel.FlatAppearance.BorderSize = 0;
+            this.btnResponsavel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.btnResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResponsavel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnResponsavel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnResponsavel.Location = new System.Drawing.Point(0, 39);
+            this.btnResponsavel.Name = "btnResponsavel";
+            this.btnResponsavel.Size = new System.Drawing.Size(203, 41);
+            this.btnResponsavel.TabIndex = 22;
+            this.btnResponsavel.Text = "Responsável";
+            this.btnResponsavel.UseVisualStyleBackColor = false;
+            this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
+            // 
+            // btnCrianca
+            // 
+            this.btnCrianca.AutoSize = true;
+            this.btnCrianca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCrianca.FlatAppearance.BorderSize = 0;
+            this.btnCrianca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.btnCrianca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrianca.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCrianca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCrianca.Location = new System.Drawing.Point(0, 0);
+            this.btnCrianca.Name = "btnCrianca";
+            this.btnCrianca.Size = new System.Drawing.Size(203, 42);
+            this.btnCrianca.TabIndex = 21;
+            this.btnCrianca.Text = "Criança";
+            this.btnCrianca.UseVisualStyleBackColor = false;
+            this.btnCrianca.Click += new System.EventHandler(this.btnCrianca_Click);
             // 
             // btnSala
             // 
@@ -243,49 +264,16 @@
             this.btnProfessor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnProfessor.Location = new System.Drawing.Point(0, 78);
             this.btnProfessor.Name = "btnProfessor";
-            this.btnProfessor.Size = new System.Drawing.Size(203, 45);
+            this.btnProfessor.Size = new System.Drawing.Size(203, 46);
             this.btnProfessor.TabIndex = 23;
             this.btnProfessor.Text = "Professor";
             this.btnProfessor.UseVisualStyleBackColor = false;
             this.btnProfessor.Click += new System.EventHandler(this.btnProfessor_Click);
             // 
-            // btnResponsavel
-            // 
-            this.btnResponsavel.AutoSize = true;
-            this.btnResponsavel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnResponsavel.FlatAppearance.BorderSize = 0;
-            this.btnResponsavel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
-            this.btnResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResponsavel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnResponsavel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnResponsavel.Location = new System.Drawing.Point(0, 39);
-            this.btnResponsavel.Name = "btnResponsavel";
-            this.btnResponsavel.Size = new System.Drawing.Size(203, 42);
-            this.btnResponsavel.TabIndex = 22;
-            this.btnResponsavel.Text = "Responsável";
-            this.btnResponsavel.UseVisualStyleBackColor = false;
-            this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
-            // 
-            // btnCrianca
-            // 
-            this.btnCrianca.AutoSize = true;
-            this.btnCrianca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCrianca.FlatAppearance.BorderSize = 0;
-            this.btnCrianca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
-            this.btnCrianca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrianca.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCrianca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrianca.Location = new System.Drawing.Point(0, 0);
-            this.btnCrianca.Name = "btnCrianca";
-            this.btnCrianca.Size = new System.Drawing.Size(203, 48);
-            this.btnCrianca.TabIndex = 21;
-            this.btnCrianca.Text = "Criança";
-            this.btnCrianca.UseVisualStyleBackColor = false;
-            this.btnCrianca.Click += new System.EventHandler(this.btnCrianca_Click);
-            // 
             // btnMenuF
             // 
             this.btnMenuF.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMenuF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuF.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuF.Image")));
             this.btnMenuF.Location = new System.Drawing.Point(184, 6);
             this.btnMenuF.Name = "btnMenuF";
@@ -363,6 +351,7 @@
             // 
             this.btnHome.AutoSize = true;
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(31)))), ((int)(((byte)(30)))));
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(106)))), ((int)(((byte)(137)))));
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -383,6 +372,7 @@
             // btnMenu
             // 
             this.btnMenu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.Location = new System.Drawing.Point(184, 6);
             this.btnMenu.Name = "btnMenu";
@@ -751,7 +741,6 @@
             this.Name = "Janela1";
             this.Fundo.ResumeLayout(false);
             this.subMenuRel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logoComunaKids)).EndInit();
             this.subMenuCad.ResumeLayout(false);
             this.subMenuCad.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).EndInit();
@@ -786,7 +775,6 @@
         #endregion
 
         private Panel Fundo;
-        private PictureBox logoComunaKids;
         private Panel MenuBar;
         private PictureBox imgCheckOutF;
         private PictureBox imgCheckOut;

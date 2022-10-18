@@ -11,7 +11,10 @@ namespace IG
         public Janela1()
         {
             InitializeComponent();
+            openChildFormInPanel(new TelaInicio());
             this.WindowState = FormWindowState.Maximized;
+            
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -382,7 +385,7 @@ namespace IG
         {
             HideAll();
         }
-        private Form activeForm = null;
+        private Form activeForm = null!;
         private void openChildFormInPanel(Form childForm)
         {
             if (activeForm != null)
@@ -391,6 +394,7 @@ namespace IG
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
+            Fundo.Visible = true;
             Fundo.Controls.Add(childForm);
             Fundo.Tag = childForm;
             childForm.BringToFront();
@@ -399,7 +403,9 @@ namespace IG
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            openChildFormInPanel(new TelaInicio());
             ShowAll();
         }
+
     }
 }

@@ -65,12 +65,14 @@
             this.txtCpfr = new System.Windows.Forms.MaskedTextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.txtCepr = new System.Windows.Forms.MaskedTextBox();
+            this.FundoCad = new System.Windows.Forms.Panel();
+            this.FundoCad.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(106, 70);
+            this.lblNome.Location = new System.Drawing.Point(147, 105);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(43, 15);
             this.lblNome.TabIndex = 0;
@@ -79,7 +81,7 @@
             // lblNasc
             // 
             this.lblNasc.AutoSize = true;
-            this.lblNasc.Location = new System.Drawing.Point(34, 116);
+            this.lblNasc.Location = new System.Drawing.Point(75, 146);
             this.lblNasc.Name = "lblNasc";
             this.lblNasc.Size = new System.Drawing.Size(115, 15);
             this.lblNasc.TabIndex = 1;
@@ -87,7 +89,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(155, 67);
+            this.txtNome.Location = new System.Drawing.Point(196, 100);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(150, 23);
             this.txtNome.TabIndex = 2;
@@ -96,7 +98,7 @@
             // lblRg
             // 
             this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(120, 184);
+            this.lblRg.Location = new System.Drawing.Point(165, 214);
             this.lblRg.Name = "lblRg";
             this.lblRg.Size = new System.Drawing.Size(25, 15);
             this.lblRg.TabIndex = 4;
@@ -105,7 +107,7 @@
             // Calendario
             // 
             this.Calendario.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Calendario.Location = new System.Drawing.Point(155, 110);
+            this.Calendario.Location = new System.Drawing.Point(196, 140);
             this.Calendario.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.Calendario.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.Calendario.Name = "Calendario";
@@ -117,7 +119,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(431, 403);
+            this.btnSave.Location = new System.Drawing.Point(425, 433);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -128,7 +130,7 @@
             // lblCep
             // 
             this.lblCep.AutoSize = true;
-            this.lblCep.Location = new System.Drawing.Point(114, 281);
+            this.lblCep.Location = new System.Drawing.Point(159, 311);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(31, 15);
             this.lblCep.TabIndex = 10;
@@ -137,7 +139,7 @@
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(86, 320);
+            this.lblEndereco.Location = new System.Drawing.Point(131, 350);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(59, 15);
             this.lblEndereco.TabIndex = 12;
@@ -145,7 +147,7 @@
             // 
             // txtEnd
             // 
-            this.txtEnd.Location = new System.Drawing.Point(155, 320);
+            this.txtEnd.Location = new System.Drawing.Point(196, 350);
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.Size = new System.Drawing.Size(150, 23);
             this.txtEnd.TabIndex = 13;
@@ -153,7 +155,7 @@
             // 
             // txtSala
             // 
-            this.txtSala.Location = new System.Drawing.Point(155, 365);
+            this.txtSala.Location = new System.Drawing.Point(196, 395);
             this.txtSala.Name = "txtSala";
             this.txtSala.Size = new System.Drawing.Size(150, 23);
             this.txtSala.TabIndex = 14;
@@ -162,7 +164,7 @@
             // lblSala
             // 
             this.lblSala.AutoSize = true;
-            this.lblSala.Location = new System.Drawing.Point(114, 368);
+            this.lblSala.Location = new System.Drawing.Point(159, 398);
             this.lblSala.Name = "lblSala";
             this.lblSala.Size = new System.Drawing.Size(31, 15);
             this.lblSala.TabIndex = 15;
@@ -170,7 +172,7 @@
             // 
             // txtEndr
             // 
-            this.txtEndr.Location = new System.Drawing.Point(698, 312);
+            this.txtEndr.Location = new System.Drawing.Point(692, 342);
             this.txtEndr.Name = "txtEndr";
             this.txtEndr.Size = new System.Drawing.Size(150, 23);
             this.txtEndr.TabIndex = 27;
@@ -179,7 +181,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(633, 315);
+            this.label1.Location = new System.Drawing.Point(627, 345);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 15);
             this.label1.TabIndex = 26;
@@ -188,7 +190,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(661, 276);
+            this.label2.Location = new System.Drawing.Point(655, 306);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 24;
@@ -197,7 +199,7 @@
             // Calendarior
             // 
             this.Calendarior.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Calendarior.Location = new System.Drawing.Point(698, 110);
+            this.Calendarior.Location = new System.Drawing.Point(692, 140);
             this.Calendarior.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.Calendarior.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.Calendarior.Name = "Calendarior";
@@ -210,7 +212,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(667, 184);
+            this.label3.Location = new System.Drawing.Point(661, 214);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 15);
             this.label3.TabIndex = 21;
@@ -218,7 +220,7 @@
             // 
             // txtNomer
             // 
-            this.txtNomer.Location = new System.Drawing.Point(698, 67);
+            this.txtNomer.Location = new System.Drawing.Point(692, 97);
             this.txtNomer.Name = "txtNomer";
             this.txtNomer.Size = new System.Drawing.Size(150, 23);
             this.txtNomer.TabIndex = 20;
@@ -227,7 +229,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(577, 116);
+            this.label4.Location = new System.Drawing.Point(571, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 15);
             this.label4.TabIndex = 19;
@@ -236,7 +238,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(649, 70);
+            this.label5.Location = new System.Drawing.Point(643, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 15);
             this.label5.TabIndex = 18;
@@ -245,7 +247,7 @@
             // lblcpfr
             // 
             this.lblcpfr.AutoSize = true;
-            this.lblcpfr.Location = new System.Drawing.Point(661, 231);
+            this.lblcpfr.Location = new System.Drawing.Point(655, 261);
             this.lblcpfr.Name = "lblcpfr";
             this.lblcpfr.Size = new System.Drawing.Size(31, 15);
             this.lblcpfr.TabIndex = 29;
@@ -254,7 +256,7 @@
             // lblparentesco
             // 
             this.lblparentesco.AutoSize = true;
-            this.lblparentesco.Location = new System.Drawing.Point(624, 354);
+            this.lblparentesco.Location = new System.Drawing.Point(618, 384);
             this.lblparentesco.Name = "lblparentesco";
             this.lblparentesco.Size = new System.Drawing.Size(68, 15);
             this.lblparentesco.TabIndex = 30;
@@ -262,7 +264,7 @@
             // 
             // txtParentesco
             // 
-            this.txtParentesco.Location = new System.Drawing.Point(698, 351);
+            this.txtParentesco.Location = new System.Drawing.Point(692, 381);
             this.txtParentesco.Name = "txtParentesco";
             this.txtParentesco.Size = new System.Drawing.Size(150, 23);
             this.txtParentesco.TabIndex = 31;
@@ -271,7 +273,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(118, 231);
+            this.label6.Location = new System.Drawing.Point(159, 261);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 15);
             this.label6.TabIndex = 33;
@@ -280,7 +282,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(155, 28);
+            this.label7.Location = new System.Drawing.Point(216, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 15);
             this.label7.TabIndex = 34;
@@ -289,7 +291,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(698, 28);
+            this.label8.Location = new System.Drawing.Point(692, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(143, 15);
             this.label8.TabIndex = 35;
@@ -298,7 +300,7 @@
             // lbltxtIdade
             // 
             this.lbltxtIdade.AutoSize = true;
-            this.lbltxtIdade.Location = new System.Drawing.Point(110, 152);
+            this.lbltxtIdade.Location = new System.Drawing.Point(151, 182);
             this.lbltxtIdade.Name = "lbltxtIdade";
             this.lbltxtIdade.Size = new System.Drawing.Size(39, 15);
             this.lbltxtIdade.TabIndex = 36;
@@ -307,7 +309,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(653, 152);
+            this.label9.Location = new System.Drawing.Point(647, 182);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 15);
             this.label9.TabIndex = 37;
@@ -316,7 +318,7 @@
             // lblIdade
             // 
             this.lblIdade.AutoSize = true;
-            this.lblIdade.Location = new System.Drawing.Point(155, 152);
+            this.lblIdade.Location = new System.Drawing.Point(196, 182);
             this.lblIdade.Name = "lblIdade";
             this.lblIdade.Size = new System.Drawing.Size(13, 15);
             this.lblIdade.TabIndex = 38;
@@ -325,7 +327,7 @@
             // lblIdader
             // 
             this.lblIdader.AutoSize = true;
-            this.lblIdader.Location = new System.Drawing.Point(698, 152);
+            this.lblIdader.Location = new System.Drawing.Point(692, 182);
             this.lblIdader.Name = "lblIdader";
             this.lblIdader.Size = new System.Drawing.Size(13, 15);
             this.lblIdader.TabIndex = 39;
@@ -334,7 +336,7 @@
             // lblCel
             // 
             this.lblCel.AutoSize = true;
-            this.lblCel.Location = new System.Drawing.Point(645, 401);
+            this.lblCel.Location = new System.Drawing.Point(639, 431);
             this.lblCel.Name = "lblCel";
             this.lblCel.Size = new System.Drawing.Size(47, 15);
             this.lblCel.TabIndex = 40;
@@ -342,7 +344,7 @@
             // 
             // txtCelr
             // 
-            this.txtCelr.Location = new System.Drawing.Point(698, 398);
+            this.txtCelr.Location = new System.Drawing.Point(692, 428);
             this.txtCelr.Mask = "(99) 00000-0000";
             this.txtCelr.Name = "txtCelr";
             this.txtCelr.Size = new System.Drawing.Size(150, 23);
@@ -352,7 +354,7 @@
             // 
             // txtRg
             // 
-            this.txtRg.Location = new System.Drawing.Point(155, 181);
+            this.txtRg.Location = new System.Drawing.Point(196, 206);
             this.txtRg.Mask = "00,000,000-0";
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(150, 23);
@@ -362,7 +364,7 @@
             // 
             // txtRgr
             // 
-            this.txtRgr.Location = new System.Drawing.Point(698, 181);
+            this.txtRgr.Location = new System.Drawing.Point(692, 211);
             this.txtRgr.Mask = "00,000,000-0";
             this.txtRgr.Name = "txtRgr";
             this.txtRgr.Size = new System.Drawing.Size(150, 23);
@@ -372,7 +374,7 @@
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(155, 228);
+            this.txtCpf.Location = new System.Drawing.Point(196, 253);
             this.txtCpf.Mask = "000,000,000-00";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(150, 23);
@@ -382,7 +384,7 @@
             // 
             // txtCpfr
             // 
-            this.txtCpfr.Location = new System.Drawing.Point(698, 228);
+            this.txtCpfr.Location = new System.Drawing.Point(692, 258);
             this.txtCpfr.Mask = "000,000,000-00";
             this.txtCpfr.Name = "txtCpfr";
             this.txtCpfr.Size = new System.Drawing.Size(150, 23);
@@ -392,7 +394,7 @@
             // 
             // txtCep
             // 
-            this.txtCep.Location = new System.Drawing.Point(155, 278);
+            this.txtCep.Location = new System.Drawing.Point(196, 303);
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(150, 23);
@@ -402,7 +404,7 @@
             // 
             // txtCepr
             // 
-            this.txtCepr.Location = new System.Drawing.Point(698, 273);
+            this.txtCepr.Location = new System.Drawing.Point(692, 303);
             this.txtCepr.Mask = "00000-000";
             this.txtCepr.Name = "txtCepr";
             this.txtCepr.Size = new System.Drawing.Size(150, 23);
@@ -410,52 +412,66 @@
             this.txtCepr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCepr_KeyDown);
             this.txtCepr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCepr_KeyPress_1);
             // 
+            // FundoCad
+            // 
+            this.FundoCad.Controls.Add(this.label7);
+            this.FundoCad.Controls.Add(this.txtNome);
+            this.FundoCad.Controls.Add(this.label6);
+            this.FundoCad.Controls.Add(this.lblIdade);
+            this.FundoCad.Controls.Add(this.Calendario);
+            this.FundoCad.Controls.Add(this.txtEnd);
+            this.FundoCad.Controls.Add(this.txtSala);
+            this.FundoCad.Controls.Add(this.lblRg);
+            this.FundoCad.Controls.Add(this.lblNasc);
+            this.FundoCad.Controls.Add(this.lblNome);
+            this.FundoCad.Controls.Add(this.lbltxtIdade);
+            this.FundoCad.Controls.Add(this.txtRg);
+            this.FundoCad.Controls.Add(this.txtCpf);
+            this.FundoCad.Controls.Add(this.txtCep);
+            this.FundoCad.Controls.Add(this.lblEndereco);
+            this.FundoCad.Controls.Add(this.lblSala);
+            this.FundoCad.Controls.Add(this.lblCep);
+            this.FundoCad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FundoCad.Location = new System.Drawing.Point(0, 0);
+            this.FundoCad.Name = "FundoCad";
+            this.FundoCad.Size = new System.Drawing.Size(1080, 619);
+            this.FundoCad.TabIndex = 48;
+            // 
             // CadastroC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(944, 501);
-            this.Controls.Add(this.txtCepr);
-            this.Controls.Add(this.txtCep);
-            this.Controls.Add(this.txtCpfr);
-            this.Controls.Add(this.txtCpf);
-            this.Controls.Add(this.txtRgr);
-            this.Controls.Add(this.txtRg);
-            this.Controls.Add(this.txtCelr);
-            this.Controls.Add(this.lblCel);
-            this.Controls.Add(this.lblIdader);
-            this.Controls.Add(this.lblIdade);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.lbltxtIdade);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtParentesco);
-            this.Controls.Add(this.lblparentesco);
-            this.Controls.Add(this.lblcpfr);
-            this.Controls.Add(this.txtEndr);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1080, 619);
             this.Controls.Add(this.Calendarior);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNomer);
+            this.Controls.Add(this.txtCepr);
+            this.Controls.Add(this.txtRgr);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblIdader);
+            this.Controls.Add(this.txtEndr);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblSala);
-            this.Controls.Add(this.txtSala);
-            this.Controls.Add(this.txtEnd);
-            this.Controls.Add(this.lblEndereco);
-            this.Controls.Add(this.lblCep);
+            this.Controls.Add(this.txtParentesco);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.Calendario);
-            this.Controls.Add(this.lblRg);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.lblNasc);
-            this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.lblcpfr);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCel);
+            this.Controls.Add(this.txtCelr);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtCpfr);
+            this.Controls.Add(this.lblparentesco);
+            this.Controls.Add(this.FundoCad);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CadastroC";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Cadastro de crianças";
+            this.FundoCad.ResumeLayout(false);
+            this.FundoCad.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,5 +516,6 @@
         private MaskedTextBox txtCpfr;
         private MaskedTextBox txtCep;
         private MaskedTextBox txtCepr;
+        private Panel FundoCad;
     }
 }
