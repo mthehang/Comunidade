@@ -294,6 +294,8 @@ namespace IG
         {
             openChildFormInPanel(new CadastroC());
             HideAll();
+            panelBack.Visible = true;
+            panelBack.BringToFront();
         }
 
         private void HideAll() {
@@ -345,12 +347,6 @@ namespace IG
             }
         }
 
-        private void ShowAll()
-        {
-            subMenuCad.Visible = false;
-            subMenuRel.Visible = false;
-            
-        }
         private void btnResponsavel_Click(object sender, EventArgs e)
         {
             HideAll();
@@ -404,8 +400,26 @@ namespace IG
         private void btnHome_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new TelaInicio());
-            ShowAll();
+            
         }
 
+        private void btnBack_MouseEnter(object sender, EventArgs e)
+        {
+            btnBack.Visible = false;
+            btnBackF.Visible = true;
+        }
+
+        private void btnBackF_MouseLeave(object sender, EventArgs e)
+        {
+            btnBack.Visible = true;
+            btnBackF.Visible = false;
+        }
+
+        private void btnBackF_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new TelaInicio());
+            btnBack.Visible = false;
+            HideAll();
+        }
     }
 }

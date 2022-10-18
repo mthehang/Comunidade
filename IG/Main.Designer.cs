@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Janela1));
             this.Fundo = new System.Windows.Forms.Panel();
+            this.panelBack = new System.Windows.Forms.Panel();
+            this.btnBackF = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.subMenuRel = new System.Windows.Forms.Panel();
             this.btnRelCheck = new System.Windows.Forms.Button();
             this.btnRelCad = new System.Windows.Forms.Button();
@@ -74,6 +77,9 @@
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnRes = new System.Windows.Forms.PictureBox();
             this.Fundo.SuspendLayout();
+            this.panelBack.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBackF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.subMenuRel.SuspendLayout();
             this.subMenuCad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).BeginInit();
@@ -104,6 +110,7 @@
             // Fundo
             // 
             this.Fundo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Fundo.Controls.Add(this.panelBack);
             this.Fundo.Controls.Add(this.subMenuRel);
             this.Fundo.Controls.Add(this.subMenuCad);
             this.Fundo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -113,6 +120,40 @@
             this.Fundo.TabIndex = 3;
             this.Fundo.Visible = false;
             // 
+            // panelBack
+            // 
+            this.panelBack.Controls.Add(this.btnBackF);
+            this.panelBack.Controls.Add(this.btnBack);
+            this.panelBack.Location = new System.Drawing.Point(0, 0);
+            this.panelBack.Name = "panelBack";
+            this.panelBack.Size = new System.Drawing.Size(69, 36);
+            this.panelBack.TabIndex = 3;
+            this.panelBack.Visible = false;
+            // 
+            // btnBackF
+            // 
+            this.btnBackF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackF.Image = ((System.Drawing.Image)(resources.GetObject("btnBackF.Image")));
+            this.btnBackF.Location = new System.Drawing.Point(20, 6);
+            this.btnBackF.Name = "btnBackF";
+            this.btnBackF.Size = new System.Drawing.Size(30, 30);
+            this.btnBackF.TabIndex = 50;
+            this.btnBackF.TabStop = false;
+            this.btnBackF.Visible = false;
+            this.btnBackF.Click += new System.EventHandler(this.btnBackF_Click);
+            this.btnBackF.MouseLeave += new System.EventHandler(this.btnBackF_MouseLeave);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(20, 6);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(30, 30);
+            this.btnBack.TabIndex = 49;
+            this.btnBack.TabStop = false;
+            this.btnBack.MouseEnter += new System.EventHandler(this.btnBack_MouseEnter);
+            // 
             // subMenuRel
             // 
             this.subMenuRel.Controls.Add(this.btnRelCheck);
@@ -121,13 +162,14 @@
             this.subMenuRel.Controls.Add(this.btnRelFreq);
             this.subMenuRel.Location = new System.Drawing.Point(0, 228);
             this.subMenuRel.Name = "subMenuRel";
-            this.subMenuRel.Size = new System.Drawing.Size(203, 155);
+            this.subMenuRel.Size = new System.Drawing.Size(203, 158);
             this.subMenuRel.TabIndex = 2;
             this.subMenuRel.Visible = false;
             // 
             // btnRelCheck
             // 
             this.btnRelCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.btnRelCheck.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRelCheck.FlatAppearance.BorderSize = 0;
             this.btnRelCheck.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
             this.btnRelCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -144,6 +186,7 @@
             // btnRelCad
             // 
             this.btnRelCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRelCad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRelCad.FlatAppearance.BorderSize = 0;
             this.btnRelCad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
             this.btnRelCad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -160,6 +203,7 @@
             // btnRelVisitantes
             // 
             this.btnRelVisitantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.btnRelVisitantes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRelVisitantes.FlatAppearance.BorderSize = 0;
             this.btnRelVisitantes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
             this.btnRelVisitantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -167,7 +211,7 @@
             this.btnRelVisitantes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRelVisitantes.Location = new System.Drawing.Point(0, 117);
             this.btnRelVisitantes.Name = "btnRelVisitantes";
-            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 39);
+            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 42);
             this.btnRelVisitantes.TabIndex = 24;
             this.btnRelVisitantes.Text = "Visitantes";
             this.btnRelVisitantes.UseVisualStyleBackColor = false;
@@ -176,6 +220,7 @@
             // btnRelFreq
             // 
             this.btnRelFreq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRelFreq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRelFreq.FlatAppearance.BorderSize = 0;
             this.btnRelFreq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
             this.btnRelFreq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -206,6 +251,7 @@
             // 
             this.btnResponsavel.AutoSize = true;
             this.btnResponsavel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.btnResponsavel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResponsavel.FlatAppearance.BorderSize = 0;
             this.btnResponsavel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
             this.btnResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -223,6 +269,7 @@
             // 
             this.btnCrianca.AutoSize = true;
             this.btnCrianca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCrianca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrianca.FlatAppearance.BorderSize = 0;
             this.btnCrianca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
             this.btnCrianca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -240,6 +287,7 @@
             // 
             this.btnSala.AutoSize = true;
             this.btnSala.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.btnSala.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSala.FlatAppearance.BorderSize = 0;
             this.btnSala.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
             this.btnSala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -257,6 +305,7 @@
             // 
             this.btnProfessor.AutoSize = true;
             this.btnProfessor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnProfessor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfessor.FlatAppearance.BorderSize = 0;
             this.btnProfessor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
             this.btnProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -275,7 +324,7 @@
             this.btnMenuF.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnMenuF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuF.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuF.Image")));
-            this.btnMenuF.Location = new System.Drawing.Point(184, 6);
+            this.btnMenuF.Location = new System.Drawing.Point(183, 6);
             this.btnMenuF.Name = "btnMenuF";
             this.btnMenuF.Size = new System.Drawing.Size(30, 30);
             this.btnMenuF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -290,9 +339,9 @@
             this.MenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(31)))), ((int)(((byte)(30)))));
             this.MenuBar.Controls.Add(this.imgHomeF);
             this.MenuBar.Controls.Add(this.imgHome);
+            this.MenuBar.Controls.Add(this.btnMenuF);
             this.MenuBar.Controls.Add(this.panelHome);
             this.MenuBar.Controls.Add(this.btnHome);
-            this.MenuBar.Controls.Add(this.btnMenuF);
             this.MenuBar.Controls.Add(this.btnMenu);
             this.MenuBar.Controls.Add(this.imgCheckOutF);
             this.MenuBar.Controls.Add(this.imgCheckOut);
@@ -374,7 +423,7 @@
             this.btnMenu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(184, 6);
+            this.btnMenu.Location = new System.Drawing.Point(183, 6);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(30, 30);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -474,6 +523,7 @@
             // btnCheckOut
             // 
             this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(31)))), ((int)(((byte)(30)))));
+            this.btnCheckOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckOut.FlatAppearance.BorderSize = 0;
             this.btnCheckOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(154)))), ((int)(((byte)(122)))));
             this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -501,6 +551,7 @@
             // btnCheckIn
             // 
             this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(31)))), ((int)(((byte)(30)))));
+            this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckIn.FlatAppearance.BorderSize = 0;
             this.btnCheckIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(193)))), ((int)(((byte)(191)))));
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -528,6 +579,7 @@
             // btnRelatorios
             // 
             this.btnRelatorios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(31)))), ((int)(((byte)(30)))));
+            this.btnRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRelatorios.FlatAppearance.BorderSize = 0;
             this.btnRelatorios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
             this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -567,6 +619,7 @@
             // 
             this.btnCadastros.AutoSize = true;
             this.btnCadastros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(31)))), ((int)(((byte)(30)))));
+            this.btnCadastros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastros.FlatAppearance.BorderSize = 0;
             this.btnCadastros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
             this.btnCadastros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -740,6 +793,9 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Janela1";
             this.Fundo.ResumeLayout(false);
+            this.panelBack.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnBackF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.subMenuRel.ResumeLayout(false);
             this.subMenuCad.ResumeLayout(false);
             this.subMenuCad.PerformLayout();
@@ -818,5 +874,8 @@
         private PictureBox imgHome;
         private Panel panelHome;
         private Button btnHome;
+        private Panel panelBack;
+        private PictureBox btnBackF;
+        private PictureBox btnBack;
     }
 }

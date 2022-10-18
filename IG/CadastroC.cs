@@ -282,5 +282,6 @@ namespace IG
                 txtCpf.Focus();
             }
         }
+
     }
 }

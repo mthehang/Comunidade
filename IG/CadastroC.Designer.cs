@@ -65,8 +65,8 @@
             this.txtCpfr = new System.Windows.Forms.MaskedTextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.txtCepr = new System.Windows.Forms.MaskedTextBox();
-            this.FundoCad = new System.Windows.Forms.Panel();
-            this.FundoCad.SuspendLayout();
+            this.Fundo = new System.Windows.Forms.Panel();
+            this.Fundo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNome
@@ -181,6 +181,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Location = new System.Drawing.Point(627, 345);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 15);
@@ -190,6 +191,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.Location = new System.Drawing.Point(655, 306);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 15);
@@ -212,6 +214,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Location = new System.Drawing.Point(661, 214);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 15);
@@ -229,6 +232,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Location = new System.Drawing.Point(571, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 15);
@@ -238,6 +242,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.Location = new System.Drawing.Point(643, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 15);
@@ -247,6 +252,7 @@
             // lblcpfr
             // 
             this.lblcpfr.AutoSize = true;
+            this.lblcpfr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblcpfr.Location = new System.Drawing.Point(655, 261);
             this.lblcpfr.Name = "lblcpfr";
             this.lblcpfr.Size = new System.Drawing.Size(31, 15);
@@ -256,6 +262,7 @@
             // lblparentesco
             // 
             this.lblparentesco.AutoSize = true;
+            this.lblparentesco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblparentesco.Location = new System.Drawing.Point(618, 384);
             this.lblparentesco.Name = "lblparentesco";
             this.lblparentesco.Size = new System.Drawing.Size(68, 15);
@@ -291,6 +298,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label8.Location = new System.Drawing.Point(692, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(143, 15);
@@ -309,6 +317,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label9.Location = new System.Drawing.Point(647, 182);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 15);
@@ -327,6 +336,7 @@
             // lblIdader
             // 
             this.lblIdader.AutoSize = true;
+            this.lblIdader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblIdader.Location = new System.Drawing.Point(692, 182);
             this.lblIdader.Name = "lblIdader";
             this.lblIdader.Size = new System.Drawing.Size(13, 15);
@@ -336,6 +346,7 @@
             // lblCel
             // 
             this.lblCel.AutoSize = true;
+            this.lblCel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblCel.Location = new System.Drawing.Point(639, 431);
             this.lblCel.Name = "lblCel";
             this.lblCel.Size = new System.Drawing.Size(47, 15);
@@ -412,30 +423,32 @@
             this.txtCepr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCepr_KeyDown);
             this.txtCepr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCepr_KeyPress_1);
             // 
-            // FundoCad
+            // Fundo
             // 
-            this.FundoCad.Controls.Add(this.label7);
-            this.FundoCad.Controls.Add(this.txtNome);
-            this.FundoCad.Controls.Add(this.label6);
-            this.FundoCad.Controls.Add(this.lblIdade);
-            this.FundoCad.Controls.Add(this.Calendario);
-            this.FundoCad.Controls.Add(this.txtEnd);
-            this.FundoCad.Controls.Add(this.txtSala);
-            this.FundoCad.Controls.Add(this.lblRg);
-            this.FundoCad.Controls.Add(this.lblNasc);
-            this.FundoCad.Controls.Add(this.lblNome);
-            this.FundoCad.Controls.Add(this.lbltxtIdade);
-            this.FundoCad.Controls.Add(this.txtRg);
-            this.FundoCad.Controls.Add(this.txtCpf);
-            this.FundoCad.Controls.Add(this.txtCep);
-            this.FundoCad.Controls.Add(this.lblEndereco);
-            this.FundoCad.Controls.Add(this.lblSala);
-            this.FundoCad.Controls.Add(this.lblCep);
-            this.FundoCad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FundoCad.Location = new System.Drawing.Point(0, 0);
-            this.FundoCad.Name = "FundoCad";
-            this.FundoCad.Size = new System.Drawing.Size(1080, 619);
-            this.FundoCad.TabIndex = 48;
+            this.Fundo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Fundo.Controls.Add(this.label7);
+            this.Fundo.Controls.Add(this.txtNome);
+            this.Fundo.Controls.Add(this.label6);
+            this.Fundo.Controls.Add(this.lblIdade);
+            this.Fundo.Controls.Add(this.Calendario);
+            this.Fundo.Controls.Add(this.txtEnd);
+            this.Fundo.Controls.Add(this.txtSala);
+            this.Fundo.Controls.Add(this.lblRg);
+            this.Fundo.Controls.Add(this.lblNasc);
+            this.Fundo.Controls.Add(this.lblNome);
+            this.Fundo.Controls.Add(this.lbltxtIdade);
+            this.Fundo.Controls.Add(this.txtRg);
+            this.Fundo.Controls.Add(this.txtCpf);
+            this.Fundo.Controls.Add(this.txtCep);
+            this.Fundo.Controls.Add(this.lblEndereco);
+            this.Fundo.Controls.Add(this.lblSala);
+            this.Fundo.Controls.Add(this.lblCep);
+            this.Fundo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Fundo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Fundo.Location = new System.Drawing.Point(0, 0);
+            this.Fundo.Name = "Fundo";
+            this.Fundo.Size = new System.Drawing.Size(1080, 619);
+            this.Fundo.TabIndex = 48;
             // 
             // CadastroC
             // 
@@ -464,14 +477,15 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCpfr);
             this.Controls.Add(this.lblparentesco);
-            this.Controls.Add(this.FundoCad);
+            this.Controls.Add(this.Fundo);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CadastroC";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Cadastro de crianças";
-            this.FundoCad.ResumeLayout(false);
-            this.FundoCad.PerformLayout();
+            this.Fundo.ResumeLayout(false);
+            this.Fundo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,6 +530,6 @@
         private MaskedTextBox txtCpfr;
         private MaskedTextBox txtCep;
         private MaskedTextBox txtCepr;
-        private Panel FundoCad;
+        private Panel Fundo;
     }
 }
