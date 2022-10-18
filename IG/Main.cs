@@ -1,6 +1,7 @@
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
 using System.Runtime.InteropServices;
+using static Org.BouncyCastle.Bcpg.Attr.ImageAttrib;
 
 
 namespace IG
@@ -264,6 +265,7 @@ namespace IG
 
         private void btnCrianca_Click(object sender, EventArgs e)
         {
+            openChildFormInPanel(new CadastroC());
             HideAll();
         }
 
@@ -343,6 +345,20 @@ namespace IG
         private void btnRelVisitantes_Click(object sender, EventArgs e)
         {
             HideAll();
+        }
+        private Form activeForm = null;
+        private void openChildFormInPanel(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            Fundo.Controls.Add(childForm);
+            Fundo.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }
