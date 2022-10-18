@@ -347,6 +347,29 @@ namespace IG
             }
         }
 
+        private void HideAll2() {
+            
+                    MenuBar.Width = 220;
+                    LogoComuna.Visible = true;
+                    panelHome.Visible = true;
+                    panelCad.Visible = true;
+                    panelRel.Visible = true;
+                    panelCheck.Visible = true;
+                    panel5.Visible = true;
+                    imgHome.Visible = true;
+                    imgCad.Visible = true;
+                    imgRel.Visible = true;
+                    imgCheckIn.Visible = true;
+                    imgCheckOut.Visible = true;
+                    btnHome.Visible = true;
+                    btnCadastros.Visible = true;
+                    btnRelatorios.Visible = true;
+                    btnCheckIn.Visible = true;
+                    btnCheckOut.Visible = true;
+                    btnMenu.Location = new Point(184, 6);
+                    btnMenuF.Location = new Point(184, 6);
+                
+        }
         private void btnResponsavel_Click(object sender, EventArgs e)
         {
             HideAll();
@@ -419,7 +442,7 @@ namespace IG
         {
             openChildFormInPanel(new TelaInicio());
             btnBack.Visible = false;
-            HideAll();
+            HideAll2();
         }
     }
 }

@@ -125,6 +125,8 @@
             this.panelBack.Controls.Add(this.btnBackF);
             this.panelBack.Controls.Add(this.btnBack);
             this.panelBack.Location = new System.Drawing.Point(0, 0);
+            this.panelBack.MaximumSize = new System.Drawing.Size(69, 36);
+            this.panelBack.MinimumSize = new System.Drawing.Size(69, 36);
             this.panelBack.Name = "panelBack";
             this.panelBack.Size = new System.Drawing.Size(69, 36);
             this.panelBack.TabIndex = 3;
