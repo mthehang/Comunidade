@@ -13,11 +13,6 @@ namespace IG
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void Janela1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -220,6 +215,134 @@ namespace IG
         private void btnCheckOut_MouseUp(object sender, MouseEventArgs e)
         {
             imgCheckOutF.BackColor = Color.FromArgb(201, 154, 122);
+        }
+
+        private void btnCadastros_Click(object sender, EventArgs e)
+        {
+            if (subMenuCad.Visible == false)
+            {
+                subMenuCad.Visible = true;
+                subMenuRel.Visible = false;
+            }
+            else
+            {
+                subMenuCad.Visible = false;
+            }
+            
+        }
+
+        private void btnRelatorios_Click(object sender, EventArgs e)
+        {
+            if (subMenuRel.Visible == false)
+            {
+                subMenuRel.Visible = true;
+                subMenuCad.Visible = false;
+
+            }
+            else 
+            {
+                subMenuRel.Visible = false;
+            }
+        }
+
+        private void btnMenu_MouseEnter(object sender, EventArgs e)
+        {
+            btnMenu.Visible = false;
+            btnMenuF.Visible = true;
+        }
+
+        private void btnMenuF_Click(object sender, EventArgs e)
+        {
+            HideAll();
+        }
+
+        private void btnMenuF_MouseLeave(object sender, EventArgs e)
+        {
+            btnMenu.Visible = true;
+            btnMenuF.Visible = false;
+        }
+
+        private void btnCrianca_Click(object sender, EventArgs e)
+        {
+            HideAll();
+        }
+
+        private void HideAll() {
+            if (MenuBar.Width == 220)
+            {
+                MenuBar.Width = 55;
+                LogoComuna.Visible = false;
+                panelCad.Visible = false;
+                panelRel.Visible = false;
+                panelCheck.Visible = false;
+                panel5.Visible = false;
+                imgCad.Visible = false;
+                imgRel.Visible = false;
+                imgCheckIn.Visible = false;
+                imgCheckOut.Visible = false;
+                btnCadastros.Visible = false;
+                btnRelatorios.Visible = false;
+                btnCheckIn.Visible = false;
+                btnCheckOut.Visible = false;
+                subMenuCad.Visible = false;
+                subMenuRel.Visible = false;
+                btnMenu.Location = new Point(12, 6);
+                btnMenuF.Location = new Point(12, 6);
+            }
+            else
+            {
+                MenuBar.Width = 220;
+                LogoComuna.Visible = true;
+                panelCad.Visible = true;
+                panelRel.Visible = true;
+                panelCheck.Visible = true;
+                panel5.Visible = true;
+                imgCad.Visible = true;
+                imgRel.Visible = true;
+                imgCheckIn.Visible = true;
+                imgCheckOut.Visible = true;
+                btnCadastros.Visible = true;
+                btnRelatorios.Visible = true;
+                btnCheckIn.Visible = true;
+                btnCheckOut.Visible = true;
+                btnMenu.Location = new Point(184, 6);
+                btnMenuF.Location = new Point(184, 6);
+            }
+        }
+
+        private void btnResponsavel_Click(object sender, EventArgs e)
+        {
+            HideAll();
+        }
+
+        private void btnProfessor_Click(object sender, EventArgs e)
+        {
+            HideAll();
+        }
+
+        private void btnSala_Click(object sender, EventArgs e)
+        {
+            HideAll();
+        }
+
+        private void btnRelCad_Click(object sender, EventArgs e)
+        {
+            HideAll();
+        }
+
+        private void btnRelCheck_Click(object sender, EventArgs e)
+        {
+            HideAll();
+        }
+
+        private void btnRelFreq_Click(object sender, EventArgs e)
+        {
+            HideAll();
+        }
+
+        private void btnRelVisitantes_Click(object sender, EventArgs e)
+        {
+            HideAll();
         }
     }
 }

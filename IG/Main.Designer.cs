@@ -29,17 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Janela1));
-            this.TopBar = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnResF = new System.Windows.Forms.PictureBox();
-            this.btnRes = new System.Windows.Forms.PictureBox();
-            this.btnMaxF = new System.Windows.Forms.PictureBox();
-            this.btnMinF = new System.Windows.Forms.PictureBox();
-            this.btnCloseF = new System.Windows.Forms.PictureBox();
-            this.btnMin = new System.Windows.Forms.PictureBox();
-            this.btnMax = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.Fundo = new System.Windows.Forms.Panel();
+            this.subMenuRel = new System.Windows.Forms.Panel();
+            this.btnRelVisitantes = new System.Windows.Forms.Button();
+            this.btnRelFreq = new System.Windows.Forms.Button();
+            this.btnRelCheck = new System.Windows.Forms.Button();
+            this.btnRelCad = new System.Windows.Forms.Button();
+            this.logoComunaKids = new System.Windows.Forms.PictureBox();
+            this.subMenuCad = new System.Windows.Forms.Panel();
+            this.btnSala = new System.Windows.Forms.Button();
+            this.btnProfessor = new System.Windows.Forms.Button();
+            this.btnResponsavel = new System.Windows.Forms.Button();
+            this.btnCrianca = new System.Windows.Forms.Button();
+            this.btnMenuF = new System.Windows.Forms.PictureBox();
             this.MenuBar = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.imgCheckOutF = new System.Windows.Forms.PictureBox();
             this.imgCheckOut = new System.Windows.Forms.PictureBox();
             this.imgCheckInF = new System.Windows.Forms.PictureBox();
@@ -49,26 +53,30 @@
             this.imgRel = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnCheckOut = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelCheck = new System.Windows.Forms.Panel();
             this.btnCheckIn = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelRel = new System.Windows.Forms.Panel();
             this.btnRelatorios = new System.Windows.Forms.Button();
             this.imgCad = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelCad = new System.Windows.Forms.Panel();
             this.btnCadastros = new System.Windows.Forms.Button();
             this.LogoComuna = new System.Windows.Forms.PictureBox();
-            this.Fundo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TopBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnResF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaxF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCloseF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            this.TopBar = new System.Windows.Forms.Panel();
+            this.btnCloseF = new System.Windows.Forms.PictureBox();
+            this.btnResF = new System.Windows.Forms.PictureBox();
+            this.btnMaxF = new System.Windows.Forms.PictureBox();
+            this.btnMinF = new System.Windows.Forms.PictureBox();
+            this.btnMax = new System.Windows.Forms.PictureBox();
+            this.btnMin = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.btnRes = new System.Windows.Forms.PictureBox();
+            this.Fundo.SuspendLayout();
+            this.subMenuRel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoComunaKids)).BeginInit();
+            this.subMenuCad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).BeginInit();
             this.MenuBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCheckOutF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCheckOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCheckInF)).BeginInit();
@@ -78,155 +86,216 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgRel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoComuna)).BeginInit();
-            this.Fundo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.TopBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCloseF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnResF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaxF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRes)).BeginInit();
             this.SuspendLayout();
             // 
-            // TopBar
+            // Fundo
             // 
-            this.TopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(47)))), ((int)(((byte)(67)))));
-            this.TopBar.Controls.Add(this.lblTitulo);
-            this.TopBar.Controls.Add(this.btnResF);
-            this.TopBar.Controls.Add(this.btnRes);
-            this.TopBar.Controls.Add(this.btnMaxF);
-            this.TopBar.Controls.Add(this.btnMinF);
-            this.TopBar.Controls.Add(this.btnCloseF);
-            this.TopBar.Controls.Add(this.btnMin);
-            this.TopBar.Controls.Add(this.btnMax);
-            this.TopBar.Controls.Add(this.btnClose);
-            this.TopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopBar.Location = new System.Drawing.Point(0, 0);
-            this.TopBar.Name = "TopBar";
-            this.TopBar.Size = new System.Drawing.Size(1300, 40);
-            this.TopBar.TabIndex = 1;
-            this.TopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopBar_MouseDown);
+            this.Fundo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Fundo.Controls.Add(this.subMenuRel);
+            this.Fundo.Controls.Add(this.logoComunaKids);
+            this.Fundo.Controls.Add(this.subMenuCad);
+            this.Fundo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Fundo.Location = new System.Drawing.Point(220, 31);
+            this.Fundo.Name = "Fundo";
+            this.Fundo.Size = new System.Drawing.Size(1080, 619);
+            this.Fundo.TabIndex = 3;
             // 
-            // lblTitulo
+            // subMenuRel
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.Location = new System.Drawing.Point(12, 7);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(46, 25);
-            this.lblTitulo.TabIndex = 6;
-            this.lblTitulo.Text = "CKP";
+            this.subMenuRel.Controls.Add(this.btnRelVisitantes);
+            this.subMenuRel.Controls.Add(this.btnRelFreq);
+            this.subMenuRel.Controls.Add(this.btnRelCheck);
+            this.subMenuRel.Controls.Add(this.btnRelCad);
+            this.subMenuRel.Location = new System.Drawing.Point(6, 351);
+            this.subMenuRel.Name = "subMenuRel";
+            this.subMenuRel.Size = new System.Drawing.Size(203, 162);
+            this.subMenuRel.TabIndex = 2;
+            this.subMenuRel.Visible = false;
             // 
-            // btnResF
+            // btnRelVisitantes
             // 
-            this.btnResF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResF.Image = ((System.Drawing.Image)(resources.GetObject("btnResF.Image")));
-            this.btnResF.Location = new System.Drawing.Point(1232, 7);
-            this.btnResF.Name = "btnResF";
-            this.btnResF.Size = new System.Drawing.Size(25, 25);
-            this.btnResF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnResF.TabIndex = 4;
-            this.btnResF.TabStop = false;
-            this.btnResF.MouseEnter += new System.EventHandler(this.btnResF_MouseEnter);
+            this.btnRelVisitantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.btnRelVisitantes.FlatAppearance.BorderSize = 0;
+            this.btnRelVisitantes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
+            this.btnRelVisitantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelVisitantes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRelVisitantes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRelVisitantes.Location = new System.Drawing.Point(0, 117);
+            this.btnRelVisitantes.Name = "btnRelVisitantes";
+            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 45);
+            this.btnRelVisitantes.TabIndex = 24;
+            this.btnRelVisitantes.Text = "Visitantes";
+            this.btnRelVisitantes.UseVisualStyleBackColor = false;
+            this.btnRelVisitantes.Click += new System.EventHandler(this.btnRelVisitantes_Click);
             // 
-            // btnRes
+            // btnRelFreq
             // 
-            this.btnRes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRes.Image = ((System.Drawing.Image)(resources.GetObject("btnRes.Image")));
-            this.btnRes.Location = new System.Drawing.Point(1232, 7);
-            this.btnRes.Name = "btnRes";
-            this.btnRes.Size = new System.Drawing.Size(25, 25);
-            this.btnRes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRes.TabIndex = 3;
-            this.btnRes.TabStop = false;
-            this.btnRes.Visible = false;
-            this.btnRes.Click += new System.EventHandler(this.btnRes_Click);
-            this.btnRes.MouseLeave += new System.EventHandler(this.btnRes_MouseLeave);
+            this.btnRelFreq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRelFreq.FlatAppearance.BorderSize = 0;
+            this.btnRelFreq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
+            this.btnRelFreq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelFreq.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRelFreq.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRelFreq.Location = new System.Drawing.Point(0, 78);
+            this.btnRelFreq.Name = "btnRelFreq";
+            this.btnRelFreq.Size = new System.Drawing.Size(203, 44);
+            this.btnRelFreq.TabIndex = 23;
+            this.btnRelFreq.Text = "Frequência";
+            this.btnRelFreq.UseVisualStyleBackColor = false;
+            this.btnRelFreq.Click += new System.EventHandler(this.btnRelFreq_Click);
             // 
-            // btnMaxF
+            // btnRelCheck
             // 
-            this.btnMaxF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaxF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaxF.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxF.Image")));
-            this.btnMaxF.Location = new System.Drawing.Point(1232, 7);
-            this.btnMaxF.Name = "btnMaxF";
-            this.btnMaxF.Size = new System.Drawing.Size(25, 25);
-            this.btnMaxF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMaxF.TabIndex = 5;
-            this.btnMaxF.TabStop = false;
-            this.btnMaxF.Visible = false;
-            this.btnMaxF.MouseEnter += new System.EventHandler(this.btnMaxF_MouseEnter);
+            this.btnRelCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.btnRelCheck.FlatAppearance.BorderSize = 0;
+            this.btnRelCheck.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
+            this.btnRelCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelCheck.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRelCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRelCheck.Location = new System.Drawing.Point(0, 40);
+            this.btnRelCheck.Name = "btnRelCheck";
+            this.btnRelCheck.Size = new System.Drawing.Size(203, 44);
+            this.btnRelCheck.TabIndex = 22;
+            this.btnRelCheck.Text = "Check";
+            this.btnRelCheck.UseVisualStyleBackColor = false;
+            this.btnRelCheck.Click += new System.EventHandler(this.btnRelCheck_Click);
             // 
-            // btnMinF
+            // btnRelCad
             // 
-            this.btnMinF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinF.Image = ((System.Drawing.Image)(resources.GetObject("btnMinF.Image")));
-            this.btnMinF.Location = new System.Drawing.Point(1201, 7);
-            this.btnMinF.Name = "btnMinF";
-            this.btnMinF.Size = new System.Drawing.Size(25, 25);
-            this.btnMinF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinF.TabIndex = 5;
-            this.btnMinF.TabStop = false;
-            this.btnMinF.MouseEnter += new System.EventHandler(this.btnMinF_MouseEnter);
+            this.btnRelCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRelCad.FlatAppearance.BorderSize = 0;
+            this.btnRelCad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(191)))), ((int)(((byte)(146)))));
+            this.btnRelCad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelCad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRelCad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRelCad.Location = new System.Drawing.Point(0, 0);
+            this.btnRelCad.Name = "btnRelCad";
+            this.btnRelCad.Size = new System.Drawing.Size(203, 44);
+            this.btnRelCad.TabIndex = 21;
+            this.btnRelCad.Text = "Cadastros";
+            this.btnRelCad.UseVisualStyleBackColor = false;
+            this.btnRelCad.Click += new System.EventHandler(this.btnRelCad_Click);
             // 
-            // btnCloseF
+            // logoComunaKids
             // 
-            this.btnCloseF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCloseF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCloseF.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseF.Image")));
-            this.btnCloseF.Location = new System.Drawing.Point(1263, 7);
-            this.btnCloseF.Name = "btnCloseF";
-            this.btnCloseF.Size = new System.Drawing.Size(25, 25);
-            this.btnCloseF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCloseF.TabIndex = 4;
-            this.btnCloseF.TabStop = false;
-            this.btnCloseF.MouseEnter += new System.EventHandler(this.btnCloseF_MouseEnter);
+            this.logoComunaKids.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logoComunaKids.Image = ((System.Drawing.Image)(resources.GetObject("logoComunaKids.Image")));
+            this.logoComunaKids.Location = new System.Drawing.Point(209, 207);
+            this.logoComunaKids.Name = "logoComunaKids";
+            this.logoComunaKids.Size = new System.Drawing.Size(659, 132);
+            this.logoComunaKids.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoComunaKids.TabIndex = 0;
+            this.logoComunaKids.TabStop = false;
             // 
-            // btnMin
+            // subMenuCad
             // 
-            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.Location = new System.Drawing.Point(1201, 7);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(25, 25);
-            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMin.TabIndex = 2;
-            this.btnMin.TabStop = false;
-            this.btnMin.Visible = false;
-            this.btnMin.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.btnMin.MouseLeave += new System.EventHandler(this.btnMin_MouseLeave);
+            this.subMenuCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.subMenuCad.Controls.Add(this.btnSala);
+            this.subMenuCad.Controls.Add(this.btnProfessor);
+            this.subMenuCad.Controls.Add(this.btnResponsavel);
+            this.subMenuCad.Controls.Add(this.btnCrianca);
+            this.subMenuCad.Location = new System.Drawing.Point(0, 189);
+            this.subMenuCad.Name = "subMenuCad";
+            this.subMenuCad.Size = new System.Drawing.Size(203, 156);
+            this.subMenuCad.TabIndex = 1;
+            this.subMenuCad.Visible = false;
             // 
-            // btnMax
+            // btnSala
             // 
-            this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
-            this.btnMax.Location = new System.Drawing.Point(1232, 7);
-            this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(25, 25);
-            this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMax.TabIndex = 1;
-            this.btnMax.TabStop = false;
-            this.btnMax.Visible = false;
-            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
-            this.btnMax.MouseLeave += new System.EventHandler(this.btnMax_MouseLeave);
+            this.btnSala.AutoSize = true;
+            this.btnSala.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.btnSala.FlatAppearance.BorderSize = 0;
+            this.btnSala.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.btnSala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSala.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSala.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSala.Location = new System.Drawing.Point(0, 117);
+            this.btnSala.Name = "btnSala";
+            this.btnSala.Size = new System.Drawing.Size(203, 39);
+            this.btnSala.TabIndex = 24;
+            this.btnSala.Text = "Sala";
+            this.btnSala.UseVisualStyleBackColor = false;
+            this.btnSala.Click += new System.EventHandler(this.btnSala_Click);
             // 
-            // btnClose
+            // btnProfessor
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1263, 7);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 25);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 0;
-            this.btnClose.TabStop = false;
-            this.btnClose.Visible = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            this.btnProfessor.AutoSize = true;
+            this.btnProfessor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnProfessor.FlatAppearance.BorderSize = 0;
+            this.btnProfessor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.btnProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfessor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProfessor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnProfessor.Location = new System.Drawing.Point(0, 78);
+            this.btnProfessor.Name = "btnProfessor";
+            this.btnProfessor.Size = new System.Drawing.Size(203, 45);
+            this.btnProfessor.TabIndex = 23;
+            this.btnProfessor.Text = "Professor";
+            this.btnProfessor.UseVisualStyleBackColor = false;
+            this.btnProfessor.Click += new System.EventHandler(this.btnProfessor_Click);
+            // 
+            // btnResponsavel
+            // 
+            this.btnResponsavel.AutoSize = true;
+            this.btnResponsavel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.btnResponsavel.FlatAppearance.BorderSize = 0;
+            this.btnResponsavel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.btnResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResponsavel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnResponsavel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnResponsavel.Location = new System.Drawing.Point(0, 39);
+            this.btnResponsavel.Name = "btnResponsavel";
+            this.btnResponsavel.Size = new System.Drawing.Size(203, 42);
+            this.btnResponsavel.TabIndex = 22;
+            this.btnResponsavel.Text = "Responsável";
+            this.btnResponsavel.UseVisualStyleBackColor = false;
+            this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
+            // 
+            // btnCrianca
+            // 
+            this.btnCrianca.AutoSize = true;
+            this.btnCrianca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCrianca.FlatAppearance.BorderSize = 0;
+            this.btnCrianca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.btnCrianca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrianca.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCrianca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCrianca.Location = new System.Drawing.Point(0, 0);
+            this.btnCrianca.Name = "btnCrianca";
+            this.btnCrianca.Size = new System.Drawing.Size(203, 44);
+            this.btnCrianca.TabIndex = 21;
+            this.btnCrianca.Text = "Criança";
+            this.btnCrianca.UseVisualStyleBackColor = false;
+            this.btnCrianca.Click += new System.EventHandler(this.btnCrianca_Click);
+            // 
+            // btnMenuF
+            // 
+            this.btnMenuF.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMenuF.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuF.Image")));
+            this.btnMenuF.Location = new System.Drawing.Point(184, 6);
+            this.btnMenuF.Name = "btnMenuF";
+            this.btnMenuF.Size = new System.Drawing.Size(30, 30);
+            this.btnMenuF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMenuF.TabIndex = 22;
+            this.btnMenuF.TabStop = false;
+            this.btnMenuF.Visible = false;
+            this.btnMenuF.Click += new System.EventHandler(this.btnMenuF_Click);
+            this.btnMenuF.MouseLeave += new System.EventHandler(this.btnMenuF_MouseLeave);
             // 
             // MenuBar
             // 
             this.MenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(31)))), ((int)(((byte)(30)))));
+            this.MenuBar.Controls.Add(this.btnMenuF);
+            this.MenuBar.Controls.Add(this.btnMenu);
             this.MenuBar.Controls.Add(this.imgCheckOutF);
             this.MenuBar.Controls.Add(this.imgCheckOut);
             this.MenuBar.Controls.Add(this.imgCheckInF);
@@ -236,19 +305,31 @@
             this.MenuBar.Controls.Add(this.imgRel);
             this.MenuBar.Controls.Add(this.panel5);
             this.MenuBar.Controls.Add(this.btnCheckOut);
-            this.MenuBar.Controls.Add(this.panel4);
+            this.MenuBar.Controls.Add(this.panelCheck);
             this.MenuBar.Controls.Add(this.btnCheckIn);
-            this.MenuBar.Controls.Add(this.panel3);
+            this.MenuBar.Controls.Add(this.panelRel);
             this.MenuBar.Controls.Add(this.btnRelatorios);
             this.MenuBar.Controls.Add(this.imgCad);
-            this.MenuBar.Controls.Add(this.panel1);
+            this.MenuBar.Controls.Add(this.panelCad);
             this.MenuBar.Controls.Add(this.btnCadastros);
             this.MenuBar.Controls.Add(this.LogoComuna);
             this.MenuBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MenuBar.Location = new System.Drawing.Point(0, 40);
+            this.MenuBar.Location = new System.Drawing.Point(0, 31);
             this.MenuBar.Name = "MenuBar";
-            this.MenuBar.Size = new System.Drawing.Size(220, 610);
+            this.MenuBar.Size = new System.Drawing.Size(220, 619);
             this.MenuBar.TabIndex = 2;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(184, 6);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(30, 30);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMenu.TabIndex = 21;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.MouseEnter += new System.EventHandler(this.btnMenu_MouseEnter);
             // 
             // imgCheckOutF
             // 
@@ -358,13 +439,13 @@
             this.btnCheckOut.MouseLeave += new System.EventHandler(this.btnCheckOut_MouseLeave);
             this.btnCheckOut.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCheckOut_MouseUp);
             // 
-            // panel4
+            // panelCheck
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(170)))), ((int)(((byte)(165)))));
-            this.panel4.Location = new System.Drawing.Point(0, 267);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 33);
-            this.panel4.TabIndex = 8;
+            this.panelCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(170)))), ((int)(((byte)(165)))));
+            this.panelCheck.Location = new System.Drawing.Point(0, 267);
+            this.panelCheck.Name = "panelCheck";
+            this.panelCheck.Size = new System.Drawing.Size(10, 33);
+            this.panelCheck.TabIndex = 8;
             // 
             // btnCheckIn
             // 
@@ -385,13 +466,13 @@
             this.btnCheckIn.MouseLeave += new System.EventHandler(this.btnCheckIn_MouseLeave);
             this.btnCheckIn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCheckIn_MouseUp);
             // 
-            // panel3
+            // panelRel
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(192)))), ((int)(((byte)(60)))));
-            this.panel3.Location = new System.Drawing.Point(0, 228);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 33);
-            this.panel3.TabIndex = 6;
+            this.panelRel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(192)))), ((int)(((byte)(60)))));
+            this.panelRel.Location = new System.Drawing.Point(0, 228);
+            this.panelRel.Name = "panelRel";
+            this.panelRel.Size = new System.Drawing.Size(10, 33);
+            this.panelRel.TabIndex = 6;
             // 
             // btnRelatorios
             // 
@@ -407,6 +488,7 @@
             this.btnRelatorios.TabIndex = 7;
             this.btnRelatorios.Text = "Relatórios";
             this.btnRelatorios.UseVisualStyleBackColor = false;
+            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
             this.btnRelatorios.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRelatorios_MouseDown);
             this.btnRelatorios.MouseEnter += new System.EventHandler(this.btnRelatorios_MouseEnter);
             this.btnRelatorios.MouseLeave += new System.EventHandler(this.btnRelatorios_MouseLeave);
@@ -422,16 +504,17 @@
             this.imgCad.TabIndex = 3;
             this.imgCad.TabStop = false;
             // 
-            // panel1
+            // panelCad
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(47)))), ((int)(((byte)(67)))));
-            this.panel1.Location = new System.Drawing.Point(0, 189);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 33);
-            this.panel1.TabIndex = 3;
+            this.panelCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(47)))), ((int)(((byte)(67)))));
+            this.panelCad.Location = new System.Drawing.Point(0, 189);
+            this.panelCad.Name = "panelCad";
+            this.panelCad.Size = new System.Drawing.Size(10, 33);
+            this.panelCad.TabIndex = 3;
             // 
             // btnCadastros
             // 
+            this.btnCadastros.AutoSize = true;
             this.btnCadastros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(31)))), ((int)(((byte)(30)))));
             this.btnCadastros.FlatAppearance.BorderSize = 0;
             this.btnCadastros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
@@ -442,8 +525,9 @@
             this.btnCadastros.Name = "btnCadastros";
             this.btnCadastros.Size = new System.Drawing.Size(220, 33);
             this.btnCadastros.TabIndex = 4;
-            this.btnCadastros.Text = "Cadastros";
+            this.btnCadastros.Text = "Cadastrar";
             this.btnCadastros.UseVisualStyleBackColor = false;
+            this.btnCadastros.Click += new System.EventHandler(this.btnCadastros_Click);
             this.btnCadastros.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCadastros_MouseDown);
             this.btnCadastros.MouseEnter += new System.EventHandler(this.btnCadastros_MouseEnter);
             this.btnCadastros.MouseLeave += new System.EventHandler(this.btnCadastros_MouseLeave);
@@ -459,25 +543,137 @@
             this.LogoComuna.TabIndex = 3;
             this.LogoComuna.TabStop = false;
             // 
-            // Fundo
+            // TopBar
             // 
-            this.Fundo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Fundo.Controls.Add(this.pictureBox1);
-            this.Fundo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Fundo.Location = new System.Drawing.Point(220, 40);
-            this.Fundo.Name = "Fundo";
-            this.Fundo.Size = new System.Drawing.Size(1080, 610);
-            this.Fundo.TabIndex = 3;
+            this.TopBar.AutoSize = true;
+            this.TopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(47)))), ((int)(((byte)(67)))));
+            this.TopBar.Controls.Add(this.btnCloseF);
+            this.TopBar.Controls.Add(this.btnResF);
+            this.TopBar.Controls.Add(this.btnMaxF);
+            this.TopBar.Controls.Add(this.btnMinF);
+            this.TopBar.Controls.Add(this.btnMax);
+            this.TopBar.Controls.Add(this.btnMin);
+            this.TopBar.Controls.Add(this.btnClose);
+            this.TopBar.Controls.Add(this.btnRes);
+            this.TopBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopBar.Location = new System.Drawing.Point(0, 0);
+            this.TopBar.Name = "TopBar";
+            this.TopBar.Size = new System.Drawing.Size(1300, 31);
+            this.TopBar.TabIndex = 1;
+            this.TopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopBar_MouseDown);
             // 
-            // pictureBox1
+            // btnCloseF
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(280, 189);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(498, 204);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnCloseF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCloseF.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseF.Image")));
+            this.btnCloseF.Location = new System.Drawing.Point(1272, 3);
+            this.btnCloseF.Name = "btnCloseF";
+            this.btnCloseF.Size = new System.Drawing.Size(25, 25);
+            this.btnCloseF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCloseF.TabIndex = 4;
+            this.btnCloseF.TabStop = false;
+            this.btnCloseF.MouseEnter += new System.EventHandler(this.btnCloseF_MouseEnter);
+            // 
+            // btnResF
+            // 
+            this.btnResF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResF.Image = ((System.Drawing.Image)(resources.GetObject("btnResF.Image")));
+            this.btnResF.Location = new System.Drawing.Point(1241, 3);
+            this.btnResF.Name = "btnResF";
+            this.btnResF.Size = new System.Drawing.Size(25, 25);
+            this.btnResF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnResF.TabIndex = 4;
+            this.btnResF.TabStop = false;
+            this.btnResF.MouseEnter += new System.EventHandler(this.btnResF_MouseEnter);
+            // 
+            // btnMaxF
+            // 
+            this.btnMaxF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaxF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaxF.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxF.Image")));
+            this.btnMaxF.Location = new System.Drawing.Point(1241, 3);
+            this.btnMaxF.Name = "btnMaxF";
+            this.btnMaxF.Size = new System.Drawing.Size(25, 25);
+            this.btnMaxF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMaxF.TabIndex = 5;
+            this.btnMaxF.TabStop = false;
+            this.btnMaxF.Visible = false;
+            this.btnMaxF.MouseEnter += new System.EventHandler(this.btnMaxF_MouseEnter);
+            // 
+            // btnMinF
+            // 
+            this.btnMinF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinF.Image = ((System.Drawing.Image)(resources.GetObject("btnMinF.Image")));
+            this.btnMinF.Location = new System.Drawing.Point(1210, 3);
+            this.btnMinF.Name = "btnMinF";
+            this.btnMinF.Size = new System.Drawing.Size(25, 25);
+            this.btnMinF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinF.TabIndex = 5;
+            this.btnMinF.TabStop = false;
+            this.btnMinF.MouseEnter += new System.EventHandler(this.btnMinF_MouseEnter);
+            // 
+            // btnMax
+            // 
+            this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
+            this.btnMax.Location = new System.Drawing.Point(1241, 3);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(25, 25);
+            this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMax.TabIndex = 1;
+            this.btnMax.TabStop = false;
+            this.btnMax.Visible = false;
+            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
+            this.btnMax.MouseLeave += new System.EventHandler(this.btnMax_MouseLeave);
+            // 
+            // btnMin
+            // 
+            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
+            this.btnMin.Location = new System.Drawing.Point(1210, 3);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(25, 25);
+            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMin.TabIndex = 2;
+            this.btnMin.TabStop = false;
+            this.btnMin.Visible = false;
+            this.btnMin.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.btnMin.MouseLeave += new System.EventHandler(this.btnMin_MouseLeave);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1272, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(25, 25);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 0;
+            this.btnClose.TabStop = false;
+            this.btnClose.Visible = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            // 
+            // btnRes
+            // 
+            this.btnRes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRes.Image = ((System.Drawing.Image)(resources.GetObject("btnRes.Image")));
+            this.btnRes.Location = new System.Drawing.Point(1241, 3);
+            this.btnRes.Name = "btnRes";
+            this.btnRes.Size = new System.Drawing.Size(25, 25);
+            this.btnRes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRes.TabIndex = 3;
+            this.btnRes.TabStop = false;
+            this.btnRes.Visible = false;
+            this.btnRes.Click += new System.EventHandler(this.btnRes_Click);
+            this.btnRes.MouseLeave += new System.EventHandler(this.btnRes_MouseLeave);
             // 
             // Janela1
             // 
@@ -489,19 +685,18 @@
             this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.TopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Janela1";
-            this.Load += new System.EventHandler(this.Janela1_Load);
-            this.TopBar.ResumeLayout(false);
-            this.TopBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnResF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaxF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCloseF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            this.Fundo.ResumeLayout(false);
+            this.subMenuRel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logoComunaKids)).EndInit();
+            this.subMenuCad.ResumeLayout(false);
+            this.subMenuCad.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).EndInit();
             this.MenuBar.ResumeLayout(false);
+            this.MenuBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCheckOutF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCheckOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCheckInF)).EndInit();
@@ -511,42 +706,62 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgRel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoComuna)).EndInit();
-            this.Fundo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.TopBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCloseF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnResF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaxF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private Panel TopBar;
+
+        private Panel Fundo;
+        private PictureBox logoComunaKids;
         private Panel MenuBar;
+        private PictureBox imgCheckOutF;
+        private PictureBox imgCheckOut;
+        private PictureBox imgCheckInF;
+        private PictureBox imgCheckIn;
+        private PictureBox imgCadF;
+        private PictureBox imgRelF;
+        private PictureBox imgRel;
+        private Panel panel5;
+        private Button btnCheckOut;
+        private Panel panelCheck;
+        private Button btnCheckIn;
+        private Panel panelRel;
+        private Button btnRelatorios;
+        private PictureBox imgCad;
+        private Panel panelCad;
+        private Button btnCadastros;
+        private PictureBox LogoComuna;
+        private Panel TopBar;
+        private PictureBox btnResF;
+        private PictureBox btnRes;
+        private PictureBox btnMaxF;
+        private PictureBox btnMinF;
+        private PictureBox btnCloseF;
         private PictureBox btnMin;
         private PictureBox btnMax;
         private PictureBox btnClose;
-        private PictureBox btnRes;
-        private PictureBox LogoComuna;
-        private Button btnCadastros;
-        private Panel panel1;
-        private PictureBox btnCloseF;
-        private PictureBox btnResF;
-        private PictureBox btnMaxF;
-        private PictureBox btnMinF;
-        private PictureBox imgCad;
-        private PictureBox imgCadF;
-        private Panel Fundo;
-        private Panel panel5;
-        private Button btnCheckOut;
-        private Panel panel4;
-        private Button btnCheckIn;
-        private Panel panel3;
-        private Button btnRelatorios;
-        private PictureBox imgCheckOutF;
-        private PictureBox imgCheckInF;
-        private PictureBox imgRel;
-        private PictureBox imgRelF;
-        private PictureBox imgCheckIn;
-        private PictureBox imgCheckOut;
-        private PictureBox pictureBox1;
-        private Label lblTitulo;
+        private Panel subMenuCad;
+        private Button btnCrianca;
+        private Button btnSala;
+        private Button btnProfessor;
+        private Button btnResponsavel;
+        private Panel subMenuRel;
+        private Button btnRelCheck;
+        private Button btnRelCad;
+        private Button btnRelVisitantes;
+        private Button btnRelFreq;
+        private PictureBox btnMenu;
+        private PictureBox btnMenuF;
     }
 }
