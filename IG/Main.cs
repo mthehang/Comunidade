@@ -144,12 +144,82 @@ namespace IG
 
         private void btnCadastros_MouseUp(object sender, MouseEventArgs e)
         {
-            imgCadF.BackColor = Color.FromArgb(236, 47, 67);
+            imgCadF.BackColor = Color.FromArgb(253, 100, 116);
+            
         }
 
         private void btnCadastros_MouseDown(object sender, MouseEventArgs e)
         {
             imgCadF.BackColor = Color.FromArgb(145, 119, 117);
+            
+        }
+
+        private void btnRelatorios_MouseEnter(object sender, EventArgs e)
+        {
+            imgRel.Visible = false;
+            imgRelF.Visible = true;
+        }
+
+        private void btnRelatorios_MouseLeave(object sender, EventArgs e)
+        {
+            imgRel.Visible = true;
+            imgRelF.Visible = false;
+        }
+
+        private void btnRelatorios_MouseDown(object sender, MouseEventArgs e)
+        {
+            imgRelF.BackColor = Color.FromArgb(145, 119, 117);
+
+        }
+
+        private void btnRelatorios_MouseUp(object sender, MouseEventArgs e)
+        {
+            imgRelF.BackColor = Color.FromArgb(165, 191, 146);
+
+        }
+
+        private void btnCheckIn_MouseDown(object sender, MouseEventArgs e)
+        {
+            imgCheckInF.BackColor = Color.FromArgb(145, 119, 117);
+        }
+
+        private void btnCheckIn_MouseEnter(object sender, EventArgs e)
+        {
+            imgCheckIn.Visible = false;
+            imgCheckInF.Visible = true;
+        }
+
+        private void btnCheckIn_MouseLeave(object sender, EventArgs e)
+        {
+            imgCheckIn.Visible = true;
+            imgCheckInF.Visible = false;
+        }
+
+        private void btnCheckIn_MouseUp(object sender, MouseEventArgs e)
+        {
+            imgCheckInF.BackColor = Color.FromArgb(161, 193, 191);
+        }
+
+        private void btnCheckOut_MouseDown(object sender, MouseEventArgs e)
+        {
+            imgCheckOutF.BackColor = Color.FromArgb(145, 119, 117);
+        }
+
+        private void btnCheckOut_MouseEnter(object sender, EventArgs e)
+        {
+            imgCheckOut.Visible = false;
+            imgCheckOutF.Visible = true;
+        }
+
+        private void btnCheckOut_MouseLeave(object sender, EventArgs e)
+        {
+            imgCheckOut.Visible = true;
+            imgCheckOutF.Visible = false;
+        }
+
+        private void btnCheckOut_MouseUp(object sender, MouseEventArgs e)
+        {
+            imgCheckOutF.BackColor = Color.FromArgb(201, 154, 122);
         }
     }
 }
