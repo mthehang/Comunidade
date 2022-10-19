@@ -11,6 +11,7 @@ namespace IG
         public Janela1()
         {
             InitializeComponent();
+            HideAll();
             openChildFormInPanel(new TelaInicio());
             this.WindowState = FormWindowState.Maximized;
             
@@ -217,6 +218,7 @@ namespace IG
 
         private void btnHome_MouseLeave(object sender, EventArgs e)
         {
+            
             imgHome.Visible = true;
             imgHomeF.Visible = false;
         }
@@ -303,16 +305,6 @@ namespace IG
             {
                 MenuBar.Width = 55;
                 LogoComuna.Visible = false;
-                panelHome.Visible = false;
-                panelCad.Visible = false;
-                panelRel.Visible = false;
-                panelCheck.Visible = false;
-                panel5.Visible = false;
-                imgHome.Visible = false;
-                imgCad.Visible = false;
-                imgRel.Visible = false;
-                imgCheckIn.Visible = false;
-                imgCheckOut.Visible = false;
                 btnHome.Visible = false;
                 btnCadastros.Visible = false;
                 btnRelatorios.Visible = false;
@@ -327,16 +319,6 @@ namespace IG
             {
                 MenuBar.Width = 220;
                 LogoComuna.Visible = true;
-                panelHome.Visible = true;
-                panelCad.Visible = true;
-                panelRel.Visible = true;
-                panelCheck.Visible = true;
-                panel5.Visible = true;
-                imgHome.Visible = true;
-                imgCad.Visible = true;
-                imgRel.Visible = true;
-                imgCheckIn.Visible = true;
-                imgCheckOut.Visible = true;
                 btnHome.Visible = true;
                btnCadastros.Visible = true;
                 btnRelatorios.Visible = true;
@@ -347,7 +329,7 @@ namespace IG
             }
         }
 
-        private void HideAll2() {
+        private void ShowAll() {
             
                     MenuBar.Width = 220;
                     LogoComuna.Visible = true;
@@ -355,7 +337,7 @@ namespace IG
                     panelCad.Visible = true;
                     panelRel.Visible = true;
                     panelCheck.Visible = true;
-                    panel5.Visible = true;
+                    panelChackOut.Visible = true;
                     imgHome.Visible = true;
                     imgCad.Visible = true;
                     imgRel.Visible = true;
@@ -442,7 +424,6 @@ namespace IG
         {
             openChildFormInPanel(new TelaInicio());
             btnBack.Visible = false;
-            HideAll2();
         }
 
         private void btnCrianca_MouseEnter(object sender, EventArgs e)
@@ -467,6 +448,292 @@ namespace IG
         {
             imgResp.Visible = true;
             imgRespF.Visible = false;
+        }
+
+        private void btnProfessor_MouseEnter(object sender, EventArgs e)
+        {
+            imgProfessor.Visible = false;
+            imgProfessorF.Visible = true;
+        }
+
+        private void btnProfessor_MouseLeave(object sender, EventArgs e)
+        {
+            imgProfessor.Visible = true;
+            imgProfessorF.Visible = false;
+        }
+
+        private void imgHome_MouseEnter(object sender, EventArgs e)
+        {
+            if (MenuBar.Width == 55)
+            {
+                imgHomeF.Visible = true;
+                imgHome.Visible = false;
+                fundoHome.Visible = true;
+            }
+            else
+            {
+                imgHomeF.Visible = true;
+                imgHome.Visible = false;
+                btnHome.BackColor = Color.FromArgb(93, 106, 137);
+            }
+        }
+
+        private void imgHomeF_MouseLeave(object sender, EventArgs e)
+        {
+            if (MenuBar.Width == 55)
+            {
+                imgHomeF.Visible = false;
+                imgHome.Visible = true;
+                fundoHome.Visible = false;
+            }
+            else
+            {
+                imgHomeF.Visible = false;
+                imgHome.Visible = true;
+                btnHome.BackColor = Color.FromArgb(40, 31, 30);
+            }
+        }
+
+        private void imgHomeF_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new TelaInicio());
+        }
+
+        private void imgCad_MouseEnter(object sender, EventArgs e)
+        {
+            if (MenuBar.Width == 55)
+            {
+                imgCadF.Visible = true;
+                imgCad.Visible = false;
+                fundoCad.Visible = true;
+                btnCadastros.BackColor = Color.FromArgb(253, 100, 116);
+            }
+            else
+            {
+                imgCadF.Visible = true;
+                imgCad.Visible = false;
+                btnCadastros.BackColor = Color.FromArgb(253, 100, 116);
+            }
+        }
+
+        private void imgCadF_MouseLeave(object sender, EventArgs e)
+        {
+            if (MenuBar.Width == 55)
+            {
+                imgCadF.Visible = false;
+                imgCad.Visible = true;
+                fundoCad.Visible = false;
+                btnCadastros.BackColor = Color.FromArgb(40, 31, 30);
+            }
+            else
+            {
+                imgCadF.Visible = false;
+                imgCad.Visible = true;
+                fundoCad.Visible = false;
+                btnCadastros.BackColor = Color.FromArgb(40, 31, 30);
+            }
+        }
+
+        private void imgCadF_Click(object sender, EventArgs e)
+        {
+            fundoCad.Visible = false;
+            ShowAll();
+            if (subMenuCad.Visible == false)
+            {
+                subMenuCad.Visible = true;
+                subMenuCad.BringToFront();
+                subMenuRel.Visible = false;
+            }
+            else
+            {
+                subMenuCad.Visible = false;
+            }
+        }
+
+        private void btnCrianca_MouseDown(object sender, MouseEventArgs e)
+        {
+            imgKidF.BackColor = Color.FromArgb(152, 140, 140);
+        }
+
+        private void btnCrianca_MouseUp(object sender, MouseEventArgs e)
+        {
+            imgKidF.BackColor = Color.FromArgb(253, 100, 116);
+        }
+
+        private void imgKid_MouseEnter(object sender, EventArgs e)
+        {
+            imgKid.Visible = false;
+            imgKidF.Visible = true;
+            btnCrianca.BackColor = Color.FromArgb(253, 100, 116);
+        }
+
+        private void imgKidF_MouseLeave(object sender, EventArgs e)
+        {
+            imgKid.Visible = true;
+            imgKidF.Visible = false;
+            btnCrianca.BackColor = Color.FromArgb(74, 64, 64);
+        }
+
+        private void imgKidF_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new CadastroC());
+            HideAll();
+            panelBack.Visible = true;
+            panelBack.BringToFront();
+        }
+
+        private void imgRel_MouseEnter(object sender, EventArgs e)
+        {
+            if (MenuBar.Width == 55)
+            {
+                imgRelF.Visible = true;
+                imgRel.Visible = false;
+                fundoRel.Visible = true;
+                btnRelatorios.BackColor = Color.FromArgb(165, 191, 146);
+            }
+            else
+            {
+                imgRelF.Visible = true;
+                imgRel.Visible = false;
+                btnRelatorios.BackColor = Color.FromArgb(165, 191, 146);
+            }
+            
+        }
+
+        private void imgRelF_MouseLeave(object sender, EventArgs e)
+        {
+                imgRelF.Visible = false;
+                imgRel.Visible = true;
+                fundoRel.Visible = false;
+                btnRelatorios.BackColor = Color.FromArgb(40, 31, 30);
+        }
+
+        private void imgRelF_Click(object sender, EventArgs e)
+        {
+            fundoRel.Visible = false;
+            ShowAll();
+            if (subMenuRel.Visible == false)
+            {
+                subMenuRel.Visible = true;
+                subMenuRel.BringToFront();
+                subMenuCad.Visible = false;
+
+            }
+            else
+            {
+                subMenuRel.Visible = false;
+            }
+        }
+
+        private void imgCheckIn_MouseEnter(object sender, EventArgs e)
+        {
+            if (MenuBar.Width == 55)
+            {
+                imgCheckIn.Visible = false;
+                imgCheckInF.Visible = true;
+                FundoCheckIn.Visible = true;
+                btnCheckIn.BackColor = Color.FromArgb(161, 193, 191);
+            }
+            else {
+                imgCheckIn.Visible = false;
+                imgCheckInF.Visible = true;
+                btnCheckIn.BackColor = Color.FromArgb(161, 193, 191);
+            }
+            
+        }
+
+        private void imgCheckInF_MouseLeave(object sender, EventArgs e)
+        {
+            imgCheckIn.Visible = true;
+            imgCheckInF.Visible = false;
+            FundoCheckIn.Visible = false;
+            btnCheckIn.BackColor = Color.FromArgb(40, 31, 30);
+        }
+
+        private void imgCheckInF_Click(object sender, EventArgs e)
+        {
+            FundoCheckIn.Visible = false;
+            ShowAll();
+        }
+
+        private void imgCheckOut_MouseEnter(object sender, EventArgs e)
+        {
+            FundoCheckOut.Visible = true;
+            imgCheckOut.Visible = false;
+            imgCheckOutF.Visible = true;
+            btnCheckOut.BackColor = Color.FromArgb(201, 154, 122);
+        }
+
+        private void imgCheckOutF_MouseLeave(object sender, EventArgs e)
+        {
+            FundoCheckOut.Visible = false;
+            imgCheckOut.Visible = true;
+            imgCheckOutF.Visible = false;
+            btnCheckOut.BackColor = Color.FromArgb(40, 31, 30);
+        }
+
+        private void imgCheckOutF_Click(object sender, EventArgs e)
+        {
+            FundoCheckOut.Visible = false;
+            ShowAll();
+        }
+
+        private void imgResp_MouseEnter(object sender, EventArgs e)
+        {
+            imgResp.Visible = false;
+            imgRespF.Visible = true;
+            btnResponsavel.BackColor = Color.FromArgb(253, 100, 116);
+        }
+
+        private void imgRespF_MouseLeave(object sender, EventArgs e)
+        {
+            imgResp.Visible = true;
+            imgRespF.Visible = false;
+            btnResponsavel.BackColor = Color.FromArgb(60, 53, 53);
+        }
+
+        private void btnResponsavel_MouseDown(object sender, MouseEventArgs e)
+        {
+            imgRespF.BackColor = Color.FromArgb(146, 135, 135);
+        }
+
+        private void btnResponsavel_MouseUp(object sender, MouseEventArgs e)
+        {
+            imgRespF.BackColor = Color.FromArgb(253, 100, 116);
+        }
+
+        private void imgRespF_Click(object sender, EventArgs e)
+        {
+            HideAll();
+        }
+
+        private void imgProfessor_MouseEnter(object sender, EventArgs e)
+        {
+            imgProfessor.Visible = false;
+            imgProfessorF.Visible = true;
+            btnProfessor.BackColor = Color.FromArgb(253, 100, 116);
+        }
+
+        private void imgProfessorF_MouseLeave(object sender, EventArgs e)
+        {
+            imgProfessor.Visible = true;
+            imgProfessorF.Visible = false;
+            btnProfessor.BackColor = Color.FromArgb(74, 64, 64);
+        }
+
+        private void imgProfessorF_Click(object sender, EventArgs e)
+        {
+            HideAll();
+        }
+
+        private void btnProfessor_MouseDown(object sender, MouseEventArgs e)
+        {
+            imgProfessorF.BackColor = Color.FromArgb(152, 140, 140);
+        }
+
+        private void btnProfessor_MouseUp(object sender, MouseEventArgs e)
+        {
+            imgProfessorF.BackColor = Color.FromArgb(253, 100, 116);
         }
     }
 }
