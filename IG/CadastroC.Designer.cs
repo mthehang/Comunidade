@@ -464,7 +464,7 @@
             this.Fundo.Controls.Add(this.lblCep);
             this.Fundo.Controls.Add(this.txtCpfr);
             this.Fundo.Controls.Add(this.lblparentesco);
-            this.Fundo.Location = new System.Drawing.Point(0, 0);
+            this.Fundo.Location = new System.Drawing.Point(1, 0);
             this.Fundo.Name = "Fundo";
             this.Fundo.Size = new System.Drawing.Size(1081, 620);
             this.Fundo.TabIndex = 48;
@@ -477,7 +477,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1080, 619);
             this.Controls.Add(this.Fundo);
-            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CadastroC";
             this.ShowIcon = false;

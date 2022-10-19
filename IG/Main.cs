@@ -320,8 +320,8 @@ namespace IG
                 btnCheckOut.Visible = false;
                 subMenuCad.Visible = false;
                 subMenuRel.Visible = false;
-                btnMenu.Location = new Point(12, 6);
-                btnMenuF.Location = new Point(12, 6);
+                btnMenu.Location = new Point(6, 6);
+                btnMenuF.Location = new Point(6, 6);
             }
             else
             {
@@ -342,8 +342,8 @@ namespace IG
                 btnRelatorios.Visible = true;
                 btnCheckIn.Visible = true;
                 btnCheckOut.Visible = true;
-                btnMenu.Location = new Point(184, 6);
-                btnMenuF.Location = new Point(184, 6);
+                btnMenu.Location = new Point(6, 6);
+                btnMenuF.Location = new Point(6, 6);
             }
         }
 
@@ -366,8 +366,8 @@ namespace IG
                     btnRelatorios.Visible = true;
                     btnCheckIn.Visible = true;
                     btnCheckOut.Visible = true;
-                    btnMenu.Location = new Point(184, 6);
-                    btnMenuF.Location = new Point(184, 6);
+                    btnMenu.Location = new Point(6, 6);
+                    btnMenuF.Location = new Point(6, 6);
                 
         }
         private void btnResponsavel_Click(object sender, EventArgs e)

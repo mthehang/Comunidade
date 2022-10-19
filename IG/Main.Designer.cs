@@ -326,7 +326,7 @@
             this.btnMenuF.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnMenuF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuF.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuF.Image")));
-            this.btnMenuF.Location = new System.Drawing.Point(183, 6);
+            this.btnMenuF.Location = new System.Drawing.Point(6, 6);
             this.btnMenuF.Name = "btnMenuF";
             this.btnMenuF.Size = new System.Drawing.Size(30, 30);
             this.btnMenuF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -425,7 +425,7 @@
             this.btnMenu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(183, 6);
+            this.btnMenu.Location = new System.Drawing.Point(6, 6);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(30, 30);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
