@@ -320,8 +320,8 @@ namespace IG
                 btnCheckOut.Visible = false;
                 subMenuCad.Visible = false;
                 subMenuRel.Visible = false;
-                btnMenu.Location = new Point(6, 6);
-                btnMenuF.Location = new Point(6, 6);
+                btnMenu.Location = new Point(12, 6);
+                btnMenuF.Location = new Point(12, 6);
             }
             else
             {
@@ -342,8 +342,8 @@ namespace IG
                 btnRelatorios.Visible = true;
                 btnCheckIn.Visible = true;
                 btnCheckOut.Visible = true;
-                btnMenu.Location = new Point(6, 6);
-                btnMenuF.Location = new Point(6, 6);
+                btnMenu.Location = new Point(12, 6);
+                btnMenuF.Location = new Point(12, 6);
             }
         }
 
@@ -366,8 +366,8 @@ namespace IG
                     btnRelatorios.Visible = true;
                     btnCheckIn.Visible = true;
                     btnCheckOut.Visible = true;
-                    btnMenu.Location = new Point(6, 6);
-                    btnMenuF.Location = new Point(6, 6);
+                    btnMenu.Location = new Point(12, 6);
+                    btnMenuF.Location = new Point(12, 6);
                 
         }
         private void btnResponsavel_Click(object sender, EventArgs e)
@@ -443,6 +443,30 @@ namespace IG
             openChildFormInPanel(new TelaInicio());
             btnBack.Visible = false;
             HideAll2();
+        }
+
+        private void btnCrianca_MouseEnter(object sender, EventArgs e)
+        {
+            imgKid.Visible = false;
+            imgKidF.Visible = true;
+        }
+
+        private void btnCrianca_MouseLeave(object sender, EventArgs e)
+        {
+            imgKid.Visible = true; 
+            imgKidF.Visible = false;
+        }
+
+        private void btnResponsavel_MouseEnter(object sender, EventArgs e)
+        {
+            imgResp.Visible = false;
+            imgRespF.Visible = true;
+        }
+
+        private void btnResponsavel_MouseLeave(object sender, EventArgs e)
+        {
+            imgResp.Visible = true;
+            imgRespF.Visible = false;
         }
     }
 }

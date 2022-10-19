@@ -39,6 +39,10 @@
             this.btnRelVisitantes = new System.Windows.Forms.Button();
             this.btnRelFreq = new System.Windows.Forms.Button();
             this.subMenuCad = new System.Windows.Forms.Panel();
+            this.imgRespF = new System.Windows.Forms.PictureBox();
+            this.imgResp = new System.Windows.Forms.PictureBox();
+            this.imgKidF = new System.Windows.Forms.PictureBox();
+            this.imgKid = new System.Windows.Forms.PictureBox();
             this.btnResponsavel = new System.Windows.Forms.Button();
             this.btnCrianca = new System.Windows.Forms.Button();
             this.btnSala = new System.Windows.Forms.Button();
@@ -82,6 +86,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.subMenuRel.SuspendLayout();
             this.subMenuCad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgRespF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgResp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgKidF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgKid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).BeginInit();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgHomeF)).BeginInit();
@@ -162,7 +170,7 @@
             this.subMenuRel.Controls.Add(this.btnRelCad);
             this.subMenuRel.Controls.Add(this.btnRelVisitantes);
             this.subMenuRel.Controls.Add(this.btnRelFreq);
-            this.subMenuRel.Location = new System.Drawing.Point(0, 228);
+            this.subMenuRel.Location = new System.Drawing.Point(266, 189);
             this.subMenuRel.Name = "subMenuRel";
             this.subMenuRel.Size = new System.Drawing.Size(203, 158);
             this.subMenuRel.TabIndex = 2;
@@ -213,7 +221,7 @@
             this.btnRelVisitantes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRelVisitantes.Location = new System.Drawing.Point(0, 117);
             this.btnRelVisitantes.Name = "btnRelVisitantes";
-            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 42);
+            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 25);
             this.btnRelVisitantes.TabIndex = 24;
             this.btnRelVisitantes.Text = "Visitantes";
             this.btnRelVisitantes.UseVisualStyleBackColor = false;
@@ -239,6 +247,10 @@
             // subMenuCad
             // 
             this.subMenuCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.subMenuCad.Controls.Add(this.imgRespF);
+            this.subMenuCad.Controls.Add(this.imgResp);
+            this.subMenuCad.Controls.Add(this.imgKidF);
+            this.subMenuCad.Controls.Add(this.imgKid);
             this.subMenuCad.Controls.Add(this.btnResponsavel);
             this.subMenuCad.Controls.Add(this.btnCrianca);
             this.subMenuCad.Controls.Add(this.btnSala);
@@ -248,6 +260,52 @@
             this.subMenuCad.Size = new System.Drawing.Size(203, 156);
             this.subMenuCad.TabIndex = 1;
             this.subMenuCad.Visible = false;
+            // 
+            // imgRespF
+            // 
+            this.imgRespF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.imgRespF.Image = ((System.Drawing.Image)(resources.GetObject("imgRespF.Image")));
+            this.imgRespF.Location = new System.Drawing.Point(17, 42);
+            this.imgRespF.Name = "imgRespF";
+            this.imgRespF.Size = new System.Drawing.Size(33, 33);
+            this.imgRespF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgRespF.TabIndex = 27;
+            this.imgRespF.TabStop = false;
+            this.imgRespF.Visible = false;
+            // 
+            // imgResp
+            // 
+            this.imgResp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.imgResp.Image = ((System.Drawing.Image)(resources.GetObject("imgResp.Image")));
+            this.imgResp.Location = new System.Drawing.Point(17, 42);
+            this.imgResp.Name = "imgResp";
+            this.imgResp.Size = new System.Drawing.Size(33, 33);
+            this.imgResp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgResp.TabIndex = 26;
+            this.imgResp.TabStop = false;
+            // 
+            // imgKidF
+            // 
+            this.imgKidF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.imgKidF.Image = ((System.Drawing.Image)(resources.GetObject("imgKidF.Image")));
+            this.imgKidF.Location = new System.Drawing.Point(17, 3);
+            this.imgKidF.Name = "imgKidF";
+            this.imgKidF.Size = new System.Drawing.Size(33, 33);
+            this.imgKidF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgKidF.TabIndex = 26;
+            this.imgKidF.TabStop = false;
+            this.imgKidF.Visible = false;
+            // 
+            // imgKid
+            // 
+            this.imgKid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.imgKid.Image = ((System.Drawing.Image)(resources.GetObject("imgKid.Image")));
+            this.imgKid.Location = new System.Drawing.Point(17, 3);
+            this.imgKid.Name = "imgKid";
+            this.imgKid.Size = new System.Drawing.Size(33, 33);
+            this.imgKid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgKid.TabIndex = 25;
+            this.imgKid.TabStop = false;
             // 
             // btnResponsavel
             // 
@@ -266,6 +324,8 @@
             this.btnResponsavel.Text = "Responsável";
             this.btnResponsavel.UseVisualStyleBackColor = false;
             this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
+            this.btnResponsavel.MouseEnter += new System.EventHandler(this.btnResponsavel_MouseEnter);
+            this.btnResponsavel.MouseLeave += new System.EventHandler(this.btnResponsavel_MouseLeave);
             // 
             // btnCrianca
             // 
@@ -284,6 +344,8 @@
             this.btnCrianca.Text = "Criança";
             this.btnCrianca.UseVisualStyleBackColor = false;
             this.btnCrianca.Click += new System.EventHandler(this.btnCrianca_Click);
+            this.btnCrianca.MouseEnter += new System.EventHandler(this.btnCrianca_MouseEnter);
+            this.btnCrianca.MouseLeave += new System.EventHandler(this.btnCrianca_MouseLeave);
             // 
             // btnSala
             // 
@@ -326,7 +388,7 @@
             this.btnMenuF.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnMenuF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuF.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuF.Image")));
-            this.btnMenuF.Location = new System.Drawing.Point(6, 6);
+            this.btnMenuF.Location = new System.Drawing.Point(12, 6);
             this.btnMenuF.Name = "btnMenuF";
             this.btnMenuF.Size = new System.Drawing.Size(30, 30);
             this.btnMenuF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -425,7 +487,7 @@
             this.btnMenu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(6, 6);
+            this.btnMenu.Location = new System.Drawing.Point(12, 6);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(30, 30);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -642,7 +704,7 @@
             // LogoComuna
             // 
             this.LogoComuna.Image = ((System.Drawing.Image)(resources.GetObject("LogoComuna.Image")));
-            this.LogoComuna.Location = new System.Drawing.Point(42, 28);
+            this.LogoComuna.Location = new System.Drawing.Point(42, 36);
             this.LogoComuna.Name = "LogoComuna";
             this.LogoComuna.Size = new System.Drawing.Size(124, 92);
             this.LogoComuna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -801,6 +863,10 @@
             this.subMenuRel.ResumeLayout(false);
             this.subMenuCad.ResumeLayout(false);
             this.subMenuCad.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgRespF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgResp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgKidF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgKid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).EndInit();
             this.MenuBar.ResumeLayout(false);
             this.MenuBar.PerformLayout();
@@ -879,5 +945,9 @@
         private Panel panelBack;
         private PictureBox btnBackF;
         private PictureBox btnBack;
+        private PictureBox imgKid;
+        private PictureBox imgKidF;
+        private PictureBox imgRespF;
+        private PictureBox imgResp;
     }
 }
