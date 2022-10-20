@@ -735,5 +735,41 @@ namespace IG
         {
             imgProfessorF.BackColor = Color.FromArgb(253, 100, 116);
         }
+
+        private void btnSala_MouseEnter(object sender, EventArgs e)
+        {
+            imgSala.Visible = false;
+            imgSalaF.Visible = true;
+        }
+
+        private void btnSala_MouseLeave(object sender, EventArgs e)
+        {
+            imgSala.Visible = true;
+            imgSalaF.Visible = false;
+        }
+
+        private void imgSala_MouseEnter(object sender, EventArgs e)
+        {
+            imgSala.Visible = false;
+            imgSalaF.Visible = true;
+            btnSala.BackColor = Color.FromArgb(253, 100, 116);
+        }
+
+        private void imgSalaF_MouseLeave(object sender, EventArgs e)
+        {
+            imgSala.Visible = true;
+            imgSalaF.Visible = false;
+            btnSala.BackColor = Color.FromArgb(60, 53, 53);
+        }
+
+        private void btnSala_MouseDown(object sender, MouseEventArgs e)
+        {
+            imgSalaF.BackColor = Color.FromArgb(152, 140, 140);
+        }
+
+        private void btnSala_MouseUp(object sender, MouseEventArgs e)
+        {
+            imgSalaF.BackColor = Color.FromArgb(253, 100, 116);
+        }
     }
 }

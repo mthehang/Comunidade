@@ -39,15 +39,17 @@
             this.btnRelVisitantes = new System.Windows.Forms.Button();
             this.btnRelFreq = new System.Windows.Forms.Button();
             this.subMenuCad = new System.Windows.Forms.Panel();
-            this.imgProfessorF = new System.Windows.Forms.PictureBox();
-            this.imgProfessor = new System.Windows.Forms.PictureBox();
+            this.imgSalaF = new System.Windows.Forms.PictureBox();
+            this.imgSala = new System.Windows.Forms.PictureBox();
             this.imgRespF = new System.Windows.Forms.PictureBox();
-            this.imgResp = new System.Windows.Forms.PictureBox();
             this.imgKidF = new System.Windows.Forms.PictureBox();
+            this.imgResp = new System.Windows.Forms.PictureBox();
             this.imgKid = new System.Windows.Forms.PictureBox();
             this.btnResponsavel = new System.Windows.Forms.Button();
             this.btnCrianca = new System.Windows.Forms.Button();
             this.btnSala = new System.Windows.Forms.Button();
+            this.imgProfessorF = new System.Windows.Forms.PictureBox();
+            this.imgProfessor = new System.Windows.Forms.PictureBox();
             this.btnProfessor = new System.Windows.Forms.Button();
             this.imgHomeF = new System.Windows.Forms.PictureBox();
             this.btnMenuF = new System.Windows.Forms.PictureBox();
@@ -93,12 +95,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.subMenuRel.SuspendLayout();
             this.subMenuCad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSalaF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSala)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgRespF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgKidF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgResp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgKid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgProfessorF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgProfessor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgRespF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgResp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgKidF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgKid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgHomeF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).BeginInit();
             this.MenuBar.SuspendLayout();
@@ -179,9 +183,9 @@
             this.subMenuRel.Controls.Add(this.btnRelCad);
             this.subMenuRel.Controls.Add(this.btnRelVisitantes);
             this.subMenuRel.Controls.Add(this.btnRelFreq);
-            this.subMenuRel.Location = new System.Drawing.Point(266, 189);
+            this.subMenuRel.Location = new System.Drawing.Point(263, 189);
             this.subMenuRel.Name = "subMenuRel";
-            this.subMenuRel.Size = new System.Drawing.Size(203, 158);
+            this.subMenuRel.Size = new System.Drawing.Size(203, 156);
             this.subMenuRel.TabIndex = 2;
             this.subMenuRel.Visible = false;
             // 
@@ -230,7 +234,7 @@
             this.btnRelVisitantes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRelVisitantes.Location = new System.Drawing.Point(0, 117);
             this.btnRelVisitantes.Name = "btnRelVisitantes";
-            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 25);
+            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 24);
             this.btnRelVisitantes.TabIndex = 24;
             this.btnRelVisitantes.Text = "Visitantes";
             this.btnRelVisitantes.UseVisualStyleBackColor = false;
@@ -256,15 +260,17 @@
             // subMenuCad
             // 
             this.subMenuCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.subMenuCad.Controls.Add(this.imgProfessorF);
-            this.subMenuCad.Controls.Add(this.imgProfessor);
+            this.subMenuCad.Controls.Add(this.imgSalaF);
+            this.subMenuCad.Controls.Add(this.imgSala);
             this.subMenuCad.Controls.Add(this.imgRespF);
-            this.subMenuCad.Controls.Add(this.imgResp);
             this.subMenuCad.Controls.Add(this.imgKidF);
+            this.subMenuCad.Controls.Add(this.imgResp);
             this.subMenuCad.Controls.Add(this.imgKid);
             this.subMenuCad.Controls.Add(this.btnResponsavel);
             this.subMenuCad.Controls.Add(this.btnCrianca);
             this.subMenuCad.Controls.Add(this.btnSala);
+            this.subMenuCad.Controls.Add(this.imgProfessorF);
+            this.subMenuCad.Controls.Add(this.imgProfessor);
             this.subMenuCad.Controls.Add(this.btnProfessor);
             this.subMenuCad.Location = new System.Drawing.Point(0, 189);
             this.subMenuCad.Name = "subMenuCad";
@@ -272,62 +278,48 @@
             this.subMenuCad.TabIndex = 1;
             this.subMenuCad.Visible = false;
             // 
-            // imgProfessorF
+            // imgSalaF
             // 
-            this.imgProfessorF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
-            this.imgProfessorF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgProfessorF.Image = ((System.Drawing.Image)(resources.GetObject("imgProfessorF.Image")));
-            this.imgProfessorF.Location = new System.Drawing.Point(17, 81);
-            this.imgProfessorF.Name = "imgProfessorF";
-            this.imgProfessorF.Size = new System.Drawing.Size(33, 33);
-            this.imgProfessorF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgProfessorF.TabIndex = 28;
-            this.imgProfessorF.TabStop = false;
-            this.imgProfessorF.Visible = false;
-            this.imgProfessorF.Click += new System.EventHandler(this.imgProfessorF_Click);
-            this.imgProfessorF.MouseLeave += new System.EventHandler(this.imgProfessorF_MouseLeave);
+            this.imgSalaF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.imgSalaF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgSalaF.Image = ((System.Drawing.Image)(resources.GetObject("imgSalaF.Image")));
+            this.imgSalaF.Location = new System.Drawing.Point(17, 120);
+            this.imgSalaF.Name = "imgSalaF";
+            this.imgSalaF.Size = new System.Drawing.Size(33, 33);
+            this.imgSalaF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgSalaF.TabIndex = 29;
+            this.imgSalaF.TabStop = false;
+            this.imgSalaF.Visible = false;
+            this.imgSalaF.MouseLeave += new System.EventHandler(this.imgSalaF_MouseLeave);
             // 
-            // imgProfessor
+            // imgSala
             // 
-            this.imgProfessor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.imgProfessor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgProfessor.Image = ((System.Drawing.Image)(resources.GetObject("imgProfessor.Image")));
-            this.imgProfessor.InitialImage = null;
-            this.imgProfessor.Location = new System.Drawing.Point(17, 81);
-            this.imgProfessor.Name = "imgProfessor";
-            this.imgProfessor.Size = new System.Drawing.Size(33, 33);
-            this.imgProfessor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgProfessor.TabIndex = 28;
-            this.imgProfessor.TabStop = false;
-            this.imgProfessor.MouseEnter += new System.EventHandler(this.imgProfessor_MouseEnter);
+            this.imgSala.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.imgSala.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgSala.Image = ((System.Drawing.Image)(resources.GetObject("imgSala.Image")));
+            this.imgSala.InitialImage = null;
+            this.imgSala.Location = new System.Drawing.Point(17, 120);
+            this.imgSala.Name = "imgSala";
+            this.imgSala.Size = new System.Drawing.Size(33, 33);
+            this.imgSala.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgSala.TabIndex = 29;
+            this.imgSala.TabStop = false;
+            this.imgSala.MouseEnter += new System.EventHandler(this.imgSala_MouseEnter);
             // 
             // imgRespF
             // 
             this.imgRespF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
             this.imgRespF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgRespF.Image = ((System.Drawing.Image)(resources.GetObject("imgRespF.Image")));
-            this.imgRespF.Location = new System.Drawing.Point(17, 42);
+            this.imgRespF.Location = new System.Drawing.Point(17, 39);
             this.imgRespF.Name = "imgRespF";
-            this.imgRespF.Size = new System.Drawing.Size(33, 33);
+            this.imgRespF.Size = new System.Drawing.Size(33, 41);
             this.imgRespF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgRespF.TabIndex = 27;
             this.imgRespF.TabStop = false;
             this.imgRespF.Visible = false;
             this.imgRespF.Click += new System.EventHandler(this.imgRespF_Click);
             this.imgRespF.MouseLeave += new System.EventHandler(this.imgRespF_MouseLeave);
-            // 
-            // imgResp
-            // 
-            this.imgResp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.imgResp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgResp.Image = ((System.Drawing.Image)(resources.GetObject("imgResp.Image")));
-            this.imgResp.Location = new System.Drawing.Point(17, 42);
-            this.imgResp.Name = "imgResp";
-            this.imgResp.Size = new System.Drawing.Size(33, 33);
-            this.imgResp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgResp.TabIndex = 26;
-            this.imgResp.TabStop = false;
-            this.imgResp.MouseEnter += new System.EventHandler(this.imgResp_MouseEnter);
             // 
             // imgKidF
             // 
@@ -343,6 +335,19 @@
             this.imgKidF.Visible = false;
             this.imgKidF.Click += new System.EventHandler(this.imgKidF_Click);
             this.imgKidF.MouseLeave += new System.EventHandler(this.imgKidF_MouseLeave);
+            // 
+            // imgResp
+            // 
+            this.imgResp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.imgResp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgResp.Image = ((System.Drawing.Image)(resources.GetObject("imgResp.Image")));
+            this.imgResp.Location = new System.Drawing.Point(17, 42);
+            this.imgResp.Name = "imgResp";
+            this.imgResp.Size = new System.Drawing.Size(33, 33);
+            this.imgResp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgResp.TabIndex = 26;
+            this.imgResp.TabStop = false;
+            this.imgResp.MouseEnter += new System.EventHandler(this.imgResp_MouseEnter);
             // 
             // imgKid
             // 
@@ -417,7 +422,39 @@
             this.btnSala.TabIndex = 24;
             this.btnSala.Text = "Sala";
             this.btnSala.UseVisualStyleBackColor = false;
-            this.btnSala.Click += new System.EventHandler(this.btnSala_Click);
+            this.btnSala.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSala_MouseDown);
+            this.btnSala.MouseEnter += new System.EventHandler(this.btnSala_MouseEnter);
+            this.btnSala.MouseLeave += new System.EventHandler(this.btnSala_MouseLeave);
+            this.btnSala.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnSala_MouseUp);
+            // 
+            // imgProfessorF
+            // 
+            this.imgProfessorF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.imgProfessorF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgProfessorF.Image = ((System.Drawing.Image)(resources.GetObject("imgProfessorF.Image")));
+            this.imgProfessorF.Location = new System.Drawing.Point(17, 78);
+            this.imgProfessorF.Name = "imgProfessorF";
+            this.imgProfessorF.Size = new System.Drawing.Size(33, 46);
+            this.imgProfessorF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgProfessorF.TabIndex = 28;
+            this.imgProfessorF.TabStop = false;
+            this.imgProfessorF.Visible = false;
+            this.imgProfessorF.Click += new System.EventHandler(this.imgProfessorF_Click);
+            this.imgProfessorF.MouseLeave += new System.EventHandler(this.imgProfessorF_MouseLeave);
+            // 
+            // imgProfessor
+            // 
+            this.imgProfessor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.imgProfessor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgProfessor.Image = ((System.Drawing.Image)(resources.GetObject("imgProfessor.Image")));
+            this.imgProfessor.InitialImage = null;
+            this.imgProfessor.Location = new System.Drawing.Point(17, 78);
+            this.imgProfessor.Name = "imgProfessor";
+            this.imgProfessor.Size = new System.Drawing.Size(33, 46);
+            this.imgProfessor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgProfessor.TabIndex = 28;
+            this.imgProfessor.TabStop = false;
+            this.imgProfessor.MouseEnter += new System.EventHandler(this.imgProfessor_MouseEnter);
             // 
             // btnProfessor
             // 
@@ -529,7 +566,7 @@
             this.imgCad.Image = ((System.Drawing.Image)(resources.GetObject("imgCad.Image")));
             this.imgCad.Location = new System.Drawing.Point(17, 189);
             this.imgCad.Name = "imgCad";
-            this.imgCad.Size = new System.Drawing.Size(33, 36);
+            this.imgCad.Size = new System.Drawing.Size(33, 33);
             this.imgCad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgCad.TabIndex = 3;
             this.imgCad.TabStop = false;
@@ -997,12 +1034,14 @@
             this.subMenuRel.ResumeLayout(false);
             this.subMenuCad.ResumeLayout(false);
             this.subMenuCad.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSalaF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSala)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgRespF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgKidF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgResp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgKid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgProfessorF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgProfessor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgRespF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgResp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgKidF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgKid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgHomeF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuF)).EndInit();
             this.MenuBar.ResumeLayout(false);
@@ -1092,5 +1131,7 @@
         private Panel FundoCheckIn;
         private Panel fundoRel;
         private Panel fundoCad;
+        private PictureBox imgSala;
+        private PictureBox imgSalaF;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.Common;
 using Npgsql;
 
 namespace IG
@@ -22,7 +23,7 @@ namespace IG
         public void InserirValoresG(string nome, string nasc, string rg, string cpf, string cep, string end, string sala,
             string nomer, string nascr, string rgr, string cpfr, string cepr, string endr, string parr, string celr)
         {
-
+            
             using (var conn = new NpgsqlConnection(connString))
             {
 
@@ -56,6 +57,23 @@ namespace IG
 
                         MessageBox.Show("Cadastro realizado com sucesso.");
                         conn.Close();
+                    }
+                }
+            }
+        }
+
+        public void ComboBox(ComboBox cb) {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                using (var command = new NpgsqlDataAdapter("SELECT DISTINCT resp_nome FROM responsavel", conn))
+                {
+                    DataTable DT = new DataTable();
+                    command.Fill(DT);
+                    foreach (DataRow ROW in DT.Rows)
+                    {
+                        cb.Items.Add(ROW["resp_nome"].ToString());
                     }
                 }
             }

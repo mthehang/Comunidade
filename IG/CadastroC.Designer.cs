@@ -66,52 +66,60 @@
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.txtCepr = new System.Windows.Forms.MaskedTextBox();
             this.Fundo = new System.Windows.Forms.Panel();
+            this.cbResponsavel = new System.Windows.Forms.ComboBox();
+            this.lblResponsavel = new System.Windows.Forms.Label();
             this.Fundo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(176, 145);
+            this.lblNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNome.Location = new System.Drawing.Point(104, 92);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(43, 15);
+            this.lblNome.Size = new System.Drawing.Size(56, 21);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
             // lblNasc
             // 
             this.lblNasc.AutoSize = true;
-            this.lblNasc.Location = new System.Drawing.Point(104, 186);
+            this.lblNasc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNasc.Location = new System.Drawing.Point(104, 168);
             this.lblNasc.Name = "lblNasc";
-            this.lblNasc.Size = new System.Drawing.Size(115, 15);
+            this.lblNasc.Size = new System.Drawing.Size(150, 21);
             this.lblNasc.TabIndex = 1;
             this.lblNasc.Text = "Data de nascimento:";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(225, 140);
+            this.txtNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNome.Location = new System.Drawing.Point(104, 116);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(150, 23);
+            this.txtNome.Size = new System.Drawing.Size(325, 29);
             this.txtNome.TabIndex = 2;
             this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
             // 
             // lblRg
             // 
             this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(194, 254);
+            this.lblRg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRg.Location = new System.Drawing.Point(104, 245);
             this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(25, 15);
+            this.lblRg.Size = new System.Drawing.Size(34, 21);
             this.lblRg.TabIndex = 4;
             this.lblRg.Text = "RG:";
             // 
             // Calendario
             // 
+            this.Calendario.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Calendario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Calendario.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Calendario.Location = new System.Drawing.Point(225, 180);
+            this.Calendario.Location = new System.Drawing.Point(104, 192);
             this.Calendario.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.Calendario.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.Calendario.Name = "Calendario";
-            this.Calendario.Size = new System.Drawing.Size(150, 23);
+            this.Calendario.Size = new System.Drawing.Size(200, 29);
             this.Calendario.TabIndex = 6;
             this.Calendario.Value = new System.DateTime(2022, 10, 7, 0, 0, 0, 0);
             this.Calendario.ValueChanged += new System.EventHandler(this.Calendario_ValueChanged);
@@ -119,7 +127,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(507, 471);
+            this.btnSave.Location = new System.Drawing.Point(498, 527);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -130,43 +138,48 @@
             // lblCep
             // 
             this.lblCep.AutoSize = true;
-            this.lblCep.Location = new System.Drawing.Point(188, 351);
+            this.lblCep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCep.Location = new System.Drawing.Point(104, 322);
             this.lblCep.Name = "lblCep";
-            this.lblCep.Size = new System.Drawing.Size(31, 15);
+            this.lblCep.Size = new System.Drawing.Size(40, 21);
             this.lblCep.TabIndex = 10;
             this.lblCep.Text = "CEP:";
             // 
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(160, 390);
+            this.lblEndereco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEndereco.Location = new System.Drawing.Point(227, 322);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(59, 15);
+            this.lblEndereco.Size = new System.Drawing.Size(77, 21);
             this.lblEndereco.TabIndex = 12;
             this.lblEndereco.Text = "Endereço:";
             // 
             // txtEnd
             // 
-            this.txtEnd.Location = new System.Drawing.Point(225, 390);
+            this.txtEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEnd.Location = new System.Drawing.Point(229, 346);
             this.txtEnd.Name = "txtEnd";
-            this.txtEnd.Size = new System.Drawing.Size(150, 23);
+            this.txtEnd.Size = new System.Drawing.Size(200, 29);
             this.txtEnd.TabIndex = 13;
             this.txtEnd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEnd_KeyDown);
             // 
             // txtSala
             // 
-            this.txtSala.Location = new System.Drawing.Point(225, 435);
+            this.txtSala.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSala.Location = new System.Drawing.Point(104, 423);
             this.txtSala.Name = "txtSala";
-            this.txtSala.Size = new System.Drawing.Size(150, 23);
+            this.txtSala.Size = new System.Drawing.Size(150, 29);
             this.txtSala.TabIndex = 14;
             this.txtSala.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSala_KeyDown);
             // 
             // lblSala
             // 
             this.lblSala.AutoSize = true;
-            this.lblSala.Location = new System.Drawing.Point(188, 438);
+            this.lblSala.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSala.Location = new System.Drawing.Point(104, 399);
             this.lblSala.Name = "lblSala";
-            this.lblSala.Size = new System.Drawing.Size(31, 15);
+            this.lblSala.Size = new System.Drawing.Size(42, 21);
             this.lblSala.TabIndex = 15;
             this.lblSala.Text = "Sala:";
             // 
@@ -280,18 +293,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(188, 301);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(225, 245);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 15);
+            this.label6.Size = new System.Drawing.Size(40, 21);
             this.label6.TabIndex = 33;
             this.label6.Text = "CPF:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(245, 98);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(104, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 15);
+            this.label7.Size = new System.Drawing.Size(190, 25);
             this.label7.TabIndex = 34;
             this.label7.Text = "Cadastro de Crianças";
             // 
@@ -308,9 +323,10 @@
             // lbltxtIdade
             // 
             this.lbltxtIdade.AutoSize = true;
-            this.lbltxtIdade.Location = new System.Drawing.Point(180, 222);
+            this.lbltxtIdade.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbltxtIdade.Location = new System.Drawing.Point(310, 169);
             this.lbltxtIdade.Name = "lbltxtIdade";
-            this.lbltxtIdade.Size = new System.Drawing.Size(39, 15);
+            this.lbltxtIdade.Size = new System.Drawing.Size(50, 20);
             this.lbltxtIdade.TabIndex = 36;
             this.lbltxtIdade.Text = "Idade:";
             // 
@@ -327,9 +343,10 @@
             // lblIdade
             // 
             this.lblIdade.AutoSize = true;
-            this.lblIdade.Location = new System.Drawing.Point(225, 222);
+            this.lblIdade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIdade.Location = new System.Drawing.Point(310, 192);
             this.lblIdade.Name = "lblIdade";
-            this.lblIdade.Size = new System.Drawing.Size(13, 15);
+            this.lblIdade.Size = new System.Drawing.Size(19, 21);
             this.lblIdade.TabIndex = 38;
             this.lblIdade.Text = "0";
             // 
@@ -365,10 +382,11 @@
             // 
             // txtRg
             // 
-            this.txtRg.Location = new System.Drawing.Point(225, 246);
+            this.txtRg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRg.Location = new System.Drawing.Point(104, 269);
             this.txtRg.Mask = "00,000,000-0";
             this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(150, 23);
+            this.txtRg.Size = new System.Drawing.Size(115, 29);
             this.txtRg.TabIndex = 42;
             this.txtRg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRg_KeyDown);
             this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRg_KeyPress_1);
@@ -385,10 +403,11 @@
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(225, 293);
+            this.txtCpf.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCpf.Location = new System.Drawing.Point(225, 269);
             this.txtCpf.Mask = "000,000,000-00";
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(150, 23);
+            this.txtCpf.Size = new System.Drawing.Size(115, 29);
             this.txtCpf.TabIndex = 44;
             this.txtCpf.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCpf_KeyDown);
             this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress_1);
@@ -405,10 +424,11 @@
             // 
             // txtCep
             // 
-            this.txtCep.Location = new System.Drawing.Point(225, 343);
+            this.txtCep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCep.Location = new System.Drawing.Point(104, 346);
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(150, 23);
+            this.txtCep.Size = new System.Drawing.Size(115, 29);
             this.txtCep.TabIndex = 46;
             this.txtCep.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCep_KeyDown);
             this.txtCep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCep_KeyPress_1);
@@ -427,6 +447,8 @@
             // 
             this.Fundo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Fundo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Fundo.Controls.Add(this.cbResponsavel);
+            this.Fundo.Controls.Add(this.lblResponsavel);
             this.Fundo.Controls.Add(this.Calendarior);
             this.Fundo.Controls.Add(this.label7);
             this.Fundo.Controls.Add(this.txtNomer);
@@ -468,6 +490,28 @@
             this.Fundo.Name = "Fundo";
             this.Fundo.Size = new System.Drawing.Size(1081, 620);
             this.Fundo.TabIndex = 48;
+            // 
+            // cbResponsavel
+            // 
+            this.cbResponsavel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbResponsavel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbResponsavel.FormattingEnabled = true;
+            this.cbResponsavel.Location = new System.Drawing.Point(104, 500);
+            this.cbResponsavel.Name = "cbResponsavel";
+            this.cbResponsavel.Size = new System.Drawing.Size(325, 29);
+            this.cbResponsavel.TabIndex = 49;
+            this.cbResponsavel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbResponsavel_KeyDown);
+            // 
+            // lblResponsavel
+            // 
+            this.lblResponsavel.AutoSize = true;
+            this.lblResponsavel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblResponsavel.Location = new System.Drawing.Point(104, 476);
+            this.lblResponsavel.Name = "lblResponsavel";
+            this.lblResponsavel.Size = new System.Drawing.Size(100, 21);
+            this.lblResponsavel.TabIndex = 48;
+            this.lblResponsavel.Text = "Responsável:";
             // 
             // CadastroC
             // 
@@ -528,5 +572,7 @@
         private MaskedTextBox txtCep;
         private MaskedTextBox txtCepr;
         private Panel Fundo;
+        private Label lblResponsavel;
+        private ComboBox cbResponsavel;
     }
 }

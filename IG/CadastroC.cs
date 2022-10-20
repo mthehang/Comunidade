@@ -18,6 +18,7 @@ namespace IG
 
             Criancas cr = new Criancas();
             DAO dao = new DAO();
+            dao.ComboBox(cbResponsavel);
 
             Calendario.Value = DateTime.Now;
             Calendarior.Value = DateTime.Now;
@@ -283,5 +284,9 @@ namespace IG
             }
         }
 
+        private void cbResponsavel_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
     }
 }
