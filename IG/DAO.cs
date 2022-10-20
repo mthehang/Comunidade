@@ -62,20 +62,33 @@ namespace IG
             }
         }
 
-        public void ComboBox(ComboBox cb) {
+        public void ListBox(ListBox lb, string param) {
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
 
-                using (var command = new NpgsqlDataAdapter("SELECT DISTINCT resp_nome FROM responsavel", conn))
-                {
-                    DataTable DT = new DataTable();
-                    command.Fill(DT);
-                    foreach (DataRow ROW in DT.Rows)
+                using (var cmd = new NpgsqlCommand("SELECT resp_nome FROM responsavel where resp_nome = @param", conn)) {
+
+                    cmd.Parameters.AddWithValue("param", param);
+
+                    var reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        cb.Items.Add(ROW["resp_nome"].ToString());
+                        if (reader["resp_nome"].ToString() != null)
+                        {
+                            lb.Visible = true;
+                            lb.Items.Clear();
+                            lb.Items.Add(reader["resp_nome"].ToString());
+                        }
+                        else {
+                            lb.Visible = false;
+                        }
+                       
                     }
+                    reader.Close();
                 }
+                conn.Close();
             }
         }
 
@@ -100,7 +113,7 @@ namespace IG
                     while (reader.Read())
                     {
 
-                        cr.Id = reader["crianca_id"].ToString()!;
+                        cr.Id = int.Parse(reader["crianca_id"].ToString()!);
                         cr.Nome = reader["crianca_nome"].ToString()!;
                         cr.Datanasc = reader["crianca_datanasc"].ToString()!;
                         cr.Rg = reader["crianca_rg"].ToString()!;
@@ -122,13 +135,30 @@ namespace IG
             return pessoas;
         }
 
-        public void ExID()
+        public void Relacao(string param)
         {
+            var cid = 0;
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-
-
+                using (var command = new NpgsqlCommand("SELECT (coalesce((MAX (crianca_id)), 0)+ 1) as crianca_id FROM crianca")) {
+                    var reader = command.ExecuteReader();
+                    
+                    while (reader.Read())
+                    {
+                        cid = short.Parse(reader["resp_nome"].ToString());
+                    }
+                    reader.Close();
+                    if (cid != 0) {
+                        using (var cmd = new NpgsqlCommand("insert into responsavel (resp_cid) values (@cid) where resp_nome = @param", conn))
+                        {
+                            cmd.Parameters.AddWithValue("param", param);
+                            cmd.Parameters.AddWithValue("cid", cid);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+                conn.Close();
             }
         }
     }

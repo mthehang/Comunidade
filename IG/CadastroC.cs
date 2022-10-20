@@ -10,15 +10,14 @@ using System.Windows.Forms;
 
 namespace IG
 {
+
     public partial class CadastroC : Form
     {
+        Criancas cr = new Criancas();
+        DAO dao = new DAO();
         public CadastroC()
         {
             InitializeComponent();
-
-            Criancas cr = new Criancas();
-            DAO dao = new DAO();
-            dao.ComboBox(cbResponsavel);
 
             Calendario.Value = DateTime.Now;
             Calendarior.Value = DateTime.Now;
@@ -284,9 +283,53 @@ namespace IG
             }
         }
 
-        private void cbResponsavel_KeyDown(object sender, KeyEventArgs e)
+        private void btnSearchF_MouseLeave(object sender, EventArgs e)
         {
+            btnSearch.Visible = true;
+            btnSearchF.Visible = false;
+        }
+
+        private void btnSearch_MouseEnter(object sender, EventArgs e)
+        {
+            btnSearch.Visible = false;
+            btnSearchF.Visible = true;
+        }
+
+        private void btnSearchF_Click(object sender, EventArgs e)
+        {
+            dao.ListBox(ListBox, txtResponsavel.Text);
+        }
+
+        private void txtResponsavel_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void txtResponsavel_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txtResponsavel.Text == "")
+            {
+                ListBox.Visible = false;
+            }
+        }
+
+        private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cr.Resp = ListBox.GetItemText(ListBox.SelectedItem);
             
+            
+        }
+
+        private void btnCriar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCriar.Visible = false;
+            btnCriarF.Visible = true;
+        }
+
+        private void btnCriarF_MouseLeave(object sender, EventArgs e)
+        {
+            btnCriar.Visible = true;
+            btnCriarF.Visible = false;
         }
     }
 }

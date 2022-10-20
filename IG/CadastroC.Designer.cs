@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroC));
             this.lblNome = new System.Windows.Forms.Label();
             this.lblNasc = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -66,9 +67,21 @@
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.txtCepr = new System.Windows.Forms.MaskedTextBox();
             this.Fundo = new System.Windows.Forms.Panel();
-            this.cbResponsavel = new System.Windows.Forms.ComboBox();
+            this.btnCriar = new System.Windows.Forms.PictureBox();
+            this.ListBox = new System.Windows.Forms.ListBox();
+            this.btnSearchF = new System.Windows.Forms.PictureBox();
+            this.btnSearch = new System.Windows.Forms.PictureBox();
+            this.txtResponsavel = new System.Windows.Forms.TextBox();
             this.lblResponsavel = new System.Windows.Forms.Label();
+            this.btnCriarF = new System.Windows.Forms.PictureBox();
+            this.panelbtnCriar = new System.Windows.Forms.Panel();
+            this.lblCriar = new System.Windows.Forms.Label();
             this.Fundo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCriar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearchF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCriarF)).BeginInit();
+            this.panelbtnCriar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNome
@@ -447,7 +460,11 @@
             // 
             this.Fundo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Fundo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Fundo.Controls.Add(this.cbResponsavel);
+            this.Fundo.Controls.Add(this.panelbtnCriar);
+            this.Fundo.Controls.Add(this.ListBox);
+            this.Fundo.Controls.Add(this.btnSearchF);
+            this.Fundo.Controls.Add(this.btnSearch);
+            this.Fundo.Controls.Add(this.txtResponsavel);
             this.Fundo.Controls.Add(this.lblResponsavel);
             this.Fundo.Controls.Add(this.Calendarior);
             this.Fundo.Controls.Add(this.label7);
@@ -491,17 +508,64 @@
             this.Fundo.Size = new System.Drawing.Size(1081, 620);
             this.Fundo.TabIndex = 48;
             // 
-            // cbResponsavel
+            // btnCriar
             // 
-            this.cbResponsavel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbResponsavel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbResponsavel.FormattingEnabled = true;
-            this.cbResponsavel.Location = new System.Drawing.Point(104, 500);
-            this.cbResponsavel.Name = "cbResponsavel";
-            this.cbResponsavel.Size = new System.Drawing.Size(325, 29);
-            this.cbResponsavel.TabIndex = 49;
-            this.cbResponsavel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbResponsavel_KeyDown);
+            this.btnCriar.Image = ((System.Drawing.Image)(resources.GetObject("btnCriar.Image")));
+            this.btnCriar.Location = new System.Drawing.Point(9, 3);
+            this.btnCriar.Name = "btnCriar";
+            this.btnCriar.Size = new System.Drawing.Size(25, 25);
+            this.btnCriar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCriar.TabIndex = 53;
+            this.btnCriar.TabStop = false;
+            this.btnCriar.MouseEnter += new System.EventHandler(this.btnCriar_MouseEnter);
+            // 
+            // ListBox
+            // 
+            this.ListBox.BackColor = System.Drawing.Color.White;
+            this.ListBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ListBox.FormattingEnabled = true;
+            this.ListBox.ItemHeight = 21;
+            this.ListBox.Location = new System.Drawing.Point(310, 421);
+            this.ListBox.Name = "ListBox";
+            this.ListBox.Size = new System.Drawing.Size(236, 67);
+            this.ListBox.TabIndex = 52;
+            this.ListBox.Visible = false;
+            this.ListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
+            // 
+            // btnSearchF
+            // 
+            this.btnSearchF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchF.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchF.Image")));
+            this.btnSearchF.Location = new System.Drawing.Point(346, 499);
+            this.btnSearchF.Name = "btnSearchF";
+            this.btnSearchF.Size = new System.Drawing.Size(30, 30);
+            this.btnSearchF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSearchF.TabIndex = 51;
+            this.btnSearchF.TabStop = false;
+            this.btnSearchF.Visible = false;
+            this.btnSearchF.Click += new System.EventHandler(this.btnSearchF_Click);
+            this.btnSearchF.MouseLeave += new System.EventHandler(this.btnSearchF_MouseLeave);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(346, 499);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(30, 30);
+            this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSearch.TabIndex = 50;
+            this.btnSearch.TabStop = false;
+            this.btnSearch.MouseEnter += new System.EventHandler(this.btnSearch_MouseEnter);
+            // 
+            // txtResponsavel
+            // 
+            this.txtResponsavel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtResponsavel.Location = new System.Drawing.Point(104, 500);
+            this.txtResponsavel.Name = "txtResponsavel";
+            this.txtResponsavel.Size = new System.Drawing.Size(236, 29);
+            this.txtResponsavel.TabIndex = 49;
+            this.txtResponsavel.TextChanged += new System.EventHandler(this.txtResponsavel_TextChanged);
             // 
             // lblResponsavel
             // 
@@ -512,6 +576,39 @@
             this.lblResponsavel.Size = new System.Drawing.Size(100, 21);
             this.lblResponsavel.TabIndex = 48;
             this.lblResponsavel.Text = "Responsável:";
+            // 
+            // btnCriarF
+            // 
+            this.btnCriarF.Image = ((System.Drawing.Image)(resources.GetObject("btnCriarF.Image")));
+            this.btnCriarF.Location = new System.Drawing.Point(9, 2);
+            this.btnCriarF.Name = "btnCriarF";
+            this.btnCriarF.Size = new System.Drawing.Size(25, 25);
+            this.btnCriarF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCriarF.TabIndex = 54;
+            this.btnCriarF.TabStop = false;
+            this.btnCriarF.Visible = false;
+            this.btnCriarF.MouseLeave += new System.EventHandler(this.btnCriarF_MouseLeave);
+            // 
+            // panelbtnCriar
+            // 
+            this.panelbtnCriar.Controls.Add(this.lblCriar);
+            this.panelbtnCriar.Controls.Add(this.btnCriar);
+            this.panelbtnCriar.Controls.Add(this.btnCriarF);
+            this.panelbtnCriar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelbtnCriar.Location = new System.Drawing.Point(104, 556);
+            this.panelbtnCriar.Name = "panelbtnCriar";
+            this.panelbtnCriar.Size = new System.Drawing.Size(190, 31);
+            this.panelbtnCriar.TabIndex = 55;
+            // 
+            // lblCriar
+            // 
+            this.lblCriar.AutoSize = true;
+            this.lblCriar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCriar.Location = new System.Drawing.Point(40, 3);
+            this.lblCriar.Name = "lblCriar";
+            this.lblCriar.Size = new System.Drawing.Size(131, 21);
+            this.lblCriar.TabIndex = 55;
+            this.lblCriar.Text = "Criar responsável";
             // 
             // CadastroC
             // 
@@ -528,6 +625,12 @@
             this.Text = "Cadastro de crianças";
             this.Fundo.ResumeLayout(false);
             this.Fundo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCriar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearchF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCriarF)).EndInit();
+            this.panelbtnCriar.ResumeLayout(false);
+            this.panelbtnCriar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -573,6 +676,13 @@
         private MaskedTextBox txtCepr;
         private Panel Fundo;
         private Label lblResponsavel;
-        private ComboBox cbResponsavel;
+        private TextBox txtResponsavel;
+        private PictureBox btnSearchF;
+        private PictureBox btnSearch;
+        private ListBox ListBox;
+        private PictureBox btnCriar;
+        private PictureBox btnCriarF;
+        private Panel panelbtnCriar;
+        private Label lblCriar;
     }
 }
