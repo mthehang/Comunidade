@@ -73,9 +73,9 @@ namespace IG
                             resp.Nome = reader["resp_nome"].ToString()!.ToUpper();
                             resp.Rg = reader["resp_rg"].ToString()!.ToUpper();
                             resp.Cpf = reader["resp_cpf"].ToString()!.ToUpper();
-
-                            //lb.Items.Add(resp.Id + " / " + resp.Nome + " / CPF: " + resp.Cpf + " / RG: " + resp.Rg);
-                            lb.Items.AddRange(new object[] { resp.Id });
+                            short x = 0;
+                            lb.Items.Insert(x, resp.Id + " / " + resp.Nome + " / CPF: " + resp.Cpf + " / RG: " + resp.Rg);
+                            x++;
                             lb.Visible = true;
                             
 
