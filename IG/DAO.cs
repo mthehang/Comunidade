@@ -81,10 +81,7 @@ namespace IG
                             item.SubItems.Add(resp.Nome);
                             item.SubItems.Add(resp.Cpf);
                             item.SubItems.Add(resp.Rg);
-                            ListView.Items.Add(item);
-
-                            //ListView.Items.Add(resp.Nome + " / CPF: " + resp.Cpf + " / RG: " + resp.Rg);
-                            
+                            ListView.Items.Add(item);                            
                             ListView.Visible = true;
                             
 
@@ -153,24 +150,23 @@ namespace IG
 
                 conn.Open();
 
-                using (var cmd = new NpgsqlCommand("SELECT (coalesce((MAX (crianca_id)), 0)+ 1) as crianca_id FROM crianca")) {
+                using (var cmd = new NpgsqlCommand("SELECT (coalesce((MAX (crianca_id)), 0) +1) as crianca_id FROM crianca"))
+                {
                     var reader = cmd.ExecuteReader();
                     
                     while (reader.Read())
                     {
-                        cid = short.Parse(reader["resp_nome"].ToString()!);
+                        cid = short.Parse(reader["crianca_id"].ToString()!);
                     }
                     reader.Close();
                 }
-                if (rid != 0)
+                using (var cmd = new NpgsqlCommand("insert into relacoes (relacoes_cid) values (@cid) where relacoes_rid = @param", conn))
                 {
-                    using (var cmd = new NpgsqlCommand("insert into relacoes (relacoes_cid) values (@cid) where relacoes_rid = @param", conn))
-                    {
-                        cmd.Parameters.AddWithValue("param", rid);
-                        cmd.Parameters.AddWithValue("cid", cid);
-                        cmd.ExecuteNonQuery();
-                    }
+                    cmd.Parameters.AddWithValue("param", rid);
+                    cmd.Parameters.AddWithValue("cid", cid);
+                    cmd.ExecuteNonQuery();
                 }
+                
                 conn.Close();
             }
         }

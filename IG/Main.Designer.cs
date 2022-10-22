@@ -214,7 +214,8 @@
             this.btnRelCheck.Name = "btnRelCheck";
             this.btnRelCheck.Size = new System.Drawing.Size(203, 41);
             this.btnRelCheck.TabIndex = 22;
-            this.btnRelCheck.Text = "Check";
+            this.btnRelCheck.Text = "                Check";
+            this.btnRelCheck.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRelCheck.UseVisualStyleBackColor = false;
             this.btnRelCheck.Click += new System.EventHandler(this.btnRelCheck_Click);
             // 
@@ -231,7 +232,8 @@
             this.btnRelCad.Name = "btnRelCad";
             this.btnRelCad.Size = new System.Drawing.Size(203, 42);
             this.btnRelCad.TabIndex = 21;
-            this.btnRelCad.Text = "Cadastros";
+            this.btnRelCad.Text = "                Cadastros";
+            this.btnRelCad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRelCad.UseVisualStyleBackColor = false;
             this.btnRelCad.Click += new System.EventHandler(this.btnRelCad_Click);
             // 
@@ -248,7 +250,8 @@
             this.btnRelVisitantes.Name = "btnRelVisitantes";
             this.btnRelVisitantes.Size = new System.Drawing.Size(203, 33);
             this.btnRelVisitantes.TabIndex = 24;
-            this.btnRelVisitantes.Text = "Visitantes";
+            this.btnRelVisitantes.Text = "                Visitantes";
+            this.btnRelVisitantes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRelVisitantes.UseVisualStyleBackColor = false;
             this.btnRelVisitantes.Click += new System.EventHandler(this.btnRelVisitantes_Click);
             // 
@@ -265,7 +268,8 @@
             this.btnRelFreq.Name = "btnRelFreq";
             this.btnRelFreq.Size = new System.Drawing.Size(203, 46);
             this.btnRelFreq.TabIndex = 23;
-            this.btnRelFreq.Text = "Frequência";
+            this.btnRelFreq.Text = "                Frequência";
+            this.btnRelFreq.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRelFreq.UseVisualStyleBackColor = false;
             this.btnRelFreq.Click += new System.EventHandler(this.btnRelFreq_Click);
             // 
@@ -388,7 +392,8 @@
             this.btnResponsavel.Name = "btnResponsavel";
             this.btnResponsavel.Size = new System.Drawing.Size(203, 41);
             this.btnResponsavel.TabIndex = 22;
-            this.btnResponsavel.Text = "Responsável";
+            this.btnResponsavel.Text = "                Responsável";
+            this.btnResponsavel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnResponsavel.UseVisualStyleBackColor = false;
             this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
             this.btnResponsavel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnResponsavel_MouseDown);
@@ -410,7 +415,8 @@
             this.btnSala.Name = "btnSala";
             this.btnSala.Size = new System.Drawing.Size(203, 39);
             this.btnSala.TabIndex = 24;
-            this.btnSala.Text = "Sala";
+            this.btnSala.Text = "                Sala";
+            this.btnSala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSala.UseVisualStyleBackColor = false;
             this.btnSala.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSala_MouseDown);
             this.btnSala.MouseEnter += new System.EventHandler(this.btnSala_MouseEnter);
@@ -460,7 +466,8 @@
             this.btnProfessor.Name = "btnProfessor";
             this.btnProfessor.Size = new System.Drawing.Size(203, 46);
             this.btnProfessor.TabIndex = 23;
-            this.btnProfessor.Text = "Professor";
+            this.btnProfessor.Text = "                Professor";
+            this.btnProfessor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProfessor.UseVisualStyleBackColor = false;
             this.btnProfessor.Click += new System.EventHandler(this.btnProfessor_Click);
             this.btnProfessor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnProfessor_MouseDown);
@@ -482,7 +489,8 @@
             this.btnCrianca.Name = "btnCrianca";
             this.btnCrianca.Size = new System.Drawing.Size(203, 42);
             this.btnCrianca.TabIndex = 21;
-            this.btnCrianca.Text = "Criança";
+            this.btnCrianca.Text = "                Criança";
+            this.btnCrianca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCrianca.UseVisualStyleBackColor = false;
             this.btnCrianca.Click += new System.EventHandler(this.btnCrianca_Click);
             this.btnCrianca.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCrianca_MouseDown);
@@ -797,7 +805,8 @@
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(220, 33);
             this.btnCheckIn.TabIndex = 9;
-            this.btnCheckIn.Text = "Check-in";
+            this.btnCheckIn.Text = "                  Check-in";
+            this.btnCheckIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCheckIn.UseVisualStyleBackColor = false;
             this.btnCheckIn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCheckIn_MouseDown);
             this.btnCheckIn.MouseEnter += new System.EventHandler(this.btnCheckIn_MouseEnter);
@@ -825,7 +834,8 @@
             this.btnRelatorios.Name = "btnRelatorios";
             this.btnRelatorios.Size = new System.Drawing.Size(220, 33);
             this.btnRelatorios.TabIndex = 7;
-            this.btnRelatorios.Text = "Relatórios";
+            this.btnRelatorios.Text = "                  Relatórios";
+            this.btnRelatorios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRelatorios.UseVisualStyleBackColor = false;
             this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
             this.btnRelatorios.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRelatorios_MouseDown);
@@ -855,7 +865,8 @@
             this.btnCadastros.Name = "btnCadastros";
             this.btnCadastros.Size = new System.Drawing.Size(220, 33);
             this.btnCadastros.TabIndex = 4;
-            this.btnCadastros.Text = "Cadastrar";
+            this.btnCadastros.Text = "                  Cadastrar";
+            this.btnCadastros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastros.UseVisualStyleBackColor = false;
             this.btnCadastros.Click += new System.EventHandler(this.btnCadastros_Click);
             this.btnCadastros.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCadastros_MouseDown);
@@ -883,11 +894,12 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnHome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnHome.Location = new System.Drawing.Point(12, 150);
+            this.btnHome.Location = new System.Drawing.Point(0, 150);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(208, 33);
+            this.btnHome.Size = new System.Drawing.Size(220, 33);
             this.btnHome.TabIndex = 23;
-            this.btnHome.Text = "Tela inicial";
+            this.btnHome.Text = "                  Tela inicial";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             this.btnHome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseDown);

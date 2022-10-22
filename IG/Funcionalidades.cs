@@ -95,5 +95,6 @@ namespace IG
             B.Visible = false;
             
         }
+
     }
 }

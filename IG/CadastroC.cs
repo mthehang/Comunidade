@@ -18,6 +18,7 @@ namespace IG
         Responsaveis resp = new Responsaveis();
         DAO dao = new DAO();
         Funcionalidades funcionalidades = new Funcionalidades();
+        private Form activeForm = null!;
         public CadastroC()
         {
             InitializeComponent();
@@ -42,8 +43,6 @@ namespace IG
 
             Funcionalidades.verificTxtC(args, arg, btnSalvar, txtNome, Calendario, txtRg, txtCpf, txtCep, txtEnd,
                 txtSala, lblIdade, ListView, resp.Id);
-
-
 
         }
 
@@ -139,15 +138,24 @@ namespace IG
 
         private void btnCriarF_Click(object sender, EventArgs e)
         {
-            CadastroCResp ccr = new CadastroCResp();
-            ccr.Show();
+            
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = new CadastroCResp();
+            activeForm.Show();
+
         }
 
         private void lblCriar_Click(object sender, EventArgs e)
         {
-            CadastroCResp ccr = new CadastroCResp();
-            ccr.Show();
-            
+
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = new CadastroCResp();
+            activeForm.Show();
+
         }
 
         private void lblCriar_MouseEnter(object sender, EventArgs e)
@@ -167,8 +175,11 @@ namespace IG
 
         private void panelbtnCriar_Click(object sender, EventArgs e)
         {
-            CadastroCResp ccr = new CadastroCResp();
-            ccr.Show();
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = new CadastroCResp();
+            activeForm.Show();
         }
 
         private void panelbtnCriar_MouseLeave(object sender, EventArgs e)
@@ -201,6 +212,5 @@ namespace IG
             ListView.Visible = false;
             Fundo.Focus();
         }
-
     }
 }
