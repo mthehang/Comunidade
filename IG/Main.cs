@@ -77,28 +77,24 @@ namespace IG
 
         private void btnMinF_MouseEnter(object sender, EventArgs e)
         {
-            btnMin.Visible = true;
-            btnMinF.Visible = false;
+            func.OnOF(btnMin, btnMinF);
         }
 
         private void btnMin_MouseLeave(object sender, EventArgs e)
         {
-            btnMin.Visible = false;
-            btnMinF.Visible = true;
+            func.OnOF(btnMinF, btnMin);
         }
 
         private void btnMaxF_MouseEnter(object sender, EventArgs e)
         {
-            btnMax.Visible = true;
-            btnMaxF.Visible = false;
+            func.OnOF(btnMax, btnMaxF);
         }
 
         private void btnMax_MouseLeave(object sender, EventArgs e)
         {
             if (btnResF.Visible == false)
             {
-                btnMax.Visible = false;
-                btnMaxF.Visible = true;
+                func.OnOF(btnMaxF, btnMax);
             }
             else 
             {
@@ -110,17 +106,15 @@ namespace IG
 
         private void btnResF_MouseEnter(object sender, EventArgs e)
         {
-            btnRes.Visible = true;
 
-            btnResF.Visible = false;
+            func.OnOF(btnRes, btnResF);
         }
 
         private void btnRes_MouseLeave(object sender, EventArgs e)
         {
             if (btnMaxF.Visible == false)
             {
-                btnRes.Visible = false;
-                btnResF.Visible = true;
+                func.OnOF(btnResF, btnRes);
             }
             else {
                 btnRes.Visible = false;
@@ -130,14 +124,12 @@ namespace IG
 
         private void btnCadastros_MouseEnter(object sender, EventArgs e)
         {
-            imgCad.Visible = false;
-            imgCadF.Visible = true;
+            func.OnOF(imgCadF, imgCad);
         }
 
         private void btnCadastros_MouseLeave(object sender, EventArgs e)
         {
-            imgCad.Visible = true;
-            imgCadF.Visible = false;
+            func.OnOF(imgCad, imgCadF);
         }
 
         private void btnCadastros_MouseUp(object sender, MouseEventArgs e)
@@ -154,14 +146,12 @@ namespace IG
 
         private void btnRelatorios_MouseEnter(object sender, EventArgs e)
         {
-            imgRel.Visible = false;
-            imgRelF.Visible = true;
+            func.OnOF(imgRelF, imgRel);
         }
 
         private void btnRelatorios_MouseLeave(object sender, EventArgs e)
         {
-            imgRel.Visible = true;
-            imgRelF.Visible = false;
+            func.OnOF(imgRel, imgRelF);
         }
 
         private void btnRelatorios_MouseDown(object sender, MouseEventArgs e)
@@ -183,14 +173,12 @@ namespace IG
 
         private void btnCheckIn_MouseEnter(object sender, EventArgs e)
         {
-            imgCheckIn.Visible = false;
-            imgCheckInF.Visible = true;
+            func.OnOF(imgCheckInF, imgCheckIn);
         }
 
         private void btnCheckIn_MouseLeave(object sender, EventArgs e)
         {
-            imgCheckIn.Visible = true;
-            imgCheckInF.Visible = false;
+            func.OnOF(imgCheckIn, imgCheckInF);
         }
 
         private void btnCheckIn_MouseUp(object sender, MouseEventArgs e)
@@ -210,15 +198,12 @@ namespace IG
 
         private void btnHome_MouseEnter(object sender, EventArgs e)
         {
-            imgHome.Visible = false;
-            imgHomeF.Visible = true;
+            func.OnOF(imgHomeF, imgHome);
         }
 
         private void btnHome_MouseLeave(object sender, EventArgs e)
         {
-            
-            imgHome.Visible = true;
-            imgHomeF.Visible = false;
+            func.OnOF(imgHome, imgHomeF);
         }
 
         private void btnHome_MouseUp(object sender, MouseEventArgs e)
@@ -228,14 +213,13 @@ namespace IG
 
         private void btnCheckOut_MouseEnter(object sender, EventArgs e)
         {
-            imgCheckOut.Visible = false;
-            imgCheckOutF.Visible = true;
+            func.OnOF(imgCheckOutF, imgCheckOut);
         }
 
         private void btnCheckOut_MouseLeave(object sender, EventArgs e)
         {
-            imgCheckOut.Visible = true;
-            imgCheckOutF.Visible = false;
+
+            func.OnOF(imgCheckOut, imgCheckOutF);
         }
 
         private void btnCheckOut_MouseUp(object sender, MouseEventArgs e)
@@ -247,6 +231,7 @@ namespace IG
         {
             if (subMenuCad.Visible == false)
             {
+                
                 subMenuCad.Visible = true;
                 subMenuCad.BringToFront();
                 subMenuRel.Visible = false;
@@ -275,8 +260,7 @@ namespace IG
 
         private void btnMenu_MouseEnter(object sender, EventArgs e)
         {
-            btnMenu.Visible = false;
-            btnMenuF.Visible = true;
+            func.OnOF(btnMenuF, btnMenu);
         }
 
         private void btnMenuF_Click(object sender, EventArgs e)
@@ -286,8 +270,8 @@ namespace IG
 
         private void btnMenuF_MouseLeave(object sender, EventArgs e)
         {
-            btnMenu.Visible = true;
-            btnMenuF.Visible = false;
+
+            func.OnOF(btnMenu, btnMenuF);
         }
 
         private void btnCrianca_Click(object sender, EventArgs e)
@@ -411,14 +395,13 @@ namespace IG
 
         private void btnBack_MouseEnter(object sender, EventArgs e)
         {
-            btnBack.Visible = false;
-            btnBackF.Visible = true;
+            func.OnOF(btnBackF, btnBack);
         }
 
         private void btnBackF_MouseLeave(object sender, EventArgs e)
         {
-            btnBack.Visible = true;
-            btnBackF.Visible = false;
+
+            func.OnOF(btnBack, btnBackF);
         }
 
         private void btnBackF_Click(object sender, EventArgs e)
@@ -429,52 +412,46 @@ namespace IG
 
         private void btnCrianca_MouseEnter(object sender, EventArgs e)
         {
-            imgKid.Visible = false;
-            imgKidF.Visible = true;
+            func.OnOF(imgKidF, imgKid);
         }
 
         private void btnCrianca_MouseLeave(object sender, EventArgs e)
         {
-            imgKid.Visible = true; 
-            imgKidF.Visible = false;
+
+            func.OnOF(imgKid, imgKidF);
         }
 
         private void btnResponsavel_MouseEnter(object sender, EventArgs e)
         {
-            imgResp.Visible = false;
-            imgRespF.Visible = true;
+            func.OnOF(imgRespF, imgResp);
         }
 
         private void btnResponsavel_MouseLeave(object sender, EventArgs e)
         {
-            imgResp.Visible = true;
-            imgRespF.Visible = false;
+
+            func.OnOF(imgResp, imgRespF);
         }
 
         private void btnProfessor_MouseEnter(object sender, EventArgs e)
         {
-            imgProfessor.Visible = false;
-            imgProfessorF.Visible = true;
+            func.OnOF(imgProfessorF, imgProfessor);
         }
 
         private void btnProfessor_MouseLeave(object sender, EventArgs e)
         {
-            imgProfessor.Visible = true;
-            imgProfessorF.Visible = false;
+            func.OnOF(imgProfessor, imgProfessorF);
         }
 
         private void imgHome_MouseEnter(object sender, EventArgs e)
         {
             if (MenuBar.Width == 55)
             {
-                imgHomeF.Visible = true;
-                imgHome.Visible = false;
+                func.OnOF(imgHomeF, imgHome);
                 fundoHome.Visible = true;
             }
             else
             {
-                imgHomeF.Visible = true;
-                imgHome.Visible = false;
+                func.OnOF(imgHomeF, imgHome);
                 btnHome.BackColor = Color.FromArgb(93, 106, 137);
             }
         }
@@ -483,14 +460,12 @@ namespace IG
         {
             if (MenuBar.Width == 55)
             {
-                imgHomeF.Visible = false;
-                imgHome.Visible = true;
+                func.OnOF(imgHome, imgHomeF);
                 fundoHome.Visible = false;
             }
             else
             {
-                imgHomeF.Visible = false;
-                imgHome.Visible = true;
+                func.OnOF(imgHome, imgHomeF);
                 btnHome.BackColor = Color.FromArgb(40, 31, 30);
             }
         }
@@ -505,15 +480,13 @@ namespace IG
         {
             if (MenuBar.Width == 55)
             {
-                imgCadF.Visible = true;
-                imgCad.Visible = false;
+                func.OnOF(imgCadF, imgCad);
                 fundoCad.Visible = true;
                 btnCadastros.BackColor = Color.FromArgb(253, 100, 116);
             }
             else
             {
-                imgCadF.Visible = true;
-                imgCad.Visible = false;
+                func.OnOF(imgCadF, imgCad);
                 btnCadastros.BackColor = Color.FromArgb(253, 100, 116);
             }
         }
@@ -522,15 +495,13 @@ namespace IG
         {
             if (MenuBar.Width == 55)
             {
-                imgCadF.Visible = false;
-                imgCad.Visible = true;
+                func.OnOF(imgCad, imgCadF);
                 fundoCad.Visible = false;
                 btnCadastros.BackColor = Color.FromArgb(40, 31, 30);
             }
             else
             {
-                imgCadF.Visible = false;
-                imgCad.Visible = true;
+                func.OnOF(imgCad, imgCadF);
                 fundoCad.Visible = false;
                 btnCadastros.BackColor = Color.FromArgb(40, 31, 30);
             }
@@ -564,15 +535,13 @@ namespace IG
 
         private void imgKid_MouseEnter(object sender, EventArgs e)
         {
-            imgKid.Visible = false;
-            imgKidF.Visible = true;
+            func.OnOF(imgKidF, imgKid);
             btnCrianca.BackColor = Color.FromArgb(253, 100, 116);
         }
 
         private void imgKidF_MouseLeave(object sender, EventArgs e)
         {
-            imgKid.Visible = true;
-            imgKidF.Visible = false;
+            func.OnOF(imgKid, imgKidF);
             btnCrianca.BackColor = Color.FromArgb(74, 64, 64);
         }
 
@@ -588,15 +557,13 @@ namespace IG
         {
             if (MenuBar.Width == 55)
             {
-                imgRelF.Visible = true;
-                imgRel.Visible = false;
+                func.OnOF(imgRelF, imgRel);
                 fundoRel.Visible = true;
                 btnRelatorios.BackColor = Color.FromArgb(165, 191, 146);
             }
             else
             {
-                imgRelF.Visible = true;
-                imgRel.Visible = false;
+                func.OnOF(imgRelF, imgRel);
                 btnRelatorios.BackColor = Color.FromArgb(165, 191, 146);
             }
             
@@ -604,10 +571,9 @@ namespace IG
 
         private void imgRelF_MouseLeave(object sender, EventArgs e)
         {
-                imgRelF.Visible = false;
-                imgRel.Visible = true;
-                fundoRel.Visible = false;
-                btnRelatorios.BackColor = Color.FromArgb(40, 31, 30);
+            func.OnOF(imgRel, imgRelF);
+            fundoRel.Visible = false;
+            btnRelatorios.BackColor = Color.FromArgb(40, 31, 30);
         }
 
         private void imgRelF_Click(object sender, EventArgs e)
@@ -631,14 +597,12 @@ namespace IG
         {
             if (MenuBar.Width == 55)
             {
-                imgCheckIn.Visible = false;
-                imgCheckInF.Visible = true;
+                func.OnOF(imgCheckInF, imgCheckIn);
                 FundoCheckIn.Visible = true;
                 btnCheckIn.BackColor = Color.FromArgb(161, 193, 191);
             }
             else {
-                imgCheckIn.Visible = false;
-                imgCheckInF.Visible = true;
+                func.OnOF(imgCheckInF, imgCheckIn);
                 btnCheckIn.BackColor = Color.FromArgb(161, 193, 191);
             }
             
@@ -646,8 +610,7 @@ namespace IG
 
         private void imgCheckInF_MouseLeave(object sender, EventArgs e)
         {
-            imgCheckIn.Visible = true;
-            imgCheckInF.Visible = false;
+            func.OnOF(imgCheckIn, imgCheckInF);
             FundoCheckIn.Visible = false;
             btnCheckIn.BackColor = Color.FromArgb(40, 31, 30);
         }
@@ -661,16 +624,14 @@ namespace IG
         private void imgCheckOut_MouseEnter(object sender, EventArgs e)
         {
             FundoCheckOut.Visible = true;
-            imgCheckOut.Visible = false;
-            imgCheckOutF.Visible = true;
+            func.OnOF(imgCheckOutF, imgCheckOut);
             btnCheckOut.BackColor = Color.FromArgb(201, 154, 122);
         }
 
         private void imgCheckOutF_MouseLeave(object sender, EventArgs e)
         {
             FundoCheckOut.Visible = false;
-            imgCheckOut.Visible = true;
-            imgCheckOutF.Visible = false;
+            func.OnOF(imgCheckOut, imgCheckOutF);
             btnCheckOut.BackColor = Color.FromArgb(40, 31, 30);
         }
 
@@ -682,15 +643,13 @@ namespace IG
 
         private void imgResp_MouseEnter(object sender, EventArgs e)
         {
-            imgResp.Visible = false;
-            imgRespF.Visible = true;
+            func.OnOF(imgRespF, imgResp);
             btnResponsavel.BackColor = Color.FromArgb(253, 100, 116);
         }
 
         private void imgRespF_MouseLeave(object sender, EventArgs e)
         {
-            imgResp.Visible = true;
-            imgRespF.Visible = false;
+            func.OnOF(imgResp, imgRespF);
             btnResponsavel.BackColor = Color.FromArgb(60, 53, 53);
         }
 
@@ -711,15 +670,13 @@ namespace IG
 
         private void imgProfessor_MouseEnter(object sender, EventArgs e)
         {
-            imgProfessor.Visible = false;
-            imgProfessorF.Visible = true;
+            func.OnOF(imgProfessorF, imgProfessor);
             btnProfessor.BackColor = Color.FromArgb(253, 100, 116);
         }
 
         private void imgProfessorF_MouseLeave(object sender, EventArgs e)
         {
-            imgProfessor.Visible = true;
-            imgProfessorF.Visible = false;
+            func.OnOF(imgProfessor, imgProfessorF);
             btnProfessor.BackColor = Color.FromArgb(74, 64, 64);
         }
 
@@ -740,27 +697,24 @@ namespace IG
 
         private void btnSala_MouseEnter(object sender, EventArgs e)
         {
-            imgSala.Visible = false;
-            imgSalaF.Visible = true;
+            func.OnOF(imgSalaF, imgSala);
         }
 
         private void btnSala_MouseLeave(object sender, EventArgs e)
         {
-            imgSala.Visible = true;
-            imgSalaF.Visible = false;
+
+            func.OnOF(imgSala, imgSalaF);
         }
 
         private void imgSala_MouseEnter(object sender, EventArgs e)
         {
-            imgSala.Visible = false;
-            imgSalaF.Visible = true;
+            func.OnOF(imgSalaF, imgSala);
             btnSala.BackColor = Color.FromArgb(253, 100, 116);
         }
 
         private void imgSalaF_MouseLeave(object sender, EventArgs e)
         {
-            imgSala.Visible = true;
-            imgSalaF.Visible = false;
+            func.OnOF(imgSala, imgSalaF);
             btnSala.BackColor = Color.FromArgb(60, 53, 53);
         }
 
