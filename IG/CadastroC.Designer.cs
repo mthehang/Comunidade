@@ -41,14 +41,17 @@
             this.txtSala = new System.Windows.Forms.TextBox();
             this.lblSala = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.lbltxtIdade = new System.Windows.Forms.Label();
             this.lblIdade = new System.Windows.Forms.Label();
             this.txtRg = new System.Windows.Forms.MaskedTextBox();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.Fundo = new System.Windows.Forms.Panel();
-            this.ListBox = new System.Windows.Forms.ListBox();
+            this.ListView = new System.Windows.Forms.ListView();
+            this.Id = new System.Windows.Forms.ColumnHeader();
+            this.Nome = new System.Windows.Forms.ColumnHeader();
+            this.Cpf = new System.Windows.Forms.ColumnHeader();
+            this.Rg = new System.Windows.Forms.ColumnHeader();
             this.lblObs = new System.Windows.Forms.Label();
             this.panelbtnCriar = new System.Windows.Forms.Panel();
             this.lblCriar = new System.Windows.Forms.Label();
@@ -184,16 +187,6 @@
             this.label6.TabIndex = 33;
             this.label6.Text = "CPF:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(450, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(190, 25);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Cadastro de Crianças";
-            // 
             // lbltxtIdade
             // 
             this.lbltxtIdade.AutoSize = true;
@@ -251,12 +244,11 @@
             // 
             this.Fundo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Fundo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Fundo.Controls.Add(this.ListBox);
+            this.Fundo.Controls.Add(this.ListView);
             this.Fundo.Controls.Add(this.lblObs);
             this.Fundo.Controls.Add(this.panelbtnCriar);
             this.Fundo.Controls.Add(this.txtResponsavel);
             this.Fundo.Controls.Add(this.lblResponsavel);
-            this.Fundo.Controls.Add(this.label7);
             this.Fundo.Controls.Add(this.txtNome);
             this.Fundo.Controls.Add(this.label6);
             this.Fundo.Controls.Add(this.lblIdade);
@@ -274,25 +266,49 @@
             this.Fundo.Controls.Add(this.lblEndereco);
             this.Fundo.Controls.Add(this.lblSala);
             this.Fundo.Controls.Add(this.lblCep);
-            this.Fundo.Location = new System.Drawing.Point(0, 0);
+            this.Fundo.Location = new System.Drawing.Point(-110, -35);
             this.Fundo.Name = "Fundo";
-            this.Fundo.Size = new System.Drawing.Size(1080, 620);
+            this.Fundo.Size = new System.Drawing.Size(970, 655);
             this.Fundo.TabIndex = 48;
+            this.Fundo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Fundo_MouseClick);
             // 
-            // ListBox
+            // ListView
             // 
-            this.ListBox.BackColor = System.Drawing.Color.White;
-            this.ListBox.ColumnWidth = 85;
-            this.ListBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ListBox.FormattingEnabled = true;
-            this.ListBox.ItemHeight = 21;
-            this.ListBox.Location = new System.Drawing.Point(384, 495);
-            this.ListBox.MultiColumn = true;
-            this.ListBox.Name = "ListBox";
-            this.ListBox.Size = new System.Drawing.Size(296, 88);
-            this.ListBox.TabIndex = 52;
-            this.ListBox.Visible = false;
-            this.ListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
+            this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
+            this.Nome,
+            this.Cpf,
+            this.Rg});
+            this.ListView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListView.FullRowSelect = true;
+            this.ListView.Location = new System.Drawing.Point(384, 495);
+            this.ListView.Name = "ListView";
+            this.ListView.Size = new System.Drawing.Size(296, 131);
+            this.ListView.TabIndex = 57;
+            this.ListView.UseCompatibleStateImageBehavior = false;
+            this.ListView.View = System.Windows.Forms.View.Details;
+            this.ListView.Visible = false;
+            this.ListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListView_MouseClick);
+            // 
+            // Id
+            // 
+            this.Id.Text = "OC";
+            this.Id.Width = 50;
+            // 
+            // Nome
+            // 
+            this.Nome.Text = "Nome";
+            this.Nome.Width = 120;
+            // 
+            // Cpf
+            // 
+            this.Cpf.Text = "CPF";
+            this.Cpf.Width = 100;
+            // 
+            // Rg
+            // 
+            this.Rg.Text = "RG";
+            this.Rg.Width = 100;
             // 
             // lblObs
             // 
@@ -381,7 +397,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1080, 619);
+            this.ClientSize = new System.Drawing.Size(860, 619);
             this.Controls.Add(this.Fundo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CadastroC";
@@ -412,7 +428,6 @@
         private TextBox txtSala;
         private Label lblSala;
         private Label label6;
-        private Label label7;
         private Label lbltxtIdade;
         private Label lblIdade;
         private MaskedTextBox txtRg;
@@ -421,11 +436,15 @@
         private Panel Fundo;
         private Label lblResponsavel;
         private TextBox txtResponsavel;
-        private ListBox ListBox;
         private PictureBox btnCriar;
         private PictureBox btnCriarF;
         private Panel panelbtnCriar;
         private Label lblCriar;
         private Label lblObs;
+        private ListView ListView;
+        private ColumnHeader Id;
+        private ColumnHeader Nome;
+        private ColumnHeader Cpf;
+        private ColumnHeader Rg;
     }
 }

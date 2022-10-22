@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Janela1));
             this.Fundo = new System.Windows.Forms.Panel();
             this.panelBack = new System.Windows.Forms.Panel();
+            this.Title = new System.Windows.Forms.Label();
             this.btnBackF = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.subMenuRel = new System.Windows.Forms.Panel();
@@ -137,21 +138,32 @@
             this.Fundo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Fundo.Location = new System.Drawing.Point(220, 31);
             this.Fundo.Name = "Fundo";
-            this.Fundo.Size = new System.Drawing.Size(1080, 619);
+            this.Fundo.Size = new System.Drawing.Size(860, 619);
             this.Fundo.TabIndex = 3;
             this.Fundo.Visible = false;
             // 
             // panelBack
             // 
+            this.panelBack.Controls.Add(this.Title);
             this.panelBack.Controls.Add(this.btnBackF);
             this.panelBack.Controls.Add(this.btnBack);
             this.panelBack.Location = new System.Drawing.Point(0, 0);
-            this.panelBack.MaximumSize = new System.Drawing.Size(69, 36);
-            this.panelBack.MinimumSize = new System.Drawing.Size(69, 36);
+            this.panelBack.MaximumSize = new System.Drawing.Size(305, 46);
+            this.panelBack.MinimumSize = new System.Drawing.Size(305, 46);
             this.panelBack.Name = "panelBack";
-            this.panelBack.Size = new System.Drawing.Size(69, 36);
+            this.panelBack.Size = new System.Drawing.Size(305, 46);
             this.panelBack.TabIndex = 3;
             this.panelBack.Visible = false;
+            // 
+            // Title
+            // 
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Title.Location = new System.Drawing.Point(56, 11);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(48, 25);
+            this.Title.TabIndex = 4;
+            this.Title.Text = "Title";
             // 
             // btnBackF
             // 
@@ -898,7 +910,7 @@
             this.TopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopBar.Location = new System.Drawing.Point(0, 0);
             this.TopBar.Name = "TopBar";
-            this.TopBar.Size = new System.Drawing.Size(1300, 31);
+            this.TopBar.Size = new System.Drawing.Size(1080, 31);
             this.TopBar.TabIndex = 1;
             this.TopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopBar_MouseDown);
             // 
@@ -907,7 +919,7 @@
             this.btnCloseF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCloseF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCloseF.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseF.Image")));
-            this.btnCloseF.Location = new System.Drawing.Point(1272, 3);
+            this.btnCloseF.Location = new System.Drawing.Point(1052, 3);
             this.btnCloseF.Name = "btnCloseF";
             this.btnCloseF.Size = new System.Drawing.Size(25, 25);
             this.btnCloseF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -920,7 +932,7 @@
             this.btnResF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnResF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResF.Image = ((System.Drawing.Image)(resources.GetObject("btnResF.Image")));
-            this.btnResF.Location = new System.Drawing.Point(1241, 3);
+            this.btnResF.Location = new System.Drawing.Point(1021, 3);
             this.btnResF.Name = "btnResF";
             this.btnResF.Size = new System.Drawing.Size(25, 25);
             this.btnResF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -933,7 +945,7 @@
             this.btnMaxF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaxF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaxF.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxF.Image")));
-            this.btnMaxF.Location = new System.Drawing.Point(1241, 3);
+            this.btnMaxF.Location = new System.Drawing.Point(1021, 3);
             this.btnMaxF.Name = "btnMaxF";
             this.btnMaxF.Size = new System.Drawing.Size(25, 25);
             this.btnMaxF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -947,7 +959,7 @@
             this.btnMinF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinF.Image = ((System.Drawing.Image)(resources.GetObject("btnMinF.Image")));
-            this.btnMinF.Location = new System.Drawing.Point(1210, 3);
+            this.btnMinF.Location = new System.Drawing.Point(990, 3);
             this.btnMinF.Name = "btnMinF";
             this.btnMinF.Size = new System.Drawing.Size(25, 25);
             this.btnMinF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -960,7 +972,7 @@
             this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
-            this.btnMax.Location = new System.Drawing.Point(1241, 3);
+            this.btnMax.Location = new System.Drawing.Point(1021, 3);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(25, 25);
             this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -975,7 +987,7 @@
             this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.Location = new System.Drawing.Point(1210, 3);
+            this.btnMin.Location = new System.Drawing.Point(990, 3);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(25, 25);
             this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -990,7 +1002,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1272, 3);
+            this.btnClose.Location = new System.Drawing.Point(1052, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 25);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1005,7 +1017,7 @@
             this.btnRes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRes.Image = ((System.Drawing.Image)(resources.GetObject("btnRes.Image")));
-            this.btnRes.Location = new System.Drawing.Point(1241, 3);
+            this.btnRes.Location = new System.Drawing.Point(1021, 3);
             this.btnRes.Name = "btnRes";
             this.btnRes.Size = new System.Drawing.Size(25, 25);
             this.btnRes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1020,7 +1032,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.ClientSize = new System.Drawing.Size(1080, 650);
             this.Controls.Add(this.Fundo);
             this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.TopBar);
@@ -1030,6 +1042,7 @@
             this.Name = "Janela1";
             this.Fundo.ResumeLayout(false);
             this.panelBack.ResumeLayout(false);
+            this.panelBack.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBackF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.subMenuRel.ResumeLayout(false);
@@ -1134,5 +1147,6 @@
         private Panel fundoCad;
         private PictureBox imgSala;
         private PictureBox imgSalaF;
+        private Label Title;
     }
 }

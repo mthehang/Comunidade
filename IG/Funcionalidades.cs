@@ -11,15 +11,16 @@ namespace IG
     {
         public static void verificTxtC(TextBox[] args, MaskedTextBox[] arg, Button btn, TextBox txtNome,
             DateTimePicker Calendario, MaskedTextBox txtRg, MaskedTextBox txtCpf, MaskedTextBox txtCep,
-            TextBox txtEnd, TextBox txtSala, Label lblIdade, ListBox ListBox)
+            TextBox txtEnd, TextBox txtSala, Label lblIdade, ListView ListView, short rid)
 
         {
 
             if (txtNome.Text != null && txtRg.MaskCompleted == true
                 && txtCpf.MaskCompleted == true && txtCep.MaskCompleted == true && txtEnd.Text != null
-                && txtSala.Text != null && lblIdade.Text != "0" && ListBox.SelectedItems != null)
+                && txtSala.Text != null && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0)
             {
                 Criancas cr = new Criancas();
+                Responsaveis resp = new Responsaveis();
 
                 cr.Ativo = true;
                 cr.Nome = txtNome.Text;
@@ -29,35 +30,44 @@ namespace IG
                 cr.Cep = txtCep.Text;
                 cr.End = txtEnd.Text;
                 cr.Sala = txtSala.Text;
+                resp.Id = rid;
 
                 DAO banco = new DAO();
 
                 banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Sala);
+                banco.Relacao(resp.Id);
 
                 Limpar(args, arg, lblIdade, Calendario);
 
 
             }
-            else {
+            else
+            {
                 for (short i = 0; i < args.Length; i++)
                 {
-                    for (short ind = 0; ind < arg.Length; ind++) { 
+                    for (short ind = 0; ind < arg.Length; ind++) {
                         if (args[i].Text == "")
                         {
                             args[i].Focus();
                             MessageBox.Show("Preencha todos os dados.");
                             break;
                         }
-                        else if (arg[ind].MaskCompleted != true) {
+                        else if (arg[ind].MaskCompleted != true)
+                        {
 
                             arg[ind].Focus();
                             MessageBox.Show("Documento(s) inválido(s).");
                             break;
 
                         }
-                        else if (short.Parse(lblIdade.Text) <= 0) 
-                        { 
+                        else if (short.Parse(lblIdade.Text) <= 0)
+                        {
                             MessageBox.Show("Data de nascimento inválida.");
+                            break;
+                        }
+                        else if (rid == 0 )
+                        {
+                            MessageBox.Show("Responsável não cadastrado.");
                             break;
                         }
                     }
@@ -77,6 +87,13 @@ namespace IG
             }
             lblIdade.Text = "0";
             Calendario.Value = DateTime.Now;
+        }
+
+        public void OnOF(PictureBox A, PictureBox B) {
+            
+            A.Visible = true;
+            B.Visible = false;
+            
         }
     }
 }

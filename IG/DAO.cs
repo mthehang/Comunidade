@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Data;
 using System.Data.Common;
 using Npgsql;
@@ -47,8 +48,10 @@ namespace IG
             }
         }
 
-        public void ListBox(ListBox lb, string param){
+        
+        public void ListView(ListView ListView, string param){
             Responsaveis resp = new Responsaveis();
+            
             try
             {
                 using (var conn = new NpgsqlConnection(connString))
@@ -64,19 +67,25 @@ namespace IG
 
                         var reader = cmd.ExecuteReader();
 
-                        lb.Items.Clear();
+                        ListView.Items.Clear();
 
                         while (reader.Read())
                         {
                             resp.Id = short.Parse(reader["resp_id"].ToString()!);
-                            
                             resp.Nome = reader["resp_nome"].ToString()!.ToUpper();
                             resp.Rg = reader["resp_rg"].ToString()!.ToUpper();
                             resp.Cpf = reader["resp_cpf"].ToString()!.ToUpper();
-                            short x = 0;
-                            lb.Items.Insert(x, resp.Id + " / " + resp.Nome + " / CPF: " + resp.Cpf + " / RG: " + resp.Rg);
-                            x++;
-                            lb.Visible = true;
+
+                            ListViewItem item = new ListViewItem(resp.Id.ToString());
+                            var obj = new object[] {resp.Nome, resp.Cpf, resp.Rg};
+                            item.SubItems.Add(resp.Nome);
+                            item.SubItems.Add(resp.Cpf);
+                            item.SubItems.Add(resp.Rg);
+                            ListView.Items.Add(item);
+
+                            //ListView.Items.Add(resp.Nome + " / CPF: " + resp.Cpf + " / RG: " + resp.Rg);
+                            
+                            ListView.Visible = true;
                             
 
                         }
@@ -136,12 +145,14 @@ namespace IG
             return pessoas;
         }
 
-        public void Relacao(string param)
+        public void Relacao(short rid)
         {
-            var cid = 0;
             using (var conn = new NpgsqlConnection(connString))
             {
+                short cid = 0;
+
                 conn.Open();
+
                 using (var cmd = new NpgsqlCommand("SELECT (coalesce((MAX (crianca_id)), 0)+ 1) as crianca_id FROM crianca")) {
                     var reader = cmd.ExecuteReader();
                     
@@ -151,11 +162,11 @@ namespace IG
                     }
                     reader.Close();
                 }
-                if (cid != 0)
+                if (rid != 0)
                 {
                     using (var cmd = new NpgsqlCommand("insert into relacoes (relacoes_cid) values (@cid) where relacoes_rid = @param", conn))
                     {
-                        cmd.Parameters.AddWithValue("param", param);
+                        cmd.Parameters.AddWithValue("param", rid);
                         cmd.Parameters.AddWithValue("cid", cid);
                         cmd.ExecuteNonQuery();
                     }

@@ -8,6 +8,8 @@ namespace IG
 {
     public partial class Janela1 : Form
     {
+        Funcionalidades func = new Funcionalidades();
+
         public Janela1()
         {
             InitializeComponent();
@@ -65,16 +67,12 @@ namespace IG
 
         private void btnCloseF_MouseEnter(object sender, EventArgs e)
         {
-            btnClose.Visible = true;
-
-            btnCloseF.Visible = false;
+            func.OnOF(btnClose, btnCloseF);
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            btnClose.Visible = false;
-
-            btnCloseF.Visible = true;
+            func.OnOF(btnCloseF, btnClose);
         }
 
         private void btnMinF_MouseEnter(object sender, EventArgs e)
@@ -297,6 +295,8 @@ namespace IG
             openChildFormInPanel(new CadastroC());
             HideAll();
             panelBack.Visible = true;
+            Title.Text = "Cadastramento de Crianças";
+            Title.Visible = true;
             panelBack.BringToFront();
         }
 
@@ -405,7 +405,8 @@ namespace IG
         private void btnHome_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new TelaInicio());
-            
+            panelBack.Visible = false;
+
         }
 
         private void btnBack_MouseEnter(object sender, EventArgs e)
@@ -423,7 +424,7 @@ namespace IG
         private void btnBackF_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new TelaInicio());
-            btnBack.Visible = false;
+            panelBack.Visible = false;
         }
 
         private void btnCrianca_MouseEnter(object sender, EventArgs e)
@@ -497,6 +498,7 @@ namespace IG
         private void imgHomeF_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new TelaInicio());
+            panelBack.Visible = false;
         }
 
         private void imgCad_MouseEnter(object sender, EventArgs e)
