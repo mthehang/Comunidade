@@ -46,11 +46,11 @@
             this.imgResp = new System.Windows.Forms.PictureBox();
             this.imgKid = new System.Windows.Forms.PictureBox();
             this.btnResponsavel = new System.Windows.Forms.Button();
-            this.btnCrianca = new System.Windows.Forms.Button();
             this.btnSala = new System.Windows.Forms.Button();
             this.imgProfessorF = new System.Windows.Forms.PictureBox();
             this.imgProfessor = new System.Windows.Forms.PictureBox();
             this.btnProfessor = new System.Windows.Forms.Button();
+            this.btnCrianca = new System.Windows.Forms.Button();
             this.imgHomeF = new System.Windows.Forms.PictureBox();
             this.btnMenuF = new System.Windows.Forms.PictureBox();
             this.MenuBar = new System.Windows.Forms.Panel();
@@ -183,7 +183,7 @@
             this.subMenuRel.Controls.Add(this.btnRelCad);
             this.subMenuRel.Controls.Add(this.btnRelVisitantes);
             this.subMenuRel.Controls.Add(this.btnRelFreq);
-            this.subMenuRel.Location = new System.Drawing.Point(263, 189);
+            this.subMenuRel.Location = new System.Drawing.Point(6, 361);
             this.subMenuRel.Name = "subMenuRel";
             this.subMenuRel.Size = new System.Drawing.Size(203, 156);
             this.subMenuRel.TabIndex = 2;
@@ -234,7 +234,7 @@
             this.btnRelVisitantes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRelVisitantes.Location = new System.Drawing.Point(0, 117);
             this.btnRelVisitantes.Name = "btnRelVisitantes";
-            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 24);
+            this.btnRelVisitantes.Size = new System.Drawing.Size(203, 33);
             this.btnRelVisitantes.TabIndex = 24;
             this.btnRelVisitantes.Text = "Visitantes";
             this.btnRelVisitantes.UseVisualStyleBackColor = false;
@@ -267,11 +267,11 @@
             this.subMenuCad.Controls.Add(this.imgResp);
             this.subMenuCad.Controls.Add(this.imgKid);
             this.subMenuCad.Controls.Add(this.btnResponsavel);
-            this.subMenuCad.Controls.Add(this.btnCrianca);
             this.subMenuCad.Controls.Add(this.btnSala);
             this.subMenuCad.Controls.Add(this.imgProfessorF);
             this.subMenuCad.Controls.Add(this.imgProfessor);
             this.subMenuCad.Controls.Add(this.btnProfessor);
+            this.subMenuCad.Controls.Add(this.btnCrianca);
             this.subMenuCad.Location = new System.Drawing.Point(0, 189);
             this.subMenuCad.Name = "subMenuCad";
             this.subMenuCad.Size = new System.Drawing.Size(203, 156);
@@ -384,28 +384,6 @@
             this.btnResponsavel.MouseLeave += new System.EventHandler(this.btnResponsavel_MouseLeave);
             this.btnResponsavel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnResponsavel_MouseUp);
             // 
-            // btnCrianca
-            // 
-            this.btnCrianca.AutoSize = true;
-            this.btnCrianca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCrianca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCrianca.FlatAppearance.BorderSize = 0;
-            this.btnCrianca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
-            this.btnCrianca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrianca.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCrianca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrianca.Location = new System.Drawing.Point(0, 0);
-            this.btnCrianca.Name = "btnCrianca";
-            this.btnCrianca.Size = new System.Drawing.Size(203, 42);
-            this.btnCrianca.TabIndex = 21;
-            this.btnCrianca.Text = "Criança";
-            this.btnCrianca.UseVisualStyleBackColor = false;
-            this.btnCrianca.Click += new System.EventHandler(this.btnCrianca_Click);
-            this.btnCrianca.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCrianca_MouseDown);
-            this.btnCrianca.MouseEnter += new System.EventHandler(this.btnCrianca_MouseEnter);
-            this.btnCrianca.MouseLeave += new System.EventHandler(this.btnCrianca_MouseLeave);
-            this.btnCrianca.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCrianca_MouseUp);
-            // 
             // btnSala
             // 
             this.btnSala.AutoSize = true;
@@ -477,6 +455,28 @@
             this.btnProfessor.MouseEnter += new System.EventHandler(this.btnProfessor_MouseEnter);
             this.btnProfessor.MouseLeave += new System.EventHandler(this.btnProfessor_MouseLeave);
             this.btnProfessor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnProfessor_MouseUp);
+            // 
+            // btnCrianca
+            // 
+            this.btnCrianca.AutoSize = true;
+            this.btnCrianca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCrianca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCrianca.FlatAppearance.BorderSize = 0;
+            this.btnCrianca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(100)))), ((int)(((byte)(116)))));
+            this.btnCrianca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrianca.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCrianca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCrianca.Location = new System.Drawing.Point(0, 0);
+            this.btnCrianca.Name = "btnCrianca";
+            this.btnCrianca.Size = new System.Drawing.Size(203, 42);
+            this.btnCrianca.TabIndex = 21;
+            this.btnCrianca.Text = "Criança";
+            this.btnCrianca.UseVisualStyleBackColor = false;
+            this.btnCrianca.Click += new System.EventHandler(this.btnCrianca_Click);
+            this.btnCrianca.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCrianca_MouseDown);
+            this.btnCrianca.MouseEnter += new System.EventHandler(this.btnCrianca_MouseEnter);
+            this.btnCrianca.MouseLeave += new System.EventHandler(this.btnCrianca_MouseLeave);
+            this.btnCrianca.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCrianca_MouseUp);
             // 
             // imgHomeF
             // 
@@ -756,7 +756,8 @@
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(220, 33);
             this.btnCheckOut.TabIndex = 11;
-            this.btnCheckOut.Text = "Check-out";
+            this.btnCheckOut.Text = "                  Check-out";
+            this.btnCheckOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCheckOut.UseVisualStyleBackColor = false;
             this.btnCheckOut.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCheckOut_MouseDown);
             this.btnCheckOut.MouseEnter += new System.EventHandler(this.btnCheckOut_MouseEnter);

@@ -22,10 +22,8 @@ namespace IG
 
         private string sala;
         private string resp;
-        private short frequencia;
         public string Sala{ get { return sala; } set { sala = value; } }
         public string Resp { get { return resp; } set { resp = value; } }
-        public short Frequencia { get { return frequencia; } set { frequencia = value; } }
 
     }
 }

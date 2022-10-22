@@ -20,8 +20,7 @@ namespace IG
                     Port,
                     Password);
 
-        public void InserirValoresG(string nome, string nasc, string rg, string cpf, string cep, string end, string sala,
-            string nomer, string nascr, string rgr, string cpfr, string cepr, string endr, string parr, string celr)
+        public void InserirValoresC(string nome, string nasc, string rg, string cpf, string cep, string end, string sala)
         {
             
             using (var conn = new NpgsqlConnection(connString))
@@ -41,56 +40,58 @@ namespace IG
                     cmd.Parameters.AddWithValue("endc", end);
                     cmd.Parameters.AddWithValue("salac", sala);
                     cmd.ExecuteNonQuery();
-
-                    using (var command = new NpgsqlCommand("INSERT INTO responsavel (resp_nome, resp_datanasc, resp_rg, resp_cpf," +
-                        "resp_cep, resp_endereco, resp_parentesco, resp_cel) values (@nomer, @nascr, @rgr, @cpfr, @cepr, @endr, @parr, @celr)", conn))
-                    {
-                        command.Parameters.AddWithValue("nomer", nomer);
-                        command.Parameters.AddWithValue("nascr", nascr);
-                        command.Parameters.AddWithValue("rgr", rgr);
-                        command.Parameters.AddWithValue("cpfr", cpfr);
-                        command.Parameters.AddWithValue("cepr", cepr);
-                        command.Parameters.AddWithValue("endr", endr);
-                        command.Parameters.AddWithValue("parr", parr);
-                        command.Parameters.AddWithValue("celr", celr);
-                        command.ExecuteNonQuery();
-
-                        MessageBox.Show("Cadastro realizado com sucesso.");
-                        conn.Close();
-                    }
+                    MessageBox.Show("Cadastro realizado com sucesso.");
                 }
-            }
-        }
 
-        public void ListBox(ListBox lb, string param) {
-            using (var conn = new NpgsqlConnection(connString))
-            {
-                conn.Open();
-
-                using (var cmd = new NpgsqlCommand("SELECT resp_nome FROM responsavel where resp_nome = @param", conn)) {
-
-                    cmd.Parameters.AddWithValue("param", param);
-
-                    var reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        if (reader["resp_nome"].ToString() != null)
-                        {
-                            lb.Visible = true;
-                            lb.Items.Clear();
-                            lb.Items.Add(reader["resp_nome"].ToString());
-                        }
-                        else {
-                            lb.Visible = false;
-                        }
-                       
-                    }
-                    reader.Close();
-                }
                 conn.Close();
             }
         }
+
+        public void ListBox(ListBox lb, string param){
+            Responsaveis resp = new Responsaveis();
+            try
+            {
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    using (var cmd = new NpgsqlCommand("SELECT resp_id, resp_nome, resp_rg, resp_cpf FROM responsavel where resp_nome like @param or resp_rg like @rg or resp_cpf like @cpf order by resp_id", conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@param","%" + param + "%");
+                        cmd.Parameters.AddWithValue("@rg", param + "%");
+                        cmd.Parameters.AddWithValue("@cpf", param + "%");
+
+                        var reader = cmd.ExecuteReader();
+
+                        lb.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            resp.Id = short.Parse(reader["resp_id"].ToString()!);
+                            
+                            resp.Nome = reader["resp_nome"].ToString()!.ToUpper();
+                            resp.Rg = reader["resp_rg"].ToString()!.ToUpper();
+                            resp.Cpf = reader["resp_cpf"].ToString()!.ToUpper();
+
+                            //lb.Items.Add(resp.Id + " / " + resp.Nome + " / CPF: " + resp.Cpf + " / RG: " + resp.Rg);
+                            lb.Items.AddRange(new object[] { resp.Id });
+                            lb.Visible = true;
+                            
+
+                        }
+                        reader.Close();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+        
 
         public void ExTabela()
         {
@@ -113,7 +114,7 @@ namespace IG
                     while (reader.Read())
                     {
 
-                        cr.Id = int.Parse(reader["crianca_id"].ToString()!);
+                        cr.Id = short.Parse(reader["crianca_id"].ToString()!);
                         cr.Nome = reader["crianca_nome"].ToString()!;
                         cr.Datanasc = reader["crianca_datanasc"].ToString()!;
                         cr.Rg = reader["crianca_rg"].ToString()!;
@@ -141,21 +142,22 @@ namespace IG
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-                using (var command = new NpgsqlCommand("SELECT (coalesce((MAX (crianca_id)), 0)+ 1) as crianca_id FROM crianca")) {
-                    var reader = command.ExecuteReader();
+                using (var cmd = new NpgsqlCommand("SELECT (coalesce((MAX (crianca_id)), 0)+ 1) as crianca_id FROM crianca")) {
+                    var reader = cmd.ExecuteReader();
                     
                     while (reader.Read())
                     {
-                        cid = short.Parse(reader["resp_nome"].ToString());
+                        cid = short.Parse(reader["resp_nome"].ToString()!);
                     }
                     reader.Close();
-                    if (cid != 0) {
-                        using (var cmd = new NpgsqlCommand("insert into responsavel (resp_cid) values (@cid) where resp_nome = @param", conn))
-                        {
-                            cmd.Parameters.AddWithValue("param", param);
-                            cmd.Parameters.AddWithValue("cid", cid);
-                            cmd.ExecuteNonQuery();
-                        }
+                }
+                if (cid != 0)
+                {
+                    using (var cmd = new NpgsqlCommand("insert into relacoes (relacoes_cid) values (@cid) where relacoes_rid = @param", conn))
+                    {
+                        cmd.Parameters.AddWithValue("param", param);
+                        cmd.Parameters.AddWithValue("cid", cid);
+                        cmd.ExecuteNonQuery();
                     }
                 }
                 conn.Close();

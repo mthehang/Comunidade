@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,6 @@ namespace IG
             InitializeComponent();
 
             Calendario.Value = DateTime.Now;
-            Calendarior.Value = DateTime.Now;
 
         }
 
@@ -35,11 +35,11 @@ namespace IG
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            TextBox[] args = { txtNome, txtEnd, txtSala, txtNomer, txtEndr, txtParentesco};
-            MaskedTextBox[] arg = { txtRg, txtCpf, txtCep, txtRgr, txtCpfr, txtCepr, txtCelr};
+            TextBox[] args = { txtNome, txtEnd, txtSala, txtResponsavel };
+            MaskedTextBox[] arg = { txtRg, txtCpf, txtCep };
 
-            Funcionalidades.verificTxt(args, arg, btnSave, txtNome, txtNomer, Calendario, Calendarior, txtRg, txtRgr, txtCpf, txtCpfr, txtCep, txtCepr, txtEnd,
-                txtEndr, txtSala, txtParentesco, lblIdade, lblIdader, txtCelr);
+            Funcionalidades.verificTxtC(args, arg, btnSalvar, txtNome, Calendario, txtRg, txtCpf, txtCep, txtEnd,
+                txtSala, lblIdade, ListBox);
 
 
 
@@ -92,36 +92,6 @@ namespace IG
             }
         }
 
-        private void txtCpfr_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtCepr_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Calendarior_ValueChanged(object sender, EventArgs e)
-        {
-            {
-                lblIdader.Text = Convert.ToString((DateTime.Now - Calendarior.Value).Days / 30 / 12);
-            }
-        }
-
-        private void Calendarior_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txtRgr.Focus();
-            }
-        }
 
         private void txtRg_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -211,59 +181,11 @@ namespace IG
             }
         }
 
-        private void txtRgr_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txtCpfr.Focus();
-            }
-        }
-
-        private void txtNomer_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Calendarior.Focus();
-            }
-        }
-
-        private void txtCpfr_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txtCepr.Focus();
-            }
-        }
-
-        private void txtCepr_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txtEndr.Focus();
-            }
-        }
-
-        private void txtEndr_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txtParentesco.Focus();
-            }
-        }
-
-        private void txtParentesco_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txtCelr.Focus();
-            }
-        }
-
         private void txtCelr_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnSave.Focus();
+                btnSalvar.Focus();
             }
         }
 
@@ -271,7 +193,7 @@ namespace IG
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtNomer.Focus();
+                btnSalvar.Focus();
             }
         }
 
@@ -283,39 +205,26 @@ namespace IG
             }
         }
 
-        private void btnSearchF_MouseLeave(object sender, EventArgs e)
-        {
-            btnSearch.Visible = true;
-            btnSearchF.Visible = false;
-        }
-
-        private void btnSearch_MouseEnter(object sender, EventArgs e)
-        {
-            btnSearch.Visible = false;
-            btnSearchF.Visible = true;
-        }
-
         private void btnSearchF_Click(object sender, EventArgs e)
         {
-            dao.ListBox(ListBox, txtResponsavel.Text);
-        }
+            if (txtResponsavel.Text != "")
+            {
+                dao.ListBox(ListBox, txtResponsavel.Text.ToUpper());
+            }
 
-        private void txtResponsavel_KeyDown(object sender, KeyEventArgs e)
-        {
         }
-
         private void txtResponsavel_TextChanged(object sender, EventArgs e)
         {
-
-            if (txtResponsavel.Text == "")
-            {
-                ListBox.Visible = false;
-            }
+            
         }
 
         private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             cr.Resp = ListBox.GetItemText(ListBox.SelectedItem);
+            cr.Resp = cr.Resp.Split(' ').FirstOrDefault()!;
+            //dao.Relacao(cr.Resp);
+            MessageBox.Show(cr.Resp);
+            ListBox.Visible = false;
             
             
         }
@@ -330,6 +239,61 @@ namespace IG
         {
             btnCriar.Visible = true;
             btnCriarF.Visible = false;
+        }
+
+        private void btnCriarF_Click(object sender, EventArgs e)
+        {
+            CadastroCResp ccr = new CadastroCResp();
+            ccr.Show();
+        }
+
+        private void lblCriar_Click(object sender, EventArgs e)
+        {
+            CadastroCResp ccr = new CadastroCResp();
+            ccr.Show();
+        }
+
+        private void lblCriar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCriar.Visible = false;
+            btnCriarF.Visible = true;
+        }
+
+        private void lblCriar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCriar.Visible = true;
+            btnCriarF.Visible = false;
+        }
+
+        private void panelbtnCriar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCriar.Visible = false;
+            btnCriarF.Visible = true;
+        }
+
+        private void panelbtnCriar_Click(object sender, EventArgs e)
+        {
+            CadastroCResp ccr = new CadastroCResp();
+            ccr.Show();
+        }
+
+        private void panelbtnCriar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCriar.Visible = true;
+            btnCriarF.Visible = false;
+        }
+
+        private void txtResponsavel_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txtResponsavel.Text != "")
+            {
+
+                dao.ListBox(ListBox, txtResponsavel.Text.ToUpper());
+            }
+            else
+            {
+                ListBox.Visible = false;
+            }
         }
     }
 }

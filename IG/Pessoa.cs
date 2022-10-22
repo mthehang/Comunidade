@@ -9,7 +9,7 @@ namespace IG
     internal class Pessoa
     {
 
-        private int id;
+        private short id;
         private string nome;
         private string rg;
         private string cpf;
@@ -18,7 +18,7 @@ namespace IG
         private string end;
         private string cel;
         private Boolean ativo;
-        public int Id { get { return id; } set { id = value; } }
+        public short Id { get { return id; } set { id = value; } }
         public string Nome { get { return nome; } set { nome = value; } }
         public string Rg { get { return rg; } set { rg = value; } }
         public string Cpf { get { return cpf; } set { cpf = value; } }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IG
 {
-    public partial class Form1 : Form
+    public partial class CadastroCResp : Form
     {
-        public Form1()
+        public CadastroCResp()
         {
             InitializeComponent();
         }
