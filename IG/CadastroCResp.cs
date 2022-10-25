@@ -16,6 +16,7 @@ namespace IG
         public CadastroCResp()
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.TopMost = true;
         }
 
@@ -28,13 +29,23 @@ namespace IG
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-            if (this.WindowState != FormWindowState.Maximized)
-            {
-                btnMaxF.Visible = true;
-                btnMax.Visible = false;
-                btnRes.Visible = false;
-                btnResF.Visible = false;
-            }
+        }
+
+        private void btnCloseF_MouseEnter(object sender, EventArgs e)
+        {
+            Funcionalidades func = new Funcionalidades();
+            func.OnOF(btnClose, btnCloseF);
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            Funcionalidades func = new Funcionalidades();
+            func.OnOF(btnCloseF, btnClose);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

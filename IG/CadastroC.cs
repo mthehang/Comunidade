@@ -24,6 +24,7 @@ namespace IG
             InitializeComponent();
 
             Calendario.Value = DateTime.Now;
+            Calendario.MaxDate = DateTime.Now;
 
         }
 
@@ -40,9 +41,9 @@ namespace IG
         {
             TextBox[] args = { txtNome, txtEnd, txtSala, txtResponsavel };
             MaskedTextBox[] arg = { txtRg, txtCpf, txtCep };
-
+            
             Funcionalidades.verificTxtC(args, arg, btnSalvar, txtNome, Calendario, txtRg, txtCpf, txtCep, txtEnd,
-                txtSala, lblIdade, ListView, resp.Id);
+                txtSala, lblIdade, ListView, resp.Id, lblObrigatorio, txtEnd2);
 
         }
 
@@ -196,6 +197,7 @@ namespace IG
             }
             else
             {
+                resp.Id = 0;
                 ListView.Visible = false;
             }
         }
@@ -211,6 +213,33 @@ namespace IG
         {
             ListView.Visible = false;
             Fundo.Focus();
+        }
+
+        private void txtCep_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtCep_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCep.MaskCompleted == false)
+            {
+                txtEnd.Text = "";
+                txtEnd2.Visible = false;
+            }
+            else
+            {
+                Funcionalidades func = new Funcionalidades();
+                func.BuscarCep(txtCep, txtEnd, txtEnd2);
+            }
+        }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -39,8 +39,10 @@ namespace IG
             btnMaxF.Visible = true;
             btnRes.Visible = false;
             btnResF.Visible = false;
+            this.Size = new Size(1280, 720);
             this.WindowState = FormWindowState.Normal;
-            
+            this.CenterToScreen();
+
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

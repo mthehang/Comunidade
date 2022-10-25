@@ -30,8 +30,8 @@ namespace IG
                 conn.Open();
 
                 using (var cmd = new NpgsqlCommand("INSERT INTO crianca (crianca_nome, crianca_datanasc, crianca_rg, " +
-                    "crianca_cpf, crianca_cep, crianca_endereco, crianca_sala) values (@nomec, @nascc, @rgc, @cpfc, @cepc," +
-                    "@endc, @salac)", conn))
+                    "crianca_cpf, crianca_cep, crianca_endereco, crianca_ativo) values (@nomec, @nascc, @rgc, @cpfc, @cepc," +
+                    "@endc, @salac, @ativo)", conn))
                 {
                     cmd.Parameters.AddWithValue("nomec", nome);
                     cmd.Parameters.AddWithValue("rgc", rg);
@@ -39,7 +39,7 @@ namespace IG
                     cmd.Parameters.AddWithValue("nascc", nasc);
                     cmd.Parameters.AddWithValue("cepc", cep);
                     cmd.Parameters.AddWithValue("endc", end);
-                    cmd.Parameters.AddWithValue("salac", sala);
+                    cmd.Parameters.AddWithValue("ativo", true);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Cadastro realizado com sucesso.");
                 }
