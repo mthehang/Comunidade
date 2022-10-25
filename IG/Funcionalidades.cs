@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace IG
 {
@@ -13,14 +14,15 @@ namespace IG
     {
         public static void verificTxtC(TextBox[] args, MaskedTextBox[] arg, Button btn, TextBox txtNome,
             DateTimePicker Calendario, MaskedTextBox txtRg, MaskedTextBox txtCpf, MaskedTextBox txtCep,
-            TextBox txtEnd, TextBox txtSala, Label lblIdade, ListView ListView, short rid, Label lblObrigatorio, Label txtEnd2)
+            TextBox txtEnd, TextBox txtSala, Label lblIdade, ListView ListView, short rid, Label lblObrigatorio, Label txtEnd2, TextBox txtNumero, TextBox txtComplemento,
+            TextBox txtBairro, CheckBox btnEspecial, TextBox txtCuidados)
 
         {
 
             if (txtNome.Text != null && txtRg.MaskCompleted == true && txtCep.MaskCompleted == true && txtEnd.Text != null
-                && txtSala.Text != null && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 || txtNome.Text != null
+                && txtSala.Text != null && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 && txtNumero.Text != null || txtNome.Text != null
                 && txtCpf.MaskCompleted == true && txtCep.MaskCompleted == true && txtEnd.Text != null
-                && txtSala.Text != null && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0)
+                && txtSala.Text != null && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 && txtNumero.Text != null)
             {
                 DAO banco = new DAO();
                 Criancas cr = new Criancas();
@@ -31,18 +33,25 @@ namespace IG
                     bool x = IsCpf(txtCpf.Text);
                     if (x == true)
                     {
+                        cr.Especial = btnEspecial.Checked;
                         cr.Ativo = true;
                         cr.Nome = txtNome.Text;
                         cr.Datanasc = Calendario.Text;
                         cr.Rg = txtRg.Text;
                         cr.Cpf = txtCpf.Text;
                         cr.Cep = txtCep.Text;
-                        cr.End = txtEnd.Text;
+                        cr.End = txtEnd.Text+", "+txtNumero.Text+" - "+txtComplemento.Text+" - "+txtBairro.Text;
                         cr.Sala = txtSala.Text;
                         resp.Id = rid;
-                        //banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Sala);
-                        //banco.Relacao(resp.Id);
+                        banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Sala);
+                        banco.Relacao(resp.Id);
 
+                        if (cr.Especial == true) {
+                            banco.Especial(txtCuidados.Text);
+                        }
+                        btnEspecial.Checked = false;
+                        txtCuidados.Text = null;
+                        txtCuidados.Visible = false;
                         Limpar(args, arg, lblIdade, Calendario, lblObrigatorio, txtEnd2);
                     }
                     else
@@ -170,16 +179,15 @@ namespace IG
             return cpf.EndsWith(digito);
         }
 
-
-        public async Task BuscarCep(MaskedTextBox Cep, TextBox txtEnd, Label txtEnd2) {
+        public async Task BuscarCep(MaskedTextBox Cep, TextBox txtEnd, Label txtEnd2, TextBox txtBairro) {
             
             Cep.Text.Replace(".", "").Replace("-", "");
             try 
             {
                 var cepBuscar = RestService.For<ICepApiService>("https://viacep.com.br/");
                 var endereco = await cepBuscar.GetAddressAsync(Cep.Text);
-                txtEnd.Text = endereco.Logradouro+", ";
-                txtEnd.SelectionStart = txtEnd.Text.Length;
+                txtEnd.Text = endereco.Logradouro;
+                txtBairro.Text = endereco.Bairro;
                 txtEnd2.Text = $"- {endereco.Localidade} - {endereco.Uf}";
                 txtEnd2.Visible = true;
             
@@ -188,6 +196,12 @@ namespace IG
             {
                 MessageBox.Show("Falha ao buscar endereço.");
             }
+        }
+
+        public void BuscarEnd(string link) {
+
+            Process.Start("explorer", link); 
+            
         }
     }
 }

@@ -55,16 +55,30 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.panelBtnBuscar = new System.Windows.Forms.Panel();
+            this.labelend = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.PictureBox();
+            this.btnBuscarF = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.lblNumero = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.txtEnd2 = new System.Windows.Forms.Label();
             this.TopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCloseF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            this.panelBtnBuscar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscarF)).BeginInit();
             this.SuspendLayout();
             // 
             // Calendarior
             // 
             this.Calendarior.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Calendarior.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Calendarior.Location = new System.Drawing.Point(281, 189);
+            this.Calendarior.Location = new System.Drawing.Point(132, 188);
             this.Calendarior.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.Calendarior.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.Calendarior.Name = "Calendarior";
@@ -75,7 +89,7 @@
             // txtNomer
             // 
             this.txtNomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNomer.Location = new System.Drawing.Point(281, 112);
+            this.txtNomer.Location = new System.Drawing.Point(132, 111);
             this.txtNomer.Name = "txtNomer";
             this.txtNomer.Size = new System.Drawing.Size(325, 29);
             this.txtNomer.TabIndex = 50;
@@ -83,7 +97,7 @@
             // txtCepr
             // 
             this.txtCepr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCepr.Location = new System.Drawing.Point(281, 341);
+            this.txtCepr.Location = new System.Drawing.Point(132, 340);
             this.txtCepr.Mask = "00000-000";
             this.txtCepr.Name = "txtCepr";
             this.txtCepr.Size = new System.Drawing.Size(115, 29);
@@ -92,7 +106,7 @@
             // txtRgr
             // 
             this.txtRgr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtRgr.Location = new System.Drawing.Point(281, 264);
+            this.txtRgr.Location = new System.Drawing.Point(132, 263);
             this.txtRgr.Mask = "00,000,000-0";
             this.txtRgr.Name = "txtRgr";
             this.txtRgr.Size = new System.Drawing.Size(115, 29);
@@ -104,7 +118,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(281, 240);
+            this.label3.Location = new System.Drawing.Point(132, 239);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 21);
             this.label3.TabIndex = 51;
@@ -116,7 +130,7 @@
             this.lblIdader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblIdader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblIdader.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblIdader.Location = new System.Drawing.Point(487, 186);
+            this.lblIdader.Location = new System.Drawing.Point(338, 185);
             this.lblIdader.Name = "lblIdader";
             this.lblIdader.Size = new System.Drawing.Size(19, 21);
             this.lblIdader.TabIndex = 61;
@@ -125,7 +139,7 @@
             // txtEndr
             // 
             this.txtEndr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndr.Location = new System.Drawing.Point(402, 341);
+            this.txtEndr.Location = new System.Drawing.Point(363, 340);
             this.txtEndr.Name = "txtEndr";
             this.txtEndr.Size = new System.Drawing.Size(200, 29);
             this.txtEndr.TabIndex = 55;
@@ -136,7 +150,7 @@
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(487, 165);
+            this.label9.Location = new System.Drawing.Point(338, 164);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 21);
             this.label9.TabIndex = 60;
@@ -148,7 +162,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(280, 165);
+            this.label4.Location = new System.Drawing.Point(131, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(150, 21);
             this.label4.TabIndex = 49;
@@ -157,7 +171,7 @@
             // txtParentesco
             // 
             this.txtParentesco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtParentesco.Location = new System.Drawing.Point(280, 418);
+            this.txtParentesco.Location = new System.Drawing.Point(463, 111);
             this.txtParentesco.Name = "txtParentesco";
             this.txtParentesco.Size = new System.Drawing.Size(150, 29);
             this.txtParentesco.TabIndex = 58;
@@ -168,7 +182,7 @@
             this.lblcpfr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblcpfr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblcpfr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblcpfr.Location = new System.Drawing.Point(402, 240);
+            this.lblcpfr.Location = new System.Drawing.Point(253, 239);
             this.lblcpfr.Name = "lblcpfr";
             this.lblcpfr.Size = new System.Drawing.Size(40, 21);
             this.lblcpfr.TabIndex = 56;
@@ -192,7 +206,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(281, 317);
+            this.label2.Location = new System.Drawing.Point(132, 316);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 21);
             this.label2.TabIndex = 53;
@@ -203,7 +217,7 @@
             this.lblCel.AutoSize = true;
             this.lblCel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblCel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCel.Location = new System.Drawing.Point(444, 394);
+            this.lblCel.Location = new System.Drawing.Point(463, 164);
             this.lblCel.Name = "lblCel";
             this.lblCel.Size = new System.Drawing.Size(62, 21);
             this.lblCel.TabIndex = 62;
@@ -212,7 +226,7 @@
             // txtCelr
             // 
             this.txtCelr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCelr.Location = new System.Drawing.Point(444, 418);
+            this.txtCelr.Location = new System.Drawing.Point(463, 188);
             this.txtCelr.Mask = "(99) 00000-0000";
             this.txtCelr.Name = "txtCelr";
             this.txtCelr.Size = new System.Drawing.Size(115, 29);
@@ -224,7 +238,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(402, 317);
+            this.label1.Location = new System.Drawing.Point(363, 316);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 21);
             this.label1.TabIndex = 54;
@@ -236,7 +250,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(281, 88);
+            this.label5.Location = new System.Drawing.Point(132, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 21);
             this.label5.TabIndex = 48;
@@ -245,7 +259,7 @@
             // txtCpfr
             // 
             this.txtCpfr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCpfr.Location = new System.Drawing.Point(402, 264);
+            this.txtCpfr.Location = new System.Drawing.Point(253, 263);
             this.txtCpfr.Mask = "000,000,000-00";
             this.txtCpfr.Name = "txtCpfr";
             this.txtCpfr.Size = new System.Drawing.Size(115, 29);
@@ -257,7 +271,7 @@
             this.lblparentesco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblparentesco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblparentesco.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblparentesco.Location = new System.Drawing.Point(280, 394);
+            this.lblparentesco.Location = new System.Drawing.Point(463, 87);
             this.lblparentesco.Name = "lblparentesco";
             this.lblparentesco.Size = new System.Drawing.Size(88, 21);
             this.lblparentesco.TabIndex = 57;
@@ -330,12 +344,121 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(402, 491);
+            this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSalvar.Location = new System.Drawing.Point(420, 485);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 71;
+            this.btnSalvar.Size = new System.Drawing.Size(105, 33);
+            this.btnSalvar.TabIndex = 72;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // panelBtnBuscar
+            // 
+            this.panelBtnBuscar.BackColor = System.Drawing.Color.Silver;
+            this.panelBtnBuscar.Controls.Add(this.labelend);
+            this.panelBtnBuscar.Controls.Add(this.btnBuscar);
+            this.panelBtnBuscar.Controls.Add(this.btnBuscarF);
+            this.panelBtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelBtnBuscar.Location = new System.Drawing.Point(253, 340);
+            this.panelBtnBuscar.Name = "panelBtnBuscar";
+            this.panelBtnBuscar.Size = new System.Drawing.Size(104, 29);
+            this.panelBtnBuscar.TabIndex = 73;
+            // 
+            // labelend
+            // 
+            this.labelend.AutoSize = true;
+            this.labelend.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelend.Location = new System.Drawing.Point(30, 3);
+            this.labelend.Name = "labelend";
+            this.labelend.Size = new System.Drawing.Size(71, 21);
+            this.labelend.TabIndex = 69;
+            this.labelend.Text = "Localizar";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(0, 0);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(29, 29);
+            this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBuscar.TabIndex = 67;
+            this.btnBuscar.TabStop = false;
+            // 
+            // btnBuscarF
+            // 
+            this.btnBuscarF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarF.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarF.Image")));
+            this.btnBuscarF.Location = new System.Drawing.Point(0, 0);
+            this.btnBuscarF.Name = "btnBuscarF";
+            this.btnBuscarF.Size = new System.Drawing.Size(29, 29);
+            this.btnBuscarF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBuscarF.TabIndex = 66;
+            this.btnBuscarF.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(133, 397);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 21);
+            this.label6.TabIndex = 82;
+            this.label6.Text = "Bairro:";
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBairro.Location = new System.Drawing.Point(132, 421);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(165, 29);
+            this.txtBairro.TabIndex = 81;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(646, 316);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 21);
+            this.label7.TabIndex = 80;
+            this.label7.Text = "Complemento:";
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtComplemento.Location = new System.Drawing.Point(646, 340);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(126, 29);
+            this.txtComplemento.TabIndex = 79;
+            // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNumero.Location = new System.Drawing.Point(569, 316);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(71, 21);
+            this.lblNumero.TabIndex = 78;
+            this.lblNumero.Text = "Número:";
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNumero.Location = new System.Drawing.Point(569, 340);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(71, 29);
+            this.txtNumero.TabIndex = 77;
+            // 
+            // txtEnd2
+            // 
+            this.txtEnd2.AutoSize = true;
+            this.txtEnd2.Location = new System.Drawing.Point(303, 429);
+            this.txtEnd2.Name = "txtEnd2";
+            this.txtEnd2.Size = new System.Drawing.Size(12, 15);
+            this.txtEnd2.TabIndex = 76;
+            this.txtEnd2.Text = "-";
+            this.txtEnd2.Visible = false;
             // 
             // CadastroCResp
             // 
@@ -343,6 +466,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(915, 600);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtBairro);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtComplemento);
+            this.Controls.Add(this.lblNumero);
+            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.txtEnd2);
+            this.Controls.Add(this.panelBtnBuscar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -372,6 +503,10 @@
             this.TopBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCloseF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            this.panelBtnBuscar.ResumeLayout(false);
+            this.panelBtnBuscar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscarF)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,5 +540,16 @@
         private Panel panel2;
         private Panel panel3;
         private Button btnSalvar;
+        private Panel panelBtnBuscar;
+        private Label labelend;
+        private PictureBox btnBuscar;
+        private PictureBox btnBuscarF;
+        private Label label6;
+        private TextBox txtBairro;
+        private Label label7;
+        private TextBox txtComplemento;
+        private Label lblNumero;
+        private TextBox txtNumero;
+        private Label txtEnd2;
     }
 }

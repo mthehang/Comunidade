@@ -39,11 +39,11 @@ namespace IG
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            TextBox[] args = { txtNome, txtEnd, txtSala, txtResponsavel };
+            TextBox[] args = { txtNome, txtEnd, txtSala, txtResponsavel, txtNumero};
             MaskedTextBox[] arg = { txtRg, txtCpf, txtCep };
             
             Funcionalidades.verificTxtC(args, arg, btnSalvar, txtNome, Calendario, txtRg, txtCpf, txtCep, txtEnd,
-                txtSala, lblIdade, ListView, resp.Id, lblObrigatorio, txtEnd2);
+                txtSala, lblIdade, ListView, resp.Id, lblObrigatorio, txtEnd2, txtNumero, txtComplemento, txtBairro, btnEspecial, txtCuidados);
 
         }
 
@@ -98,7 +98,18 @@ namespace IG
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtEnd.Focus();
+                if (txtCep.MaskCompleted == false)
+                {
+                    txtEnd.Text = "";
+                    txtEnd2.Visible = false;
+                    MessageBox.Show("CEP inválido.");
+                }
+                else
+                {
+                    Funcionalidades func = new Funcionalidades();
+                    func.BuscarCep(txtCep, txtEnd, txtEnd2, txtBairro);
+                    txtNumero.Focus();
+                }
             }
         }
 
@@ -215,31 +226,151 @@ namespace IG
             Fundo.Focus();
         }
 
-        private void txtCep_Leave(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtCep_TextChanged(object sender, EventArgs e)
-        {
-            if (txtCep.MaskCompleted == false)
-            {
-                txtEnd.Text = "";
-                txtEnd2.Visible = false;
-            }
-            else
-            {
-                Funcionalidades func = new Funcionalidades();
-                func.BuscarCep(txtCep, txtEnd, txtEnd2);
-            }
-        }
-
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnBuscarF_Click(object sender, EventArgs e)
+        {
+            if (txtCep.MaskCompleted == false)
+            {
+                txtEnd.Text = "";
+                txtEnd2.Visible = false;
+                MessageBox.Show("CEP inválido.");
+            }
+            else
+            {
+                Funcionalidades func = new Funcionalidades();
+                func.BuscarCep(txtCep, txtEnd, txtEnd2, txtBairro);
+                txtNumero.Focus();
+            }
+        }
+
+        private void btnBuscar_MouseEnter(object sender, EventArgs e)
+        {
+            Funcionalidades func = new Funcionalidades();
+            func.OnOF(btnBuscarF, btnBuscar);
+            panelBtnBuscar.BackColor = Color.FromArgb(211, 211, 211);
+        }
+
+        private void btnBuscarF_MouseLeave(object sender, EventArgs e)
+        {
+            Funcionalidades func = new Funcionalidades();
+            func.OnOF(btnBuscar, btnBuscarF);
+            panelBtnBuscar.BackColor = Color.FromArgb(192, 192, 192);
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            Funcionalidades func = new Funcionalidades();
+            func.OnOF(btnBuscarF, btnBuscar);
+            panelBtnBuscar.BackColor = Color.FromArgb(211, 211, 211);
+        }
+
+        private void panel1_MouseLeave(object sender, EventArgs e)
+        {
+            Funcionalidades func = new Funcionalidades();
+            func.OnOF(btnBuscar, btnBuscarF);
+            panelBtnBuscar.BackColor = Color.FromArgb(192, 192, 192);
+        }
+
+        private void labelend_Click(object sender, EventArgs e)
+        {
+            if (txtCep.MaskCompleted == false)
+            {
+                txtEnd.Text = "";
+                txtEnd2.Visible = false;
+                MessageBox.Show("CEP inválido.");
+            }
+            else
+            {
+                Funcionalidades func = new Funcionalidades();
+                func.BuscarCep(txtCep, txtEnd, txtEnd2, txtBairro);
+                txtNumero.Focus();
+            }
+        }
+
+        private void labelend_MouseEnter(object sender, EventArgs e)
+        {
+            Funcionalidades func = new Funcionalidades();
+            func.OnOF(btnBuscarF, btnBuscar);
+            panelBtnBuscar.BackColor = Color.FromArgb(211, 211, 211);
+        }
+
+        private void labelend_MouseLeave(object sender, EventArgs e)
+        {
+            Funcionalidades func = new Funcionalidades();
+            func.OnOF(btnBuscar, btnBuscarF);
+            panelBtnBuscar.BackColor = Color.FromArgb(192, 192, 192);
+        }
+
+        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtCep.MaskCompleted == false)
+            {
+                txtEnd.Text = "";
+                txtEnd2.Visible = false;
+                MessageBox.Show("CEP inválido.");
+            }
+            else
+            {
+                Funcionalidades func = new Funcionalidades();
+                func.BuscarCep(txtCep, txtEnd, txtEnd2, txtBairro);
+                txtNumero.Focus();
+            }
+        }
+
+        private void txtCep_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCep.MaskCompleted != true)
+            {
+                txtEnd.Text = txtBairro.Text = txtEnd2.Text = null;
+            }
+        }
+
+        private void txtNumero_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtComplemento.Focus();
+            }
+        }
+
+        private void txtComplemento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtBairro.Focus();
+            }
+        }
+
+        private void txtBairro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSala.Focus();
+            }
+        }
+
+        private void btnEspecial_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btnEspecial.Checked == true)
+            {
+                lblCuidados.Visible = txtCuidados.Visible = true;
+            }
+            else {
+                lblCuidados.Visible = txtCuidados.Visible = false;
+            }
+        }
+
+        private void linkEnd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Funcionalidades func = new Funcionalidades();
+            func.BuscarEnd("https://buscacepinter.correios.com.br/app/endereco/index.php");
         }
     }
 }

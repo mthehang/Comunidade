@@ -22,6 +22,8 @@ namespace IG
 
         private string sala;
         private string resp;
+        private bool especial;
+        public bool Especial { get { return especial; } set { especial = value; } }
         public string Sala{ get { return sala; } set { sala = value; } }
         public string Resp { get { return resp; } set { resp = value; } }
 

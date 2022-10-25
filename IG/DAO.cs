@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Data;
 using System.Data.Common;
+using System.Security.Cryptography;
 using Npgsql;
 
 namespace IG
@@ -167,6 +168,34 @@ namespace IG
                     cmd.ExecuteNonQuery();
                 }
                 
+                conn.Close();
+            }
+        }
+
+        public void Especial(string Cuidados) {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                short cid = 0;
+
+                conn.Open();
+
+                using (var cmd = new NpgsqlCommand("SELECT (coalesce((MAX (crianca_id)), 0) +1) as crianca_id FROM crianca"))
+                {
+                    var reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        cid = short.Parse(reader["crianca_id"].ToString()!);
+                    }
+                    reader.Close();
+                }
+                using (var cmd = new NpgsqlCommand("insert into especial (especial_detalhe) values (@detalhe) where especial_cid = @param", conn))
+                {
+                    cmd.Parameters.AddWithValue("param", cid);
+                    cmd.Parameters.AddWithValue("detalhe", Cuidados);
+                    cmd.ExecuteNonQuery();
+                }
+
                 conn.Close();
             }
         }
