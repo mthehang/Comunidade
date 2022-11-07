@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroC));
             this.lblNome = new System.Windows.Forms.Label();
             this.lblNasc = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.Fundo = new System.Windows.Forms.Panel();
+            this.linkEnd = new System.Windows.Forms.LinkLabel();
             this.lblCuidados = new System.Windows.Forms.Label();
             this.txtCuidados = new System.Windows.Forms.TextBox();
             this.btnEspecial = new System.Windows.Forms.CheckBox();
@@ -70,18 +70,17 @@
             this.lblObs = new System.Windows.Forms.Label();
             this.panelbtnCriar = new System.Windows.Forms.Panel();
             this.lblCriar = new System.Windows.Forms.Label();
-            this.btnCriar = new System.Windows.Forms.PictureBox();
             this.btnCriarF = new System.Windows.Forms.PictureBox();
+            this.btnCriar = new System.Windows.Forms.PictureBox();
             this.txtResponsavel = new System.Windows.Forms.TextBox();
             this.lblResponsavel = new System.Windows.Forms.Label();
-            this.linkEnd = new System.Windows.Forms.LinkLabel();
             this.Fundo.SuspendLayout();
             this.panelBtnBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscarF)).BeginInit();
             this.panelbtnCriar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCriar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCriarF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCriar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNome
@@ -306,6 +305,17 @@
             this.Fundo.TabIndex = 48;
             this.Fundo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Fundo_MouseClick);
             // 
+            // linkEnd
+            // 
+            this.linkEnd.AutoSize = true;
+            this.linkEnd.Location = new System.Drawing.Point(791, 412);
+            this.linkEnd.Name = "linkEnd";
+            this.linkEnd.Size = new System.Drawing.Size(155, 15);
+            this.linkEnd.TabIndex = 73;
+            this.linkEnd.TabStop = true;
+            this.linkEnd.Text = "Localizar CEP pelo endereço";
+            this.linkEnd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkEnd_LinkClicked);
+            // 
             // lblCuidados
             // 
             this.lblCuidados.AutoSize = true;
@@ -370,7 +380,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Image = global::IG.Properties.Resources.search_b;
             this.btnBuscar.Location = new System.Drawing.Point(0, 0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(29, 29);
@@ -382,7 +392,7 @@
             // btnBuscarF
             // 
             this.btnBuscarF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarF.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarF.Image")));
+            this.btnBuscarF.Image = global::IG.Properties.Resources.search_click;
             this.btnBuscarF.Location = new System.Drawing.Point(0, 0);
             this.btnBuscarF.Name = "btnBuscarF";
             this.btnBuscarF.Size = new System.Drawing.Size(29, 29);
@@ -524,8 +534,8 @@
             // panelbtnCriar
             // 
             this.panelbtnCriar.Controls.Add(this.lblCriar);
-            this.panelbtnCriar.Controls.Add(this.btnCriar);
             this.panelbtnCriar.Controls.Add(this.btnCriarF);
+            this.panelbtnCriar.Controls.Add(this.btnCriar);
             this.panelbtnCriar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelbtnCriar.Location = new System.Drawing.Point(852, 616);
             this.panelbtnCriar.Name = "panelbtnCriar";
@@ -539,7 +549,7 @@
             // 
             this.lblCriar.AutoSize = true;
             this.lblCriar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCriar.Location = new System.Drawing.Point(40, 0);
+            this.lblCriar.Location = new System.Drawing.Point(38, 0);
             this.lblCriar.Name = "lblCriar";
             this.lblCriar.Size = new System.Drawing.Size(131, 21);
             this.lblCriar.TabIndex = 55;
@@ -548,21 +558,10 @@
             this.lblCriar.MouseEnter += new System.EventHandler(this.lblCriar_MouseEnter);
             this.lblCriar.MouseLeave += new System.EventHandler(this.lblCriar_MouseLeave);
             // 
-            // btnCriar
-            // 
-            this.btnCriar.Image = ((System.Drawing.Image)(resources.GetObject("btnCriar.Image")));
-            this.btnCriar.Location = new System.Drawing.Point(0, 0);
-            this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(34, 21);
-            this.btnCriar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCriar.TabIndex = 53;
-            this.btnCriar.TabStop = false;
-            this.btnCriar.MouseEnter += new System.EventHandler(this.btnCriar_MouseEnter);
-            // 
             // btnCriarF
             // 
-            this.btnCriarF.Image = ((System.Drawing.Image)(resources.GetObject("btnCriarF.Image")));
-            this.btnCriarF.Location = new System.Drawing.Point(0, 0);
+            this.btnCriarF.Image = global::IG.Properties.Resources.mais_b;
+            this.btnCriarF.Location = new System.Drawing.Point(3, 0);
             this.btnCriarF.Name = "btnCriarF";
             this.btnCriarF.Size = new System.Drawing.Size(34, 21);
             this.btnCriarF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -572,6 +571,17 @@
             this.btnCriarF.Click += new System.EventHandler(this.btnCriarF_Click);
             this.btnCriarF.MouseLeave += new System.EventHandler(this.btnCriarF_MouseLeave);
             // 
+            // btnCriar
+            // 
+            this.btnCriar.Image = global::IG.Properties.Resources.mais;
+            this.btnCriar.Location = new System.Drawing.Point(3, 0);
+            this.btnCriar.Name = "btnCriar";
+            this.btnCriar.Size = new System.Drawing.Size(34, 21);
+            this.btnCriar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCriar.TabIndex = 53;
+            this.btnCriar.TabStop = false;
+            this.btnCriar.MouseEnter += new System.EventHandler(this.btnCriar_MouseEnter);
+            // 
             // txtResponsavel
             // 
             this.txtResponsavel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -580,6 +590,7 @@
             this.txtResponsavel.Size = new System.Drawing.Size(296, 29);
             this.txtResponsavel.TabIndex = 49;
             this.txtResponsavel.TextChanged += new System.EventHandler(this.txtResponsavel_TextChanged_1);
+            this.txtResponsavel.Enter += new System.EventHandler(this.txtResponsavel_Enter);
             // 
             // lblResponsavel
             // 
@@ -587,20 +598,9 @@
             this.lblResponsavel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblResponsavel.Location = new System.Drawing.Point(546, 587);
             this.lblResponsavel.Name = "lblResponsavel";
-            this.lblResponsavel.Size = new System.Drawing.Size(165, 21);
+            this.lblResponsavel.Size = new System.Drawing.Size(100, 21);
             this.lblResponsavel.TabIndex = 48;
-            this.lblResponsavel.Text = "Nome do responsável:";
-            // 
-            // linkEnd
-            // 
-            this.linkEnd.AutoSize = true;
-            this.linkEnd.Location = new System.Drawing.Point(791, 412);
-            this.linkEnd.Name = "linkEnd";
-            this.linkEnd.Size = new System.Drawing.Size(155, 15);
-            this.linkEnd.TabIndex = 73;
-            this.linkEnd.TabStop = true;
-            this.linkEnd.Text = "Localizar CEP pelo endereço";
-            this.linkEnd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkEnd_LinkClicked);
+            this.lblResponsavel.Text = "Responsável:";
             // 
             // CadastroC
             // 
@@ -623,8 +623,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscarF)).EndInit();
             this.panelbtnCriar.ResumeLayout(false);
             this.panelbtnCriar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCriar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCriarF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCriar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -650,13 +650,11 @@
         private MaskedTextBox txtCep;
         private Panel Fundo;
         private Label lblResponsavel;
-        private TextBox txtResponsavel;
         private PictureBox btnCriar;
         private PictureBox btnCriarF;
         private Panel panelbtnCriar;
         private Label lblCriar;
         private Label lblObs;
-        private ListView ListView;
         private ColumnHeader Id;
         private ColumnHeader Nome;
         private ColumnHeader Cpf;
@@ -677,5 +675,7 @@
         private TextBox txtCuidados;
         private CheckBox btnEspecial;
         private LinkLabel linkEnd;
+        public TextBox txtResponsavel;
+        public ListView ListView;
     }
 }

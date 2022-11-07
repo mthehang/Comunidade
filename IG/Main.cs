@@ -704,7 +704,7 @@ namespace IG
 
         private void btnSala_MouseLeave(object sender, EventArgs e)
         {
-
+            btnSala.BackColor = Color.FromArgb(60, 53, 53);
             func.OnOF(imgSala, imgSalaF);
         }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IG
 {
-    public partial class Buscar : Form
+    public partial class CadastroResp : Form
     {
-        public Buscar()
+        public CadastroResp()
         {
             InitializeComponent();
         }

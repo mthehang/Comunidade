@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,10 +40,10 @@ namespace IG
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            TextBox[] args = { txtNome, txtEnd, txtSala, txtResponsavel, txtNumero};
+            TextBox[] args = { txtNome, txtEnd, txtSala, txtResponsavel, txtNumero, txtNumero, txtBairro, txtComplemento};
             MaskedTextBox[] arg = { txtRg, txtCpf, txtCep };
             
-            Funcionalidades.verificTxtC(args, arg, btnSalvar, txtNome, Calendario, txtRg, txtCpf, txtCep, txtEnd,
+            Funcionalidades.verificTxtC(args, arg, txtNome, Calendario, txtRg, txtCpf, txtCep, txtEnd,
                 txtSala, lblIdade, ListView, resp.Id, lblObrigatorio, txtEnd2, txtNumero, txtComplemento, txtBairro, btnEspecial, txtCuidados);
 
         }
@@ -154,7 +155,7 @@ namespace IG
             if (activeForm != null)
                 activeForm.Close();
 
-            activeForm = new CadastroCResp();
+            activeForm = new CadastroCResp(this);
             activeForm.Show();
 
         }
@@ -165,7 +166,7 @@ namespace IG
             if (activeForm != null)
                 activeForm.Close();
 
-            activeForm = new CadastroCResp();
+            activeForm = new CadastroCResp(this);
             activeForm.Show();
 
         }
@@ -190,7 +191,7 @@ namespace IG
             if (activeForm != null)
                 activeForm.Close();
 
-            activeForm = new CadastroCResp();
+            activeForm = new CadastroCResp(this);
             activeForm.Show();
         }
 
@@ -217,6 +218,7 @@ namespace IG
         {
             resp.Id = short.Parse(ListView.SelectedItems[0].SubItems[0].Text);
             txtResponsavel.Text = ListView.SelectedItems[0].SubItems[1].Text;
+            btnSalvar.Focus();
             ListView.Visible = false;
         }
 
@@ -371,6 +373,13 @@ namespace IG
         {
             Funcionalidades func = new Funcionalidades();
             func.BuscarEnd("https://buscacepinter.correios.com.br/app/endereco/index.php");
+        }
+
+        private void txtResponsavel_Enter(object sender, EventArgs e)
+        {
+            if (txtResponsavel.Text != "") {
+                ListView.Visible = true;
+            }
         }
     }
 }

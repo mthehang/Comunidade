@@ -22,7 +22,7 @@ namespace IG
                     Port,
                     Password);
 
-        public void InserirValoresC(string nome, string nasc, string rg, string cpf, string cep, string end, string sala)
+        public void InserirValoresC(string nome, string nasc, string rg, string cpf, string cep, string end, bool especial)
         {
             
             using (var conn = new NpgsqlConnection(connString))
@@ -31,16 +31,17 @@ namespace IG
                 conn.Open();
 
                 using (var cmd = new NpgsqlCommand("INSERT INTO crianca (crianca_nome, crianca_datanasc, crianca_rg, " +
-                    "crianca_cpf, crianca_cep, crianca_endereco, crianca_ativo) values (@nomec, @nascc, @rgc, @cpfc, @cepc," +
-                    "@endc, @salac, @ativo)", conn))
+                    "crianca_cpf, crianca_cep, crianca_endereco, crianca_ativo, crianca_especial) values (@nomec, @nascc, @rgc, @cpfc, @cepc," +
+                    "@endc, @ativo, @especial)", conn))
                 {
                     cmd.Parameters.AddWithValue("nomec", nome);
                     cmd.Parameters.AddWithValue("rgc", rg);
                     cmd.Parameters.AddWithValue("cpfc", cpf);
-                    cmd.Parameters.AddWithValue("nascc", nasc);
+                    cmd.Parameters.AddWithValue("nascc", Convert.ToDateTime(nasc));
                     cmd.Parameters.AddWithValue("cepc", cep);
                     cmd.Parameters.AddWithValue("endc", end);
                     cmd.Parameters.AddWithValue("ativo", true);
+                    cmd.Parameters.AddWithValue("especial", especial);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Cadastro realizado com sucesso.");
                 }
@@ -49,6 +50,31 @@ namespace IG
             }
         }
 
+        public void InserirValoresR(string nome, string nasc, string rg, string cpf, string cep, string end, string parent, string cel) 
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+
+                conn.Open();
+
+                using (var cmd = new NpgsqlCommand("INSERT INTO responsavel (resp_nome, resp_datanasc, resp_rg, " +
+                    "resp_cpf, resp_cep, resp_endereco, resp_cel) values (@nome, @nasc, @rg, @cpf, @cep," +
+                    "@end, @cel)", conn))
+                {
+                    cmd.Parameters.AddWithValue("nome", nome);
+                    cmd.Parameters.AddWithValue("rg", rg);
+                    cmd.Parameters.AddWithValue("cpf", cpf);
+                    cmd.Parameters.AddWithValue("nasc", Convert.ToDateTime(nasc));
+                    cmd.Parameters.AddWithValue("cep", cep);
+                    cmd.Parameters.AddWithValue("end", end);
+                    cmd.Parameters.AddWithValue("cel", cel);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Cadastro realizado com sucesso.");
+                }
+
+                conn.Close();
+            }
+        }
         
         public void ListView(ListView ListView, string param){
             Responsaveis resp = new Responsaveis();
@@ -145,38 +171,113 @@ namespace IG
 
         public void Relacao(short rid)
         {
-            using (var conn = new NpgsqlConnection(connString))
-            {
-                short cid = 0;
-
-                conn.Open();
-
-                using (var cmd = new NpgsqlCommand("SELECT (coalesce((MAX (crianca_id)), 0) +1) as crianca_id FROM crianca"))
+            Criancas crianca = new Criancas();
+            try {
+                using (var conn = new NpgsqlConnection(connString))
                 {
-                    var reader = cmd.ExecuteReader();
-                    
-                    while (reader.Read())
+
+                    conn.Open();
+
+                    using (var cmd = new NpgsqlCommand("SELECT (crianca_id) as crianca_id FROM crianca", conn))
                     {
-                        cid = short.Parse(reader["crianca_id"].ToString()!);
+                        var reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            crianca.Id = short.Parse(reader["crianca_id"].ToString()!);
+                        }
+                        reader.Close();
                     }
-                    reader.Close();
+                    using (var cmd = new NpgsqlCommand("insert into relacoes (cid) values (@cid) where rid = @param", conn))
+                    {
+                        cmd.Parameters.AddWithValue("param", rid);
+                        cmd.Parameters.AddWithValue("cid", crianca.Id);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conn.Close();
                 }
-                using (var cmd = new NpgsqlCommand("insert into relacoes (relacoes_cid) values (@cid) where relacoes_rid = @param", conn))
-                {
-                    cmd.Parameters.AddWithValue("param", rid);
-                    cmd.Parameters.AddWithValue("cid", cid);
-                    cmd.ExecuteNonQuery();
-                }
-                
-                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
-        public void Especial(string Cuidados) {
+        public void RelacaoR(Label ganb)
+        {
+            
+            try {
+                Responsaveis resp = new Responsaveis();
+                using (var conn = new NpgsqlConnection(connString))
+                {
+
+                    conn.Open();
+
+                    using (var cmd = new NpgsqlCommand("select resp_id from responsavel", conn))
+                    {
+                        
+                        var reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            resp.Id = short.Parse(reader["resp_id"].ToString()!);
+                        }
+                            reader.Close();
+
+                        Nome(resp.Id, ganb);
+
+                        using (var comd = new NpgsqlCommand("insert into relacoes(relacoes_rid) values (@rid)", conn))
+                        {
+                            comd.Parameters.AddWithValue("rid", resp.Id);
+                            comd.ExecuteNonQuery();
+                        }
+                    }
+                    
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void Nome(int id, Label ganb)
+        {
+            Responsaveis resp = new Responsaveis();
+            try
+            {
+                using (var conn = new NpgsqlConnection(connString))
+                {
+
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand("select resp_nome from responsavel where resp_id = @id", conn))
+                    {
+                        cmd.Parameters.AddWithValue("id", id);
+                        var reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            resp.Nome = (reader["resp_nome"].ToString()!);
+                        }
+                        ganb.Text = resp.Nome;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()!);
+            }
+        }
+        public void Especial(string Cuidados) 
+        {
+
             using (var conn = new NpgsqlConnection(connString))
             {
-                short cid = 0;
-
+                Criancas crianca = new Criancas();
+                crianca.Id = 0;
                 conn.Open();
 
                 using (var cmd = new NpgsqlCommand("SELECT (coalesce((MAX (crianca_id)), 0) +1) as crianca_id FROM crianca"))
@@ -185,13 +286,15 @@ namespace IG
 
                     while (reader.Read())
                     {
-                        cid = short.Parse(reader["crianca_id"].ToString()!);
+                        
+                        crianca.Id = short.Parse(reader["crianca_id"].ToString()!);
                     }
                     reader.Close();
                 }
-                using (var cmd = new NpgsqlCommand("insert into especial (especial_detalhe) values (@detalhe) where especial_cid = @param", conn))
+                using (var cmd = new NpgsqlCommand("insert into especial (especial_detalhe, especial_cide) values (@detalhe, @param)", conn))
                 {
-                    cmd.Parameters.AddWithValue("param", cid);
+                    
+                    cmd.Parameters.AddWithValue("param", crianca.Id);
                     cmd.Parameters.AddWithValue("detalhe", Cuidados);
                     cmd.ExecuteNonQuery();
                 }
@@ -199,5 +302,7 @@ namespace IG
                 conn.Close();
             }
         }
+
+    
     }
 }

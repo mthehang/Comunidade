@@ -1,6 +1,6 @@
 ﻿namespace IG
 {
-    partial class Buscar
+    partial class CadastroResp
     {
         /// <summary>
         /// Required designer variable.
