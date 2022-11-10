@@ -46,6 +46,8 @@
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.Fundo = new System.Windows.Forms.Panel();
+            this.txtParentesco = new System.Windows.Forms.TextBox();
+            this.lblParentesco = new System.Windows.Forms.Label();
             this.linkEnd = new System.Windows.Forms.LinkLabel();
             this.lblCuidados = new System.Windows.Forms.Label();
             this.txtCuidados = new System.Windows.Forms.TextBox();
@@ -140,7 +142,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSalvar.Location = new System.Drawing.Point(742, 697);
+            this.btnSalvar.Location = new System.Drawing.Point(741, 744);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(105, 33);
             this.btnSalvar.TabIndex = 7;
@@ -264,6 +266,8 @@
             // 
             this.Fundo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Fundo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Fundo.Controls.Add(this.txtParentesco);
+            this.Fundo.Controls.Add(this.lblParentesco);
             this.Fundo.Controls.Add(this.linkEnd);
             this.Fundo.Controls.Add(this.lblCuidados);
             this.Fundo.Controls.Add(this.txtCuidados);
@@ -304,6 +308,24 @@
             this.Fundo.Size = new System.Drawing.Size(1400, 854);
             this.Fundo.TabIndex = 48;
             this.Fundo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Fundo_MouseClick);
+            // 
+            // txtParentesco
+            // 
+            this.txtParentesco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtParentesco.Location = new System.Drawing.Point(853, 611);
+            this.txtParentesco.Name = "txtParentesco";
+            this.txtParentesco.Size = new System.Drawing.Size(139, 29);
+            this.txtParentesco.TabIndex = 75;
+            // 
+            // lblParentesco
+            // 
+            this.lblParentesco.AutoSize = true;
+            this.lblParentesco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblParentesco.Location = new System.Drawing.Point(853, 587);
+            this.lblParentesco.Name = "lblParentesco";
+            this.lblParentesco.Size = new System.Drawing.Size(92, 21);
+            this.lblParentesco.TabIndex = 74;
+            this.lblParentesco.Text = "Parentesco: ";
             // 
             // linkEnd
             // 
@@ -491,9 +513,9 @@
             this.Rg});
             this.ListView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ListView.FullRowSelect = true;
-            this.ListView.Location = new System.Drawing.Point(550, 638);
+            this.ListView.Location = new System.Drawing.Point(550, 636);
             this.ListView.Name = "ListView";
-            this.ListView.Size = new System.Drawing.Size(297, 160);
+            this.ListView.Size = new System.Drawing.Size(297, 149);
             this.ListView.TabIndex = 57;
             this.ListView.UseCompatibleStateImageBehavior = false;
             this.ListView.View = System.Windows.Forms.View.Details;
@@ -537,7 +559,7 @@
             this.panelbtnCriar.Controls.Add(this.btnCriarF);
             this.panelbtnCriar.Controls.Add(this.btnCriar);
             this.panelbtnCriar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelbtnCriar.Location = new System.Drawing.Point(852, 616);
+            this.panelbtnCriar.Location = new System.Drawing.Point(540, 673);
             this.panelbtnCriar.Name = "panelbtnCriar";
             this.panelbtnCriar.Size = new System.Drawing.Size(190, 24);
             this.panelbtnCriar.TabIndex = 55;
@@ -677,5 +699,7 @@
         private LinkLabel linkEnd;
         public TextBox txtResponsavel;
         public ListView ListView;
+        private TextBox txtParentesco;
+        private Label lblParentesco;
     }
 }

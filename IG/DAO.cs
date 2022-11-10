@@ -169,7 +169,7 @@ namespace IG
             return pessoas;
         }
 
-        public void Relacao(short rid)
+        public void Relacao(short rid, string pare)
         {
             Criancas crianca = new Criancas();
             try {
@@ -188,9 +188,10 @@ namespace IG
                         }
                         reader.Close();
                     }
-                    using (var cmd = new NpgsqlCommand("insert into relacoes (relacoes_cid) values (@cid) where relacoes_rid = @param", conn))
+                    using (var cmd = new NpgsqlCommand("INSERT INTO relacoes(relacoes_rid, relacoes_cid, relacoes_parentesco) values (@rid, @cid, @pare)", conn))
                     {
-                        cmd.Parameters.AddWithValue("param", rid);
+                        cmd.Parameters.AddWithValue("rid", rid);
+                        cmd.Parameters.AddWithValue("pare", pare.ToUpper());
                         cmd.Parameters.AddWithValue("cid", crianca.Id);
                         cmd.ExecuteNonQuery();
                     }
@@ -206,8 +207,9 @@ namespace IG
 
         public void RelacaoR(Label ganb)
         {
-            
-            try {
+
+            try
+            {
                 Responsaveis resp = new Responsaveis();
                 using (var conn = new NpgsqlConnection(connString))
                 {
@@ -216,7 +218,7 @@ namespace IG
 
                     using (var cmd = new NpgsqlCommand("select resp_id from responsavel", conn))
                     {
-                        
+
                         var reader = cmd.ExecuteReader();
 
                         while (reader.Read())
@@ -227,13 +229,8 @@ namespace IG
 
                         Nome(resp.Id, ganb);
 
-                        using (var comd = new NpgsqlCommand("insert into relacoes(relacoes_rid) values (@rid)", conn))
-                        {
-                            comd.Parameters.AddWithValue("rid", resp.Id);
-                            comd.ExecuteNonQuery();
-                        }
                     }
-                    
+
 
                     conn.Close();
                 }
@@ -277,25 +274,24 @@ namespace IG
             using (var conn = new NpgsqlConnection(connString))
             {
                 Criancas crianca = new Criancas();
-                crianca.Id = 0;
                 conn.Open();
 
-                using (var cmd = new NpgsqlCommand("SELECT (coalesce((MAX (crianca_id)), 0) +1) as crianca_id FROM crianca"))
+                using (var cmd = new NpgsqlCommand("SELECT crianca_id FROM crianca", conn))
                 {
                     var reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        
                         crianca.Id = short.Parse(reader["crianca_id"].ToString()!);
                     }
+
                     reader.Close();
                 }
-                using (var cmd = new NpgsqlCommand("insert into especial (especial_detalhe, especial_cide) values (@detalhe, @param)", conn))
+                using (var cmd = new NpgsqlCommand("insert into especial (especial_detalhe, especial_cid) values (@detalhe, @cid)", conn))
                 {
                     
-                    cmd.Parameters.AddWithValue("param", crianca.Id);
-                    cmd.Parameters.AddWithValue("detalhe", Cuidados);
+                    cmd.Parameters.AddWithValue("cid", crianca.Id);
+                    cmd.Parameters.AddWithValue("detalhe", Cuidados.ToUpper());
                     cmd.ExecuteNonQuery();
                 }
 

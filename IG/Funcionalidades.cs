@@ -16,14 +16,14 @@ namespace IG
         public static void verificTxtC(TextBox[] args, MaskedTextBox[] arg, TextBox txtNome,
             DateTimePicker Calendario, MaskedTextBox txtRg, MaskedTextBox txtCpf, MaskedTextBox txtCep,
             TextBox txtEnd, TextBox txtSala, Label lblIdade, ListView ListView, short rid, Label lblObrigatorio, Label txtEnd2, TextBox txtNumero, TextBox txtComplemento,
-            TextBox txtBairro, CheckBox btnEspecial, TextBox txtCuidados)
+            TextBox txtBairro, CheckBox btnEspecial, TextBox txtCuidados, TextBox txtParentesco)
 
         {
 
             if (txtNome.Text != null && txtRg.MaskCompleted == true && txtCep.MaskCompleted == true && txtEnd.Text != null
-                && txtSala.Text != null && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 && txtNumero.Text != null || txtNome.Text != null
+                && txtSala.Text != null && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 && txtNumero.Text != null && txtParentesco.Text != null || txtNome.Text != null
                 && txtCpf.MaskCompleted == true && txtCep.MaskCompleted == true && txtEnd.Text != null
-                && txtSala.Text != null && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 && txtNumero.Text != null)
+                && txtSala.Text != null && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 && txtNumero.Text != null && txtParentesco.Text != null)
             {
                 DAO banco = new DAO();
                 Criancas cr = new Criancas();
@@ -40,7 +40,15 @@ namespace IG
                             cr.Ativo = true;
                             cr.Nome = txtNome.Text.ToUpper();
                             cr.Datanasc = Calendario.Text;
-                            cr.Rg = txtRg.Text;
+                            if (txtRg.MaskCompleted == true)
+                            {
+                                cr.Rg = txtRg.Text;
+                            }
+                            else
+                            {
+                                cr.Rg = "";
+                            }
+                            resp.Parentesco = txtParentesco.Text;
                             cr.Cpf = txtCpf.Text;
                             cr.Cep = txtCep.Text;
                             if (txtComplemento.Text != "")
@@ -53,13 +61,16 @@ namespace IG
                             }
                             cr.Sala = txtSala.Text.ToUpper();
                             resp.Id = rid;
+
                             banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Especial);
+
                             if (cr.Especial == true)
                             {
-                                //banco.Especial(txtCuidados.Text.ToUpper());
+                                
+                                banco.Especial(txtCuidados.Text.ToUpper());
                             }
 
-                            banco.Relacao(resp.Id);
+                            banco.Relacao(resp.Id, resp.Parentesco);
 
                             btnEspecial.Checked = false;
                             txtCuidados.Text = null;
@@ -74,7 +85,16 @@ namespace IG
                             cr.Ativo = true;
                             cr.Nome = txtNome.Text.ToUpper();
                             cr.Datanasc = Calendario.Text;
-                            cr.Rg = txtRg.Text;
+
+                            if (txtRg.MaskCompleted == true)
+                            {
+                                cr.Rg = txtRg.Text;
+                            }
+                            else
+                            {
+                                cr.Rg = "";
+                            }
+                            resp.Parentesco = txtParentesco.Text;
                             cr.Cpf = txtCpf.Text;
                             cr.Cep = txtCep.Text;
                             if (txtComplemento.Text != "")
@@ -89,11 +109,14 @@ namespace IG
                             cr.Sala = txtSala.Text;
                             resp.Id = rid;
                             banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Especial);
-                            banco.Relacao(resp.Id);
+                            banco.Relacao(resp.Id, resp.Parentesco);
+
                             if (cr.Especial == true)
                             {
-                                // banco.Especial(txtCuidados.Text);
+                                
+                                banco.Especial(txtCuidados.Text);
                             }
+
                             btnEspecial.Checked = false;
                             txtCuidados.Text = null;
                             txtCuidados.Visible = false;
@@ -115,7 +138,7 @@ namespace IG
                         cr.Nome = txtNome.Text.ToUpper();
                         cr.Datanasc = Calendario.Text;
                         cr.Rg = txtRg.Text;
-                        cr.Cpf = txtCpf.Text;
+                        cr.Cpf = "";
                         cr.Cep = txtCep.Text;
                         if (txtComplemento.Text != "")
                         {
@@ -125,15 +148,18 @@ namespace IG
                         {
                             cr.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
                         }
+                        resp.Parentesco = txtParentesco.Text;
                         cr.Sala = txtSala.Text.ToUpper();
                         resp.Id = rid;
                         banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Especial);
+
                         if (cr.Especial == true)
                         {
-                            //banco.Especial(txtCuidados.Text.ToUpper());
+                            
+                            banco.Especial(txtCuidados.Text.ToUpper());
                         }
 
-                        banco.Relacao(resp.Id);
+                        banco.Relacao(resp.Id, resp.Parentesco);
 
                         btnEspecial.Checked = false;
                         txtCuidados.Text = null;
@@ -149,7 +175,7 @@ namespace IG
                         cr.Nome = txtNome.Text.ToUpper();
                         cr.Datanasc = Calendario.Text;
                         cr.Rg = txtRg.Text;
-                        cr.Cpf = txtCpf.Text;
+                        cr.Cpf = "";
                         cr.Cep = txtCep.Text;
                         if (txtComplemento.Text != "")
                         {
@@ -159,15 +185,18 @@ namespace IG
                         {
                             cr.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
                         }
-
+                        resp.Parentesco = txtParentesco.Text;
                         cr.Sala = txtSala.Text;
                         resp.Id = rid;
                         banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Especial);
-                        banco.Relacao(resp.Id);
+                        banco.Relacao(resp.Id, resp.Parentesco);
+
                         if (cr.Especial == true)
                         {
-                            // banco.Especial(txtCuidados.Text);
+                            
+                            banco.Especial(txtCuidados.Text);
                         }
+
                         btnEspecial.Checked = false;
                         txtCuidados.Text = null;
                         txtCuidados.Visible = false;
@@ -180,7 +209,9 @@ namespace IG
 
             }
             else
-            {
+            { 
+                //melhorar na lógica
+
                 for (short i = 0; i < args.Length; i++)
                 {
                     for (short ind = 0; ind < arg.Length; ind++) {

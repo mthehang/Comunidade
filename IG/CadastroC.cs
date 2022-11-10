@@ -40,11 +40,11 @@ namespace IG
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            TextBox[] args = { txtNome, txtEnd, txtSala, txtResponsavel, txtNumero, txtNumero, txtBairro, txtComplemento};
+            TextBox[] args = { txtNome, txtEnd, txtSala, txtResponsavel, txtNumero, txtNumero, txtBairro, txtComplemento, txtParentesco};
             MaskedTextBox[] arg = { txtRg, txtCpf, txtCep };
             
             Funcionalidades.verificTxtC(args, arg, txtNome, Calendario, txtRg, txtCpf, txtCep, txtEnd,
-                txtSala, lblIdade, ListView, resp.Id, lblObrigatorio, txtEnd2, txtNumero, txtComplemento, txtBairro, btnEspecial, txtCuidados);
+                txtSala, lblIdade, ListView, resp.Id, lblObrigatorio, txtEnd2, txtNumero, txtComplemento, txtBairro, btnEspecial, txtCuidados, txtParentesco);
 
         }
 
