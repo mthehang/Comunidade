@@ -72,15 +72,18 @@ namespace IG
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            TextBox[] args = { txtNomer, txtParentesco, txtEndr, txtNumero, txtBairro, txtComplemento };
+            TextBox[] args = { txtNomer, txtEndr, txtNumero, txtBairro, txtComplemento };
             MaskedTextBox[] arg = { txtRgr, txtCpfr, txtCepr, txtCelr };
 
             Funcionalidades.verificTxtR(args, arg, txtNomer, Calendarior, txtRgr, txtCpfr, txtCepr, txtEndr,
-                lblIdader, txtEnd2, txtNumero, txtComplemento, txtBairro, txtParentesco, txtCelr, this, ganb);
-            Responsaveis resp = new Responsaveis();
-            cc.txtResponsavel.Text = ganb.Text;
-            cc.txtResponsavel.Refresh();
-            cc.ListView.Visible = false;
+                lblIdader, txtEnd2, txtNumero, txtComplemento, txtBairro, txtCelr, this, ganb, lblOb);
+            
+            if (!ganb.Text.Equals(".")) {
+                Responsaveis resp = new Responsaveis();
+                cc.txtResponsavel.Text = ganb.Text;
+                cc.txtResponsavel.Refresh();
+            }
+            
         }
 
         private void txtCepr_KeyPress(object sender, KeyPressEventArgs e)
@@ -172,14 +175,6 @@ namespace IG
         }
 
         private void txtNomer_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txtParentesco.Focus();
-            }
-        }
-
-        private void txtParentesco_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {

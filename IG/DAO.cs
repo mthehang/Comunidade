@@ -178,7 +178,7 @@ namespace IG
 
                     conn.Open();
 
-                    using (var cmd = new NpgsqlCommand("SELECT (crianca_id) as crianca_id FROM crianca", conn))
+                    using (var cmd = new NpgsqlCommand("SELECT crianca_id FROM crianca", conn))
                     {
                         var reader = cmd.ExecuteReader();
 
@@ -188,7 +188,7 @@ namespace IG
                         }
                         reader.Close();
                     }
-                    using (var cmd = new NpgsqlCommand("insert into relacoes (cid) values (@cid) where rid = @param", conn))
+                    using (var cmd = new NpgsqlCommand("insert into relacoes (relacoes_cid) values (@cid) where relacoes_rid = @param", conn))
                     {
                         cmd.Parameters.AddWithValue("param", rid);
                         cmd.Parameters.AddWithValue("cid", crianca.Id);
@@ -223,7 +223,7 @@ namespace IG
                         {
                             resp.Id = short.Parse(reader["resp_id"].ToString()!);
                         }
-                            reader.Close();
+                        reader.Close();
 
                         Nome(resp.Id, ganb);
 

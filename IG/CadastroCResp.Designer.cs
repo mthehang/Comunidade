@@ -37,7 +37,6 @@
             this.txtEndr = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtParentesco = new System.Windows.Forms.TextBox();
             this.lblcpfr = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCpfr = new System.Windows.Forms.MaskedTextBox();
-            this.lblparentesco = new System.Windows.Forms.Label();
             this.TopBar = new System.Windows.Forms.Panel();
             this.btnCloseF = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
@@ -67,6 +65,7 @@
             this.txtEnd2 = new System.Windows.Forms.Label();
             this.linkEnd = new System.Windows.Forms.LinkLabel();
             this.ganb = new System.Windows.Forms.Label();
+            this.lblOb = new System.Windows.Forms.Label();
             this.TopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCloseF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -176,15 +175,6 @@
             this.label4.TabIndex = 49;
             this.label4.Text = "Data de nascimento:";
             // 
-            // txtParentesco
-            // 
-            this.txtParentesco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtParentesco.Location = new System.Drawing.Point(488, 124);
-            this.txtParentesco.Name = "txtParentesco";
-            this.txtParentesco.Size = new System.Drawing.Size(150, 29);
-            this.txtParentesco.TabIndex = 58;
-            this.txtParentesco.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtParentesco_KeyDown);
-            // 
             // lblcpfr
             // 
             this.lblcpfr.AutoSize = true;
@@ -226,7 +216,7 @@
             this.lblCel.AutoSize = true;
             this.lblCel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblCel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCel.Location = new System.Drawing.Point(644, 100);
+            this.lblCel.Location = new System.Drawing.Point(488, 100);
             this.lblCel.Name = "lblCel";
             this.lblCel.Size = new System.Drawing.Size(62, 21);
             this.lblCel.TabIndex = 62;
@@ -235,10 +225,10 @@
             // txtCelr
             // 
             this.txtCelr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCelr.Location = new System.Drawing.Point(644, 124);
+            this.txtCelr.Location = new System.Drawing.Point(488, 124);
             this.txtCelr.Mask = "(99) 00000-0000";
             this.txtCelr.Name = "txtCelr";
-            this.txtCelr.Size = new System.Drawing.Size(129, 29);
+            this.txtCelr.Size = new System.Drawing.Size(134, 29);
             this.txtCelr.TabIndex = 63;
             this.txtCelr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCelr_KeyDown);
             this.txtCelr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelr_KeyPress);
@@ -277,18 +267,6 @@
             this.txtCpfr.TabIndex = 65;
             this.txtCpfr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCpfr_KeyDown);
             this.txtCpfr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpfr_KeyPress);
-            // 
-            // lblparentesco
-            // 
-            this.lblparentesco.AutoSize = true;
-            this.lblparentesco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblparentesco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblparentesco.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblparentesco.Location = new System.Drawing.Point(488, 100);
-            this.lblparentesco.Name = "lblparentesco";
-            this.lblparentesco.Size = new System.Drawing.Size(88, 21);
-            this.lblparentesco.TabIndex = 57;
-            this.lblparentesco.Text = "Parentesco:";
             // 
             // TopBar
             // 
@@ -466,7 +444,7 @@
             this.txtNumero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNumero.Location = new System.Drawing.Point(594, 353);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(71, 29);
+            this.txtNumero.Size = new System.Drawing.Size(84, 29);
             this.txtNumero.TabIndex = 77;
             this.txtNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNumero_KeyDown);
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
@@ -501,12 +479,25 @@
             this.ganb.Text = ".";
             this.ganb.Visible = false;
             // 
+            // lblOb
+            // 
+            this.lblOb.AutoSize = true;
+            this.lblOb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblOb.ForeColor = System.Drawing.Color.Red;
+            this.lblOb.Location = new System.Drawing.Point(157, 308);
+            this.lblOb.Name = "lblOb";
+            this.lblOb.Size = new System.Drawing.Size(179, 15);
+            this.lblOb.TabIndex = 85;
+            this.lblOb.Text = "* Documentos são obrigatórios *";
+            this.lblOb.Visible = false;
+            // 
             // CadastroCResp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(915, 600);
+            this.Controls.Add(this.lblOb);
             this.Controls.Add(this.ganb);
             this.Controls.Add(this.linkEnd);
             this.Controls.Add(this.label6);
@@ -532,7 +523,6 @@
             this.Controls.Add(this.txtEndr);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtParentesco);
             this.Controls.Add(this.lblcpfr);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCel);
@@ -540,7 +530,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCpfr);
-            this.Controls.Add(this.lblparentesco);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CadastroCResp";
             this.TopBar.ResumeLayout(false);
@@ -566,7 +555,6 @@
         private TextBox txtEndr;
         private Label label9;
         private Label label4;
-        private TextBox txtParentesco;
         private Label lblcpfr;
         private Label label8;
         private Label label2;
@@ -575,7 +563,6 @@
         private Label label1;
         private Label label5;
         private MaskedTextBox txtCpfr;
-        private Label lblparentesco;
         private Panel TopBar;
         private PictureBox btnCloseF;
         private PictureBox btnClose;
@@ -596,5 +583,6 @@
         private Label txtEnd2;
         private LinkLabel linkEnd;
         private Label ganb;
+        private Label lblOb;
     }
 }

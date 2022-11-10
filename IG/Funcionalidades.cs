@@ -29,10 +29,85 @@ namespace IG
                 Criancas cr = new Criancas();
                 Responsaveis resp = new Responsaveis();
 
-                
-                bool x = IsCpf(txtCpf.Text);
-                if (x == true)
+                if (txtCpf.MaskCompleted == true)
                 {
+                    bool x = IsCpf(txtCpf.Text);
+                    if (x == true)
+                    {
+                        if (txtComplemento.Text != "")
+                        {
+                            cr.Especial = btnEspecial.Checked;
+                            cr.Ativo = true;
+                            cr.Nome = txtNome.Text.ToUpper();
+                            cr.Datanasc = Calendario.Text;
+                            cr.Rg = txtRg.Text;
+                            cr.Cpf = txtCpf.Text;
+                            cr.Cep = txtCep.Text;
+                            if (txtComplemento.Text != "")
+                            {
+                                cr.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtComplemento.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
+                            }
+                            else
+                            {
+                                cr.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
+                            }
+                            cr.Sala = txtSala.Text.ToUpper();
+                            resp.Id = rid;
+                            banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Especial);
+                            if (cr.Especial == true)
+                            {
+                                //banco.Especial(txtCuidados.Text.ToUpper());
+                            }
+
+                            banco.Relacao(resp.Id);
+
+                            btnEspecial.Checked = false;
+                            txtCuidados.Text = null;
+                            txtCuidados.Visible = false;
+                            Limpar(args, arg, lblIdade, Calendario, txtEnd2);
+
+                            lblObrigatorio.Visible = false;
+                        }
+                        else
+                        {
+                            cr.Especial = btnEspecial.Checked;
+                            cr.Ativo = true;
+                            cr.Nome = txtNome.Text.ToUpper();
+                            cr.Datanasc = Calendario.Text;
+                            cr.Rg = txtRg.Text;
+                            cr.Cpf = txtCpf.Text;
+                            cr.Cep = txtCep.Text;
+                            if (txtComplemento.Text != "")
+                            {
+                                cr.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtComplemento.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
+                            }
+                            else
+                            {
+                                cr.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
+                            }
+
+                            cr.Sala = txtSala.Text;
+                            resp.Id = rid;
+                            banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Especial);
+                            banco.Relacao(resp.Id);
+                            if (cr.Especial == true)
+                            {
+                                // banco.Especial(txtCuidados.Text);
+                            }
+                            btnEspecial.Checked = false;
+                            txtCuidados.Text = null;
+                            txtCuidados.Visible = false;
+                            Limpar(args, arg, lblIdade, Calendario, txtEnd2);
+
+                            lblObrigatorio.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("CPF inválido");
+                    }
+                }
+                else {
                     if (txtComplemento.Text != "")
                     {
                         cr.Especial = btnEspecial.Checked;
@@ -53,10 +128,11 @@ namespace IG
                         cr.Sala = txtSala.Text.ToUpper();
                         resp.Id = rid;
                         banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Especial);
-                        if (cr.Especial == true) {
+                        if (cr.Especial == true)
+                        {
                             //banco.Especial(txtCuidados.Text.ToUpper());
                         }
-                        
+
                         banco.Relacao(resp.Id);
 
                         btnEspecial.Checked = false;
@@ -79,18 +155,18 @@ namespace IG
                         {
                             cr.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtComplemento.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
                         }
-                        else 
+                        else
                         {
                             cr.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
                         }
-                        
+
                         cr.Sala = txtSala.Text;
                         resp.Id = rid;
                         banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Especial);
                         banco.Relacao(resp.Id);
                         if (cr.Especial == true)
                         {
-                           // banco.Especial(txtCuidados.Text);
+                            // banco.Especial(txtCuidados.Text);
                         }
                         btnEspecial.Checked = false;
                         txtCuidados.Text = null;
@@ -100,10 +176,7 @@ namespace IG
                         lblObrigatorio.Visible = false;
                     }
                 }
-                else
-                {
-                    MessageBox.Show("CPF inválido");
-                }
+                
 
             }
             else
@@ -145,11 +218,11 @@ namespace IG
         public static void verificTxtR(TextBox[] args, MaskedTextBox[] arg, TextBox txtNome,
             DateTimePicker Calendario, MaskedTextBox txtRg, MaskedTextBox txtCpf, MaskedTextBox txtCep,
             TextBox txtEnd, Label lblIdade, Label txtEnd2, TextBox txtNumero, TextBox txtComplemento,
-            TextBox txtBairro, TextBox txtParentesco, MaskedTextBox txtCel, Form ccr, Label ganb)
+            TextBox txtBairro, MaskedTextBox txtCel, Form ccr, Label ganb, Label lblOb)
         {
 
             if (txtRg.MaskCompleted && txtNome.Text != null && txtCpf.MaskCompleted == true && txtCep.MaskCompleted == true && txtEnd.Text != null
-                && int.Parse(lblIdade.Text) >= 18 && txtNumero.Text != null && txtParentesco.Text != null && txtCel.MaskCompleted == true)
+                && int.Parse(lblIdade.Text) >= 18 && txtNumero.Text != null && txtCel.MaskCompleted == true)
             {
                 DAO banco = new DAO();
                 Criancas cr = new Criancas();
@@ -174,7 +247,6 @@ namespace IG
                         {
                             resp.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
                         }
-                        resp.Parentesco = txtParentesco.Text!.ToUpper();
                         resp.Cel = txtCel.Text;
                         banco.InserirValoresR(resp.Nome, resp.Datanasc, resp.Rg, resp.Cpf, resp.Cep, resp.End, resp.Parentesco, resp.Cel);
                         banco.RelacaoR(ganb);
@@ -201,7 +273,6 @@ namespace IG
                         {
                             resp.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
                         }
-                        resp.Parentesco = txtParentesco.Text!.ToUpper();
                         resp.Cel = txtCel.Text;
                         banco.InserirValoresR(resp.Nome, resp.Datanasc, resp.Rg, resp.Cpf, resp.Cep, resp.End, resp.Parentesco, resp.Cel);
                         banco.RelacaoR(ganb);
@@ -236,6 +307,7 @@ namespace IG
 
                             arg[ind].Focus();
                             MessageBox.Show("Documento(s) inválido(s).");
+                            lblOb.Visible = true;
                             
                             break;
 
