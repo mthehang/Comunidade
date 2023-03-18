@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "IG": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "KPass": "bb4499d4c5cb58d4e1387d42d86ab6f0924e6dd0930d405131124165daa16a5b"
+      }
+    }
+  }
+}
