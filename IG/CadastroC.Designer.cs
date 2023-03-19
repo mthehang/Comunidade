@@ -501,7 +501,7 @@
             ListView.Columns.AddRange(new ColumnHeader[] { Id, Nome, Cpf, Rg });
             ListView.Cursor = Cursors.Hand;
             ListView.FullRowSelect = true;
-            ListView.Location = new Point(897, 657);
+            ListView.Location = new Point(550, 639);
             ListView.Name = "ListView";
             ListView.Size = new Size(297, 142);
             ListView.TabIndex = 57;
