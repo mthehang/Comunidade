@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             Fundo = new Panel();
+            cbSupervisao = new ComboBox();
+            txtLastName = new TextBox();
+            lblLastName = new Label();
             lblCel = new Label();
             txtCelr = new MaskedTextBox();
-            cbSupervisao = new ComboBox();
             lblSupervisao = new Label();
             txtParentesco = new TextBox();
             lblParentesco = new Label();
@@ -71,8 +73,7 @@
             txtCep = new MaskedTextBox();
             lblEndereco = new Label();
             lblCep = new Label();
-            lblLastName = new Label();
-            txtLastName = new TextBox();
+            lblMaior = new Label();
             Fundo.SuspendLayout();
             panelBtnBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnBuscar).BeginInit();
@@ -83,11 +84,12 @@
             // 
             Fundo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Fundo.BackColor = Color.FromArgb(224, 224, 224);
+            Fundo.Controls.Add(lblMaior);
+            Fundo.Controls.Add(cbSupervisao);
             Fundo.Controls.Add(txtLastName);
             Fundo.Controls.Add(lblLastName);
             Fundo.Controls.Add(lblCel);
             Fundo.Controls.Add(txtCelr);
-            Fundo.Controls.Add(cbSupervisao);
             Fundo.Controls.Add(lblSupervisao);
             Fundo.Controls.Add(txtParentesco);
             Fundo.Controls.Add(lblParentesco);
@@ -126,6 +128,35 @@
             Fundo.TabIndex = 48;
             Fundo.MouseClick += Fundo_MouseClick;
             // 
+            // cbSupervisao
+            // 
+            cbSupervisao.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSupervisao.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbSupervisao.FormattingEnabled = true;
+            cbSupervisao.Items.AddRange(new object[] { "Amarela", "Azul", "Branca", "Laranja ", "Verde", "Vermelha" });
+            cbSupervisao.Location = new Point(881, 134);
+            cbSupervisao.Name = "cbSupervisao";
+            cbSupervisao.Size = new Size(159, 29);
+            cbSupervisao.TabIndex = 85;
+            // 
+            // txtLastName
+            // 
+            txtLastName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLastName.Location = new Point(719, 135);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(156, 29);
+            txtLastName.TabIndex = 81;
+            // 
+            // lblLastName
+            // 
+            lblLastName.AutoSize = true;
+            lblLastName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLastName.Location = new Point(716, 110);
+            lblLastName.Name = "lblLastName";
+            lblLastName.Size = new Size(94, 21);
+            lblLastName.TabIndex = 80;
+            lblLastName.Text = "Sobrenome:";
+            // 
             // lblCel
             // 
             lblCel.AutoSize = true;
@@ -145,15 +176,6 @@
             txtCelr.Name = "txtCelr";
             txtCelr.Size = new Size(134, 29);
             txtCelr.TabIndex = 79;
-            // 
-            // cbSupervisao
-            // 
-            cbSupervisao.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbSupervisao.FormattingEnabled = true;
-            cbSupervisao.Location = new Point(881, 135);
-            cbSupervisao.Name = "cbSupervisao";
-            cbSupervisao.Size = new Size(173, 29);
-            cbSupervisao.TabIndex = 77;
             // 
             // lblSupervisao
             // 
@@ -328,7 +350,7 @@
             ListView.Columns.AddRange(new ColumnHeader[] { Id, Nome, Cpf, Rg });
             ListView.Cursor = Cursors.Hand;
             ListView.FullRowSelect = true;
-            ListView.Location = new Point(551, 534);
+            ListView.Location = new Point(550, 584);
             ListView.Name = "ListView";
             ListView.Size = new Size(297, 165);
             ListView.TabIndex = 57;
@@ -537,23 +559,17 @@
             lblCep.TabIndex = 10;
             lblCep.Text = "CEP:";
             // 
-            // lblLastName
+            // lblMaior
             // 
-            lblLastName.AutoSize = true;
-            lblLastName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblLastName.Location = new Point(716, 110);
-            lblLastName.Name = "lblLastName";
-            lblLastName.Size = new Size(94, 21);
-            lblLastName.TabIndex = 80;
-            lblLastName.Text = "Sobrenome:";
-            // 
-            // txtLastName
-            // 
-            txtLastName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtLastName.Location = new Point(719, 135);
-            txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(156, 29);
-            txtLastName.TabIndex = 81;
+            lblMaior.AutoSize = true;
+            lblMaior.BackColor = Color.FromArgb(224, 224, 224);
+            lblMaior.ForeColor = Color.Red;
+            lblMaior.Location = new Point(550, 243);
+            lblMaior.Name = "lblMaior";
+            lblMaior.Size = new Size(166, 15);
+            lblMaior.TabIndex = 92;
+            lblMaior.Text = "*Responsável precisa ser +18 *";
+            lblMaior.Visible = false;
             // 
             // CadastroResp
             // 
@@ -618,11 +634,12 @@
         private MaskedTextBox txtCep;
         private Label lblEndereco;
         private Label lblCep;
-        private ComboBox cbSupervisao;
         private Label lblSupervisao;
         private Label lblCel;
         private MaskedTextBox txtCelr;
         private TextBox txtLastName;
         private Label lblLastName;
+        private ComboBox cbSupervisao;
+        private Label lblMaior;
     }
 }

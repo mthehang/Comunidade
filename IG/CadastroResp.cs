@@ -49,7 +49,7 @@ namespace IG
 
         private void Calendario_ValueChanged(object sender, EventArgs e)
         {
-
+            lblMaior.Visible = false;
             lblIdade.Text = Convert.ToString((DateTime.Now - Calendario.Value).Days / 30 / 12);
         }
 

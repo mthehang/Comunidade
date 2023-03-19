@@ -15,15 +15,15 @@ namespace IG
     {
         public static void verificTxtC(TextBox[] args, TextBox txtNome,
             DateTimePicker Calendario, MaskedTextBox txtCep,
-            TextBox txtEnd, TextBox txtSala, Label lblIdade, ListView ListView, short rid, Label txtEnd2, TextBox txtNumero, TextBox txtComplemento,
+            TextBox txtEnd, ComboBox cbSala, Label lblIdade, ListView ListView, short rid, Label txtEnd2, TextBox txtNumero, TextBox txtComplemento,
             TextBox txtBairro, CheckBox btnEspecial, TextBox txtCuidados, TextBox txtParentesco)
 
         {
 
             if (txtNome.Text != "" &&  txtCep.MaskCompleted == true && txtEnd.Text != ""
-                && txtSala.Text != "" && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 && txtNumero.Text != "" && txtParentesco.Text != "" || txtNome.Text != null
+                && cbSala.Text != "" && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 && txtNumero.Text != "" && txtParentesco.Text != "" || txtNome.Text != null
                 &&  txtCep.MaskCompleted == true && txtEnd.Text != null
-                && txtSala.Text != "" && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 && txtNumero.Text != "" && txtParentesco.Text != "")
+                && cbSala.Text != "" && lblIdade.Text != "0" && ListView.SelectedItems != null && rid != 0 && txtNumero.Text != "" && txtParentesco.Text != "")
             {
                 DAO banco = new DAO();
                 Criancas cr = new Criancas();
@@ -45,7 +45,7 @@ namespace IG
                             cr.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
                         }
                         resp.Parentesco = txtParentesco.Text;
-                        cr.Sala = txtSala.Text.ToUpper();
+                        cr.Sala = cbSala.Text.ToUpper();
                         resp.Id = rid;
                         banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Especial);
 
@@ -60,7 +60,7 @@ namespace IG
                         btnEspecial.Checked = false;
                         txtCuidados.Text = null;
                         txtCuidados.Visible = false;
-                        Limpar(args, txtCep, lblIdade, Calendario, txtEnd2);
+                        Limpar(args, txtCep, lblIdade, Calendario, txtEnd2, cbSala);
                     }
                     else
                     {
@@ -78,7 +78,7 @@ namespace IG
                             cr.End = (txtEnd.Text + ", " + txtNumero.Text + " - " + txtBairro.Text + txtEnd2.Text).ToUpper();
                         }
                         resp.Parentesco = txtParentesco.Text;
-                        cr.Sala = txtSala.Text;
+                        cr.Sala = cbSala.Text;
                         resp.Id = rid;
                         banco.InserirValoresC(cr.Nome, cr.Datanasc, cr.Rg, cr.Cpf, cr.Cep, cr.End, cr.Especial);
                         banco.Relacao(resp.Id, resp.Parentesco);
@@ -92,7 +92,7 @@ namespace IG
                         btnEspecial.Checked = false;
                         txtCuidados.Text = null;
                         txtCuidados.Visible = false;
-                        Limpar(args, txtCep, lblIdade, Calendario, txtEnd2);
+                        Limpar(args, txtCep, lblIdade, Calendario, txtEnd2, cbSala);
                     }
                 }
             else
@@ -103,11 +103,10 @@ namespace IG
                 {
                     if (args[i].Text == "")
                     {
-                        args[i].Focus();
                         MessageBox.Show("Preencha todos os dados.");
                         break;
                     }
-                        else if (lblIdade.Text == "0")
+                        else if (lblIdade.Text == "0" || int.Parse(lblIdade.Text) >= 10)
                         {
                             MessageBox.Show("Data de nascimento inválida.");
                             break;
@@ -124,7 +123,7 @@ namespace IG
         public static void verificTxtR(TextBox[] argsr, MaskedTextBox[] argr, TextBox txtNome,
             DateTimePicker Calendario, MaskedTextBox txtRg, MaskedTextBox txtCpf, MaskedTextBox txtCep,
             TextBox txtEnd, Label lblIdader, Label txtEnd2, TextBox txtNumero, TextBox txtComplemento,
-            TextBox txtBairro, MaskedTextBox txtCel, Form ccr, Label ganb, Label lblOb)
+            TextBox txtBairro, MaskedTextBox txtCel, Form ccr, Label ganb, Label lblOb, Label lblMaior)
         {
 
             if (txtRg.MaskCompleted == true && txtNome.Text != null && txtCpf.MaskCompleted == true && txtCep.MaskCompleted == true && txtEnd.Text != null
@@ -216,6 +215,7 @@ namespace IG
                                 else if (int.Parse(lblIdader.Text) < 18)
                                 {
                                     MessageBox.Show("Data de nascimento inválida.");
+                                    lblMaior.Visible = true;
                                     break;
                                 }
                                 break;
@@ -228,11 +228,12 @@ namespace IG
 
         }
 
-        public static void Limpar(TextBox[] args, MaskedTextBox cep, Label lblIdade, DateTimePicker Calendario, Label txtEnd2) {
+        public static void Limpar(TextBox[] args, MaskedTextBox cep, Label lblIdade, DateTimePicker Calendario, Label txtEnd2, ComboBox cbSala) {
             for (short i = 0; i < args.Length; i++)
             {
                 args[i].Clear();
             }
+            cbSala.SelectedIndex = -1;
             cep.Text = "";
             lblIdade.Text = "0";
             Calendario.Value = DateTime.Today;

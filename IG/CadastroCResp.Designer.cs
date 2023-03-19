@@ -66,10 +66,11 @@
             linkEnd = new LinkLabel();
             ganb = new Label();
             lblOb = new Label();
-            cbSupervisao = new ComboBox();
             lblSupervisao = new Label();
             txtLastNamer = new TextBox();
             lblLastNamer = new Label();
+            cbSupervisao = new ComboBox();
+            lblMaior = new Label();
             TopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnCloseF).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -220,7 +221,7 @@
             lblCel.AutoSize = true;
             lblCel.BackColor = Color.FromArgb(224, 224, 224);
             lblCel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCel.Location = new Point(667, 101);
+            lblCel.Location = new Point(652, 100);
             lblCel.Name = "lblCel";
             lblCel.Size = new Size(62, 21);
             lblCel.TabIndex = 62;
@@ -229,7 +230,7 @@
             // txtCelr
             // 
             txtCelr.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCelr.Location = new Point(667, 125);
+            txtCelr.Location = new Point(652, 124);
             txtCelr.Mask = "(99) 00000-0000";
             txtCelr.Name = "txtCelr";
             txtCelr.Size = new Size(134, 29);
@@ -495,21 +496,11 @@
             lblOb.Text = "* Documentos são obrigatórios *";
             lblOb.Visible = false;
             // 
-            // cbSupervisao
-            // 
-            cbSupervisao.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbSupervisao.FormattingEnabled = true;
-            cbSupervisao.Location = new Point(488, 124);
-            cbSupervisao.Name = "cbSupervisao";
-            cbSupervisao.Size = new Size(173, 29);
-            cbSupervisao.TabIndex = 87;
-            cbSupervisao.KeyDown += cbSupervisao_KeyDown;
-            // 
             // lblSupervisao
             // 
             lblSupervisao.AutoSize = true;
             lblSupervisao.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSupervisao.Location = new Point(488, 101);
+            lblSupervisao.Location = new Point(473, 101);
             lblSupervisao.Name = "lblSupervisao";
             lblSupervisao.Size = new Size(84, 20);
             lblSupervisao.TabIndex = 86;
@@ -522,6 +513,7 @@
             txtLastNamer.Name = "txtLastNamer";
             txtLastNamer.Size = new Size(156, 29);
             txtLastNamer.TabIndex = 89;
+            txtLastNamer.KeyDown += txtLastNamer_KeyDown;
             // 
             // lblLastNamer
             // 
@@ -533,15 +525,40 @@
             lblLastNamer.TabIndex = 88;
             lblLastNamer.Text = "Sobrenome:";
             // 
+            // cbSupervisao
+            // 
+            cbSupervisao.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSupervisao.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbSupervisao.FormattingEnabled = true;
+            cbSupervisao.Items.AddRange(new object[] { "Amarela", "Azul", "Branca", "Laranja ", "Verde", "Vermelha" });
+            cbSupervisao.Location = new Point(473, 125);
+            cbSupervisao.Name = "cbSupervisao";
+            cbSupervisao.Size = new Size(173, 29);
+            cbSupervisao.TabIndex = 90;
+            cbSupervisao.SelectedIndexChanged += cbSupervisao_SelectedIndexChanged;
+            // 
+            // lblMaior
+            // 
+            lblMaior.AutoSize = true;
+            lblMaior.BackColor = Color.FromArgb(224, 224, 224);
+            lblMaior.ForeColor = Color.Red;
+            lblMaior.Location = new Point(157, 233);
+            lblMaior.Name = "lblMaior";
+            lblMaior.Size = new Size(166, 15);
+            lblMaior.TabIndex = 91;
+            lblMaior.Text = "*Responsável precisa ser +18 *";
+            lblMaior.Visible = false;
+            // 
             // CadastroCResp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(915, 600);
+            Controls.Add(lblMaior);
+            Controls.Add(cbSupervisao);
             Controls.Add(txtLastNamer);
             Controls.Add(lblLastNamer);
-            Controls.Add(cbSupervisao);
             Controls.Add(lblSupervisao);
             Controls.Add(lblOb);
             Controls.Add(ganb);
@@ -630,9 +647,10 @@
         private LinkLabel linkEnd;
         private Label ganb;
         private Label lblOb;
-        private ComboBox cbSupervisao;
         private Label lblSupervisao;
         private TextBox txtLastNamer;
         private Label lblLastNamer;
+        private ComboBox cbSupervisao;
+        private Label lblMaior;
     }
 }

@@ -35,22 +35,46 @@ namespace IG
 
             if (e.KeyCode == Keys.Enter)
             {
-                Calendario.Focus();
+                txtLastName.Focus();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            TextBox[] args = { txtParentesco, txtName, txtEnd, txtSala, txtResponsavel, txtNumero, txtNumero, txtBairro, txtComplemento };
+            TextBox[] args = { txtParentesco, txtName, txtEnd, txtResponsavel, txtNumero, txtNumero, txtBairro, txtComplemento };
 
             Funcionalidades.verificTxtC(args, txtName, Calendario, txtCep, txtEnd,
-                txtSala, lblIdade, ListView, resp.Id, txtEnd2, txtNumero, txtComplemento, txtBairro, btnEspecial, txtCuidados, txtParentesco);
+                cbSala, lblIdade, ListView, resp.Id, txtEnd2, txtNumero, txtComplemento, txtBairro, btnEspecial, txtCuidados, txtParentesco);
 
         }
 
         private void Calendario_ValueChanged(object sender, EventArgs e)
         {
             lblIdade.Text = Convert.ToString((DateTime.Now - Calendario.Value).Days / 30 / 12);
+            if (int.Parse(lblIdade.Text) == 0 || int.Parse(lblIdade.Text) >= 11)
+            {
+                cbSala.SelectedIndex = -1;
+            }
+            else if (int.Parse(lblIdade.Text) > 0 && int.Parse(lblIdade.Text) <= 2)
+            {
+                cbSala.SelectedIndex = 0;
+            }
+            else if (int.Parse(lblIdade.Text) >= 3 && int.Parse(lblIdade.Text) <= 4)
+            {
+                cbSala.SelectedIndex = 1;
+            }
+            else if (int.Parse(lblIdade.Text) >= 5 && int.Parse(lblIdade.Text) <= 6)
+            {
+                cbSala.SelectedIndex = 2;
+            }
+            else if (int.Parse(lblIdade.Text) >= 7 && int.Parse(lblIdade.Text) <= 8)
+            {
+                cbSala.SelectedIndex = 3;
+            }
+            else if (int.Parse(lblIdade.Text) >= 9 && int.Parse(lblIdade.Text) <= 10)
+            {
+                cbSala.SelectedIndex = 4;
+            }
         }
 
         private void Calendario_KeyDown(object sender, KeyEventArgs e)
@@ -102,7 +126,7 @@ namespace IG
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtSala.Focus();
+                txtNumero.Focus();
             }
         }
 
@@ -329,7 +353,7 @@ namespace IG
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtSala.Focus();
+                cbSala.Focus();
             }
         }
 
@@ -357,6 +381,19 @@ namespace IG
             {
                 ListView.Visible = true;
             }
+        }
+
+        private void txtLastName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Calendario.Focus();
+            }
+        }
+
+        private void cbSala_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                txtResponsavel.Focus();  
         }
     }
 }

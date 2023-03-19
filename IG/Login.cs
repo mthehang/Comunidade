@@ -60,11 +60,32 @@ namespace IG
 
         private void btnEntrarb_Click(object sender, EventArgs e)
         {
+            Entrar();
+
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Entrar();
+            }
+        }
+
+        private void Entrar()
+        {
             Main main = new Main();
             this.Hide();
             this.Controls.Clear();
             main.Show();
+        }
 
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Entrar();
+            }
         }
     }
 }

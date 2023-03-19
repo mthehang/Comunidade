@@ -36,12 +36,12 @@
             lblCep = new Label();
             lblEndereco = new Label();
             txtEnd = new TextBox();
-            txtSala = new TextBox();
             lblSala = new Label();
             lbltxtIdade = new Label();
             lblIdade = new Label();
             txtCep = new MaskedTextBox();
             Fundo = new Panel();
+            cbSala = new ComboBox();
             txtLastName = new TextBox();
             lblLastName = new Label();
             txtParentesco = new TextBox();
@@ -166,15 +166,6 @@
             txtEnd.TabIndex = 13;
             txtEnd.KeyDown += txtEnd_KeyDown;
             // 
-            // txtSala
-            // 
-            txtSala.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSala.Location = new Point(550, 534);
-            txtSala.Name = "txtSala";
-            txtSala.Size = new Size(150, 29);
-            txtSala.TabIndex = 14;
-            txtSala.KeyDown += txtSala_KeyDown;
-            // 
             // lblSala
             // 
             lblSala.AutoSize = true;
@@ -221,6 +212,7 @@
             // 
             Fundo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Fundo.BackColor = Color.FromArgb(224, 224, 224);
+            Fundo.Controls.Add(cbSala);
             Fundo.Controls.Add(txtLastName);
             Fundo.Controls.Add(lblLastName);
             Fundo.Controls.Add(txtParentesco);
@@ -246,7 +238,6 @@
             Fundo.Controls.Add(lblIdade);
             Fundo.Controls.Add(Calendario);
             Fundo.Controls.Add(txtEnd);
-            Fundo.Controls.Add(txtSala);
             Fundo.Controls.Add(lblNasc);
             Fundo.Controls.Add(lblNome);
             Fundo.Controls.Add(btnSalvar);
@@ -261,6 +252,18 @@
             Fundo.TabIndex = 48;
             Fundo.MouseClick += Fundo_MouseClick;
             // 
+            // cbSala
+            // 
+            cbSala.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSala.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbSala.FormattingEnabled = true;
+            cbSala.Items.AddRange(new object[] { "Berçário (até 2 anos)", "3 e 4 anos", "5 e 6 anos", "7 e 8 anos", "9 e 10 anos" });
+            cbSala.Location = new Point(550, 534);
+            cbSala.Name = "cbSala";
+            cbSala.Size = new Size(159, 29);
+            cbSala.TabIndex = 84;
+            cbSala.SelectedIndexChanged += cbSala_SelectedIndexChanged;
+            // 
             // txtLastName
             // 
             txtLastName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -268,6 +271,7 @@
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(156, 29);
             txtLastName.TabIndex = 83;
+            txtLastName.KeyDown += txtLastName_KeyDown;
             // 
             // lblLastName
             // 
@@ -614,7 +618,6 @@
         private Label lblCep;
         private Label lblEndereco;
         private TextBox txtEnd;
-        private TextBox txtSala;
         private Label lblSala;
         private Label lbltxtIdade;
         private Label lblIdade;
@@ -651,5 +654,6 @@
         private Label lblParentesco;
         private TextBox txtLastName;
         private Label lblLastName;
+        private ComboBox cbSala;
     }
 }

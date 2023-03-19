@@ -76,7 +76,7 @@ namespace IG
             MaskedTextBox[] arg = { txtRgr, txtCpfr, txtCepr, txtCelr };
 
             Funcionalidades.verificTxtR(args, arg, txtNomer, Calendarior, txtRgr, txtCpfr, txtCepr, txtEndr,
-                lblIdader, txtEnd2, txtNumero, txtComplemento, txtBairro, txtCelr, this, ganb, lblOb);
+                lblIdader, txtEnd2, txtNumero, txtComplemento, txtBairro, txtCelr, this, ganb, lblOb, lblMaior);
 
             if (!ganb.Text.Equals("."))
             {
@@ -179,7 +179,7 @@ namespace IG
         {
             if (e.KeyCode == Keys.Enter)
             {
-                cbSupervisao.Focus();
+                txtLastNamer.Focus();
             }
         }
 
@@ -194,6 +194,7 @@ namespace IG
         private void Calendarior_ValueChanged(object sender, EventArgs e)
         {
             lblIdader.Text = Convert.ToString((DateTime.Now - Calendarior.Value).Days / 30 / 12);
+            lblMaior.Visible = false;
         }
 
         private void txtRgr_KeyDown(object sender, KeyEventArgs e)
@@ -259,6 +260,19 @@ namespace IG
             {
                 txtCelr.Focus();
             }
+        }
+
+        private void txtLastNamer_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cbSupervisao.Focus();
+            }
+        }
+
+        private void cbSupervisao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                txtCelr.Focus();
         }
     }
 }

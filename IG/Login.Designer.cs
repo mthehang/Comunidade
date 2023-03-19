@@ -115,8 +115,10 @@
             txtSenha.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtSenha.Location = new Point(167, 197);
             txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(282, 29);
             txtSenha.TabIndex = 2;
+            txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // txtEmail
             // 
@@ -125,6 +127,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(282, 29);
             txtEmail.TabIndex = 1;
+            txtEmail.KeyDown += txtEmail_KeyDown;
             // 
             // pictureBox1
             // 
