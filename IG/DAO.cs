@@ -134,7 +134,7 @@ namespace IG
                 {
                     conn.Open();
 
-                    using (var cmd = new NpgsqlCommand("SELECT crianca_id, crianca_nome FROM crianca where crianca_nome like @param or crianca_rg like @rg or crianca_cpf like @cpf order by crianca_id", conn))
+                    using (var cmd = new NpgsqlCommand("SELECT crianca_id, crianca_nome FROM crianca where crianca_nome like @param order by crianca_id", conn))
                     {
 
                         cmd.Parameters.AddWithValue("@param", "%" + param + "%");
@@ -146,7 +146,6 @@ namespace IG
                         while (reader.Read())
                         {
                             cria.Id = short.Parse(reader["crianca_id"].ToString()!);
-                            cria.Cpf = reader["crianca_cpf"].ToString()!.ToUpper();
 
                             ListViewItem item = new ListViewItem(cria.Id.ToString());
                             var obj = new object[] { cria.Nome };

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Fundo = new Panel();
+            lblMaior = new Label();
             cbSupervisao = new ComboBox();
             txtLastName = new TextBox();
             lblLastName = new Label();
@@ -53,8 +54,6 @@
             ListView = new ListView();
             Id = new ColumnHeader();
             Nome = new ColumnHeader();
-            Cpf = new ColumnHeader();
-            Rg = new ColumnHeader();
             lblObs = new Label();
             txtCrianca = new TextBox();
             lblCrianca = new Label();
@@ -73,7 +72,6 @@
             txtCep = new MaskedTextBox();
             lblEndereco = new Label();
             lblCep = new Label();
-            lblMaior = new Label();
             Fundo.SuspendLayout();
             panelBtnBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnBuscar).BeginInit();
@@ -82,7 +80,6 @@
             // 
             // Fundo
             // 
-            Fundo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Fundo.BackColor = Color.FromArgb(224, 224, 224);
             Fundo.Controls.Add(lblMaior);
             Fundo.Controls.Add(cbSupervisao);
@@ -122,14 +119,29 @@
             Fundo.Controls.Add(txtCep);
             Fundo.Controls.Add(lblEndereco);
             Fundo.Controls.Add(lblCep);
-            Fundo.Location = new Point(81, 61);
+            Fundo.Dock = DockStyle.Fill;
+            Fundo.Location = new Point(0, 0);
             Fundo.Name = "Fundo";
-            Fundo.Size = new Size(1296, 802);
+            Fundo.Size = new Size(1684, 825);
             Fundo.TabIndex = 48;
             Fundo.MouseClick += Fundo_MouseClick;
             // 
+            // lblMaior
+            // 
+            lblMaior.Anchor = AnchorStyles.None;
+            lblMaior.AutoSize = true;
+            lblMaior.BackColor = Color.FromArgb(224, 224, 224);
+            lblMaior.ForeColor = Color.Red;
+            lblMaior.Location = new Point(550, 243);
+            lblMaior.Name = "lblMaior";
+            lblMaior.Size = new Size(166, 15);
+            lblMaior.TabIndex = 92;
+            lblMaior.Text = "*Responsável precisa ser +18 *";
+            lblMaior.Visible = false;
+            // 
             // cbSupervisao
             // 
+            cbSupervisao.Anchor = AnchorStyles.None;
             cbSupervisao.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSupervisao.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbSupervisao.FormattingEnabled = true;
@@ -141,6 +153,7 @@
             // 
             // txtLastName
             // 
+            txtLastName.Anchor = AnchorStyles.None;
             txtLastName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtLastName.Location = new Point(719, 135);
             txtLastName.Name = "txtLastName";
@@ -149,6 +162,7 @@
             // 
             // lblLastName
             // 
+            lblLastName.Anchor = AnchorStyles.None;
             lblLastName.AutoSize = true;
             lblLastName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblLastName.Location = new Point(716, 110);
@@ -159,6 +173,7 @@
             // 
             // lblCel
             // 
+            lblCel.Anchor = AnchorStyles.None;
             lblCel.AutoSize = true;
             lblCel.BackColor = Color.FromArgb(224, 224, 224);
             lblCel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -170,6 +185,7 @@
             // 
             // txtCelr
             // 
+            txtCelr.Anchor = AnchorStyles.None;
             txtCelr.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCelr.Location = new Point(1060, 135);
             txtCelr.Mask = "(99) 00000-0000";
@@ -179,6 +195,7 @@
             // 
             // lblSupervisao
             // 
+            lblSupervisao.Anchor = AnchorStyles.None;
             lblSupervisao.AutoSize = true;
             lblSupervisao.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblSupervisao.Location = new Point(881, 111);
@@ -189,6 +206,7 @@
             // 
             // txtParentesco
             // 
+            txtParentesco.Anchor = AnchorStyles.None;
             txtParentesco.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtParentesco.Location = new Point(854, 534);
             txtParentesco.Name = "txtParentesco";
@@ -197,6 +215,7 @@
             // 
             // lblParentesco
             // 
+            lblParentesco.Anchor = AnchorStyles.None;
             lblParentesco.AutoSize = true;
             lblParentesco.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblParentesco.Location = new Point(854, 510);
@@ -207,6 +226,7 @@
             // 
             // linkEnd
             // 
+            linkEnd.Anchor = AnchorStyles.None;
             linkEnd.AutoSize = true;
             linkEnd.Location = new Point(791, 412);
             linkEnd.Name = "linkEnd";
@@ -218,6 +238,7 @@
             // 
             // panelBtnBuscar
             // 
+            panelBtnBuscar.Anchor = AnchorStyles.None;
             panelBtnBuscar.BackColor = Color.Silver;
             panelBtnBuscar.Controls.Add(labelend);
             panelBtnBuscar.Controls.Add(btnBuscar);
@@ -271,6 +292,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(675, 433);
@@ -281,6 +303,7 @@
             // 
             // txtBairro
             // 
+            txtBairro.Anchor = AnchorStyles.None;
             txtBairro.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtBairro.Location = new Point(682, 457);
             txtBairro.Name = "txtBairro";
@@ -289,6 +312,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(550, 433);
@@ -299,6 +323,7 @@
             // 
             // txtComplemento
             // 
+            txtComplemento.Anchor = AnchorStyles.None;
             txtComplemento.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtComplemento.Location = new Point(550, 457);
             txtComplemento.Name = "txtComplemento";
@@ -307,6 +332,7 @@
             // 
             // lblNumero
             // 
+            lblNumero.Anchor = AnchorStyles.None;
             lblNumero.AutoSize = true;
             lblNumero.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblNumero.Location = new Point(997, 356);
@@ -317,6 +343,7 @@
             // 
             // txtNumero
             // 
+            txtNumero.Anchor = AnchorStyles.None;
             txtNumero.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtNumero.Location = new Point(997, 380);
             txtNumero.Name = "txtNumero";
@@ -325,6 +352,7 @@
             // 
             // txtEnd2
             // 
+            txtEnd2.Anchor = AnchorStyles.None;
             txtEnd2.AutoSize = true;
             txtEnd2.Location = new Point(853, 465);
             txtEnd2.Name = "txtEnd2";
@@ -335,6 +363,7 @@
             // 
             // lblObrigatorio
             // 
+            lblObrigatorio.Anchor = AnchorStyles.None;
             lblObrigatorio.AutoSize = true;
             lblObrigatorio.BackColor = Color.FromArgb(224, 224, 224);
             lblObrigatorio.ForeColor = Color.Red;
@@ -347,10 +376,11 @@
             // 
             // ListView
             // 
-            ListView.Columns.AddRange(new ColumnHeader[] { Id, Nome, Cpf, Rg });
+            ListView.Anchor = AnchorStyles.None;
+            ListView.Columns.AddRange(new ColumnHeader[] { Id, Nome });
             ListView.Cursor = Cursors.Hand;
             ListView.FullRowSelect = true;
-            ListView.Location = new Point(550, 584);
+            ListView.Location = new Point(549, 562);
             ListView.Name = "ListView";
             ListView.Size = new Size(297, 165);
             ListView.TabIndex = 57;
@@ -369,18 +399,9 @@
             Nome.Text = "Nome";
             Nome.Width = 120;
             // 
-            // Cpf
-            // 
-            Cpf.Text = "CPF";
-            Cpf.Width = 100;
-            // 
-            // Rg
-            // 
-            Rg.Text = "RG";
-            Rg.Width = 100;
-            // 
             // lblObs
             // 
+            lblObs.Anchor = AnchorStyles.None;
             lblObs.AutoSize = true;
             lblObs.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblObs.ForeColor = SystemColors.ControlDarkDark;
@@ -392,6 +413,7 @@
             // 
             // txtCrianca
             // 
+            txtCrianca.Anchor = AnchorStyles.None;
             txtCrianca.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCrianca.Location = new Point(550, 534);
             txtCrianca.Name = "txtCrianca";
@@ -402,6 +424,7 @@
             // 
             // lblCrianca
             // 
+            lblCrianca.Anchor = AnchorStyles.None;
             lblCrianca.AutoSize = true;
             lblCrianca.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblCrianca.Location = new Point(550, 510);
@@ -412,6 +435,7 @@
             // 
             // txtNome
             // 
+            txtNome.Anchor = AnchorStyles.None;
             txtNome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtNome.Location = new Point(550, 135);
             txtNome.Name = "txtNome";
@@ -420,6 +444,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(671, 264);
@@ -430,6 +455,7 @@
             // 
             // lblIdade
             // 
+            lblIdade.Anchor = AnchorStyles.None;
             lblIdade.AutoSize = true;
             lblIdade.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblIdade.Location = new Point(756, 211);
@@ -440,6 +466,7 @@
             // 
             // Calendario
             // 
+            Calendario.Anchor = AnchorStyles.None;
             Calendario.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Calendario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Calendario.Format = DateTimePickerFormat.Short;
@@ -454,6 +481,7 @@
             // 
             // txtEnd
             // 
+            txtEnd.Anchor = AnchorStyles.None;
             txtEnd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtEnd.Location = new Point(791, 380);
             txtEnd.Name = "txtEnd";
@@ -462,6 +490,7 @@
             // 
             // lblRg
             // 
+            lblRg.Anchor = AnchorStyles.None;
             lblRg.AutoSize = true;
             lblRg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblRg.Location = new Point(550, 264);
@@ -472,6 +501,7 @@
             // 
             // lblNasc
             // 
+            lblNasc.Anchor = AnchorStyles.None;
             lblNasc.AutoSize = true;
             lblNasc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblNasc.Location = new Point(550, 187);
@@ -482,6 +512,7 @@
             // 
             // lblNome
             // 
+            lblNome.Anchor = AnchorStyles.None;
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblNome.Location = new Point(550, 111);
@@ -492,6 +523,7 @@
             // 
             // btnSalvar
             // 
+            btnSalvar.Anchor = AnchorStyles.None;
             btnSalvar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnSalvar.Location = new Point(741, 640);
             btnSalvar.Name = "btnSalvar";
@@ -502,6 +534,7 @@
             // 
             // lbltxtIdade
             // 
+            lbltxtIdade.Anchor = AnchorStyles.None;
             lbltxtIdade.AutoSize = true;
             lbltxtIdade.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbltxtIdade.Location = new Point(756, 188);
@@ -512,6 +545,7 @@
             // 
             // txtRg
             // 
+            txtRg.Anchor = AnchorStyles.None;
             txtRg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtRg.Location = new Point(550, 288);
             txtRg.Mask = "00,000,000-0";
@@ -521,6 +555,7 @@
             // 
             // txtCpf
             // 
+            txtCpf.Anchor = AnchorStyles.None;
             txtCpf.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCpf.Location = new Point(671, 288);
             txtCpf.Mask = "000,000,000-00";
@@ -530,6 +565,7 @@
             // 
             // txtCep
             // 
+            txtCep.Anchor = AnchorStyles.None;
             txtCep.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCep.Location = new Point(550, 380);
             txtCep.Mask = "00000-000";
@@ -541,6 +577,7 @@
             // 
             // lblEndereco
             // 
+            lblEndereco.Anchor = AnchorStyles.None;
             lblEndereco.AutoSize = true;
             lblEndereco.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblEndereco.Location = new Point(791, 356);
@@ -551,6 +588,7 @@
             // 
             // lblCep
             // 
+            lblCep.Anchor = AnchorStyles.None;
             lblCep.AutoSize = true;
             lblCep.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblCep.Location = new Point(550, 356);
@@ -558,18 +596,6 @@
             lblCep.Size = new Size(40, 21);
             lblCep.TabIndex = 10;
             lblCep.Text = "CEP:";
-            // 
-            // lblMaior
-            // 
-            lblMaior.AutoSize = true;
-            lblMaior.BackColor = Color.FromArgb(224, 224, 224);
-            lblMaior.ForeColor = Color.Red;
-            lblMaior.Location = new Point(550, 243);
-            lblMaior.Name = "lblMaior";
-            lblMaior.Size = new Size(166, 15);
-            lblMaior.TabIndex = 92;
-            lblMaior.Text = "*Responsável precisa ser +18 *";
-            lblMaior.Visible = false;
             // 
             // CadastroResp
             // 
@@ -614,8 +640,6 @@
         public ListView ListView;
         private ColumnHeader Id;
         private ColumnHeader Nome;
-        private ColumnHeader Cpf;
-        private ColumnHeader Rg;
         private Label lblObs;
         public TextBox txtCrianca;
         private Label lblCrianca;

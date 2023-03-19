@@ -393,7 +393,7 @@ namespace IG
 
         private void cbSala_SelectedIndexChanged(object sender, EventArgs e)
         {
-                txtResponsavel.Focus();  
+            txtResponsavel.Focus();
         }
     }
 }
